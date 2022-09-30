@@ -1,15 +1,12 @@
-/* --------- Global style */
+/* /* --------- Global style */
 
 body {
-    background-color: aqua;
-    font-family: "Raleway", sans-serif;
-    color: red;
     text-align: center;
 }
 
-.game-area {
+#game-area {
     background-color: aqua;
-    font-family: "Raleway", sans-serif;
-    color: red;
-    text-align: center;
+    width: 80%;
+    height: 480px;
+    border: 1px solid black;
 }
