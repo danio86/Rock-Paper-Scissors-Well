@@ -1,12 +1,11 @@
+//#######################Game Draw: ############################
 //Game Area:
 let canvas = document.getElementById('game-area');
 let ctx = canvas.getContext('2d');
 //ctx is the snake. getContext(2d) allows us to drwaw in 2d in the cavas(game-area)
 
 let snake = [
-    {x: 2, y:2},
-    {x: 3, y:2}, 
-    {x: 4, y:2}
+    {x: 20, y:2}
 ];
 //an array of jsons is 1 element/value
 let food = {x: 5, y: 5}; 
@@ -26,13 +25,26 @@ function addCube(x ,y) {
 };
 
 function draw() {
-    ctx.fillStyle = 'yellow';
-    addCube(snake.x, snake.y)
-    
-
-    //food!
+    //Food
     ctx.fillStyle = 'red';
     addCube(food.x, food.y);
-}
+
+    //Snake
+    ctx.fillStyle = 'yellow';
+    // we need to place every part of the snake(array) > for "each"-loop!
+    snake.forEach(part => addCube(part.x, part.y));
+    //we need part => because the items are jsons.
+
+    requestAnimationFrame(draw)
+    //repeats draw function permanently
+};
 
 draw();          
+
+//#######################Game Loop: ############################
+function gameLoop() {
+    snake[0].x-- //-1 does not work!
+};
+
+setInterval(gameLoop, 100);
+//gameLoop function is called every 100ms
