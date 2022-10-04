@@ -2,13 +2,14 @@
 
 body {
     text-align: center;
+    background-color: blueviolet;
 
 }
 
 #game-area {
     background-color: aqua;
-    width: 80%;
-    height: 50%;
+    width: 500px;
+    height: 500px;
     border: 1px solid black;
     margin-top: 150px;
-}
+};
