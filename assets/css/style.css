@@ -1,13 +1,14 @@
- --------- Global style */
+/* --------- Global style ---------  */
 
 body {
     text-align: center;
-    background-color: blueviolet;
+
 }
 
 #game-area {
     background-color: aqua;
     width: 80%;
-    height: 480px;
+    height: 50%;
     border: 1px solid black;
+    margin-top: 150px;
 }
