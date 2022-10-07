@@ -3,13 +3,20 @@
 let canvas = document.getElementById('game-area');
 let ctx = canvas.getContext('2d');
 //ctx is an Object in the Game Area. getContext(2d) allows us to drwaw in 2d in the cavas(game-area)
+img = document.getElementById("spider");
+   
+
+
 
 let snake = [
     {x: 25, y:2}
 ];
 //an array of jsons is 1 element/value
+ 
 let food;
+let animal;
 let gotFood = false;
+let gotAnimal = false;
 let direction = 'LEFT';
 
 let row = 30;
@@ -20,10 +27,14 @@ let cellHight = canvas.height/row;
 
 
 placeFood();
+placeAnimal();
 
 
 function addCube(x ,y) {
     ctx.fillRect(x*cellWidth, y*cellHight, cellWidth-1, cellHight-1);
+    if (snake.length > 1){
+        ctx.fillStyle = 'blue';
+    } else {ctx.fillStyle = 'yellow';}
     //...(x-pos, y-pos, width, height) of painted object
 };
 
@@ -31,19 +42,27 @@ function addCube(x ,y) {
 
 
 function draw() {
-    ctx.fillStyle = 'aqua';
+    ctx.fillStyle = 'lightgreen';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     //Food
     ctx.fillStyle = 'red';
     addCube(food.x, food.y);
     
+    //Animal
+    ctx.fillStyle = 'black';
+    addCube(animal.x, animal.y);
+
+    //Spider
+    ctx.drawImage(img, 20, 20, 20, 15);
+
 
     //Snake
     ctx.fillStyle = 'yellow';
     // we need to place every part of the snake(array) > for "each"-loop!
     snake.forEach(part => addCube(part.x, part.y));
     //we need part => because the items are jsons.
+    
 
     requestAnimationFrame(draw);
     //repeats draw function permanently  
@@ -59,20 +78,54 @@ function placeFood() {
 //{x:..,y:..} this is 1 value called json! withs this a var can have "2" values!
 }// places the food object randomly in Game Area
 
+function placeAnimal() {
+    let animalY = Math.floor(Math.random()*row);
+    let animalX = Math.floor(Math.random()*col);
+
+    animal = {x: animalX, y: animalY}
+}
+
 function snakeGrowth() {
     for (let i = snake.length-1; i > 0; i--) {
         let piece = snake[i];
         let frontPiece = snake[i-1];
         piece.x = frontPiece.x;
-        piece.y = frontPiece.y ; 
+        piece.y = frontPiece.y; 
     }
 }//if the number of pieces is >0 the funktion is executed.
 //the last piece is targeted and the position gets changed to 
 // the position of it's frontpiece.
 
+function gameEnd() {
+    let snakeHead = snake[0];
+    let snakeBody = snake.slice(2);
+    let sameCoordinares = snakeBody.find(part => part.x == snakeHead.x && part.y == snakeHead.y);
+    //array.find(or forEach)(part =>) works like a loop: For each part do(in this case find) something
+   
+    if (snake[0].x > col -1 || 
+        snake[0].x < 0 || 
+        snake[0].y > row -1 || 
+        snake[0].y < 0 /* ||
+        sameCoordinares */  //this would ask if the variable has a value of true
+        ) {
+            direction = 'LEFT'
+            placeFood();
+            snake = [{x: 25, y:2}];
+        }// if snake touches a wall
+    
+    if (sameCoordinares) {
+        direction = 'LEFT'
+        placeFood();
+        snake = [{x: 25, y:2}];
+        alert('Game Over!')
+    }
+        
+};
+
 
 //#######################Game Loop: ############################
 function gameLoop() {
+    gameEnd();
     snakeGrowth(); 
     if(direction == 'LEFT') {
         snake[0].x--; //-1 does not work!
@@ -97,6 +150,16 @@ function gameLoop() {
         }  
     }// if snake-head is at the same pos like food > food get placed on an other pos.
     // and skake growth and counter grows.
+    if (snake[0].x == animal.x && snake[0].y == animal.y){
+        placeAnimal();
+        gotAnimal = true;
+        if (gotAnimal) {
+            snake = [
+                {x: snake[0].x, y:snake[0].y}, 
+                ...snake 
+            ];
+        }  
+    }
 };
 
 setInterval(gameLoop, 200);
@@ -107,16 +170,16 @@ document.addEventListener('keydown', keyPress);
 
 
 function keyPress(e) {
-    if(e.keyCode == 37) {
+    if(e.keyCode == 37 && direction != 'RIGHT') {
         direction = 'LEFT';
     }
-    if(e.keyCode == 38) {
+    if(e.keyCode == 38 && direction != 'DOWN') {
         direction = 'UP';
     }
-    if(e.keyCode == 39) {
+    if(e.keyCode == 39 && direction != 'LEFT') {
         direction = 'RIGHT';
     }
-    if(e.keyCode == 40) {
+    if(e.keyCode == 40 && direction != 'UP') {
         direction = 'DOWN';
     }
 };
