@@ -1,15 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald&display=swap');
 /* --------- Global style ---------  */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+}
 
 body {
     text-align: center;
     background-color: blueviolet;
+    background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat center center teal;
+    background-size: 80%;
+    background-position-y: -320px;
+}
 
+header {
+    height: fit-content;
+    width: 100%;
+}
+
+header h1 {
+    float: right
+}
+
+.logo {
+    width: 20%;
+    height: auto;
+    float: left;
+}
+
+#pictures {
+    display: none;
+}
+
+#cellphone {
+    width: 100%;
+    height: auto;
+}
+
+.score-area {
+    float: right;
+    /* width: 100%; */
+    background-color: aqua;
+    text-align: right;
+    position: relative;
+    top: 100px;
+    right: 125px;
 }
 
 #game-area {
-    background-color: aqua;
-    width: 500px;
-    height: 500px;
+    /* background-color: whitesmoke; */
+    width: 360px;
+    height: 315px;
     border: 1px solid black;
-    margin-top: 150px;
-};
+    margin-top: 5px;
+    margin-right: 170px;
+    box-shadow: black 20px 10px 50px;
+    /* left: -23px; */
+    /* position: unset; */
+    border-radius: 5px;
+}
+
+.control-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.control-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%
+}
+
+#up {
+    margin: 50px;
+    position: relative;
+    top: 42px;
+    left: 225px;
+    width: 50px;
+    height: 23px;
+    border-radius: 15px;
+}
+
+#left {
+    margin: 50px;
+    position: relative;
+    top: 108px;
+    right: 75px;
+    width: 50px;
+    height: 23px;
+    border-radius: 15px;
+}
+
+#right {
+    margin: 50px;
+    position: relative;
+    top: 108px;
+    left: 75px;
+    width: 50px;
+    height: 23px;
+    border-radius: 15px;
+}
+
+#down {
+    margin: 50px;
+    position: relative;
+    top: 212px;
+    right: 225px;
+    width: 50px;
+    height: 23px;
+    border-radius: 15px;
+}
+

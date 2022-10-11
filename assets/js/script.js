@@ -15,9 +15,11 @@ let snake = [
  
 let food;
 let animal;
+let spider;
 let gotFood = false;
 let gotAnimal = false;
 let direction = 'LEFT';
+let oldScore = parseInt(document.getElementById('score').innerText);
 
 let row = 30;
 let col = 30;
@@ -28,6 +30,7 @@ let cellHight = canvas.height/row;
 
 placeFood();
 placeAnimal();
+/* placeSpider(); */
 
 
 function addCube(x ,y) {
@@ -54,7 +57,7 @@ function draw() {
     addCube(animal.x, animal.y);
 
     //Spider
-    ctx.drawImage(img, 20, 20, 20, 15);
+    ctx.drawImage(img, 20, 20, 15, 10);
 
 
     //Snake
@@ -85,6 +88,13 @@ function placeAnimal() {
     animal = {x: animalX, y: animalY}
 }
 
+function scoreCounter() {
+    /* console.log('caled!') */
+    let oldScore = parseInt(document.getElementById('score').innerText);
+    /* console.log(oldScore, 'test'); */
+    document.getElementById('score').innerText = oldScore + 10;
+}
+
 function snakeGrowth() {
     for (let i = snake.length-1; i > 0; i--) {
         let piece = snake[i];
@@ -111,6 +121,8 @@ function gameEnd() {
             direction = 'LEFT'
             placeFood();
             snake = [{x: 25, y:2}];
+            document.getElementById('score').innerText = oldScore - oldScore;
+            /* alert('Game Over!') */
         }// if snake touches a wall
     
     if (sameCoordinares) {
@@ -118,7 +130,7 @@ function gameEnd() {
         placeFood();
         snake = [{x: 25, y:2}];
         alert('Game Over!')
-    }
+    }// if snake bites itself
         
 };
 
@@ -138,6 +150,7 @@ function gameLoop() {
     } 
     
     if (snake[0].x == food.x && snake[0].y == food.y){
+        scoreCounter();
         placeFood();
         gotFood = true;
         if (gotFood) {
@@ -151,6 +164,7 @@ function gameLoop() {
     }// if snake-head is at the same pos like food > food get placed on an other pos.
     // and skake growth and counter grows.
     if (snake[0].x == animal.x && snake[0].y == animal.y){
+        scoreCounter();
         placeAnimal();
         gotAnimal = true;
         if (gotAnimal) {
@@ -167,7 +181,27 @@ setInterval(gameLoop, 200);
 document.addEventListener('keydown', keyPress);
 //if a key is pressed ('keydown') the keyPress function is called
 
+document.addEventListener("DOMContentLoaded", function() {
+let buttons = document.getElementsByTagName("button");
 
+    for (let button of buttons) {
+        button.addEventListener("click", clickDirection) 
+    }
+function clickDirection() {
+    if (this.getAttribute("id") === "left" && direction != 'RIGHT') {
+        direction = 'LEFT';
+    } else if (this.getAttribute("id") === "right" && direction != 'LEFT') {
+        direction = 'RIGHT';
+    } else if (this.getAttribute("id") === "up" && direction != 'DOWN') {
+        direction = 'UP';
+    } else if (this.getAttribute("id") === "down" && direction != 'UP') {
+        direction = 'DOWN';
+    }
+
+    
+}
+   
+});
 
 function keyPress(e) {
     if(e.keyCode == 37 && direction != 'RIGHT') {

@@ -5,13 +5,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome and google fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
+    <link rel='shortcut icon' type='image/x-icon' href='assets/images/favicon.ico'/>
+    <!-- <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico"> -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Snake</title>
 </head>
 
 <body>
+    <header>
+        <h1 class="heading">Snake</h1>
+        <img class="logo" src="assets/images/animals-g13a0b5bb3_1280.png" alt="logo"> 
+    </header>
 
-    <canvas id="game-area"></canvas>
+    <div class="score-area">
+        <p class="scores">Score: <span id="score">0</span></p>
+        <p class="record">Current Record: <span id="record">0</span></p>
+    </div>
+
+
+    <div id="pictures">
+        <img id="spider" src="assets/images/spider-transp.png" alt="Spider" style="display:none">
+    </div>
+
+    <canvas id="game-area">
+        <span class="food">tets</span> -->
+        <img src="assets/images/spider.png" alt="Spider">
+    </canvas>
+   <!----------------  Control keys --------------------->
+    <section class="control-area">
+        <div>
+            <button type="button" class="btn-up" id="up">
+                2<i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div>
+            <button type="button" class="btn-left" id="left">
+                4<i class="fas fa-plus"></i>
+            </button>
+            <button type="button" class="btn-right" id="right">
+                6<i class="fas fa-minus"></i>
+            </button>
+        </div>
+        <div>
+            <button type="button" class="btn-down" id="down">
+                8<i class="fas fa-divide"></i>
+            </button>
+        </div>
+    </section>
+
 
     
     
