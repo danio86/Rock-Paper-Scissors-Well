@@ -13,14 +13,16 @@ let snake = [
     { x: 25, y: 2 }
 ];
 //an array of jsons is 1 element/value
-let insect = document.getElementById('spider');
+/* let img = document.getElementById('spider'); */
+let img;
+let imgImg;
 let food;
 let animal;
 let spider;
 let gotFood = false;
 let gotAnimal = false;
 let gotSpider = false;
-let gotInsect = false;
+let gotImg = false;
 let direction = 'LEFT';
 let oldScore = parseInt(document.getElementById('score').innerText);
 /* let record = parseInt(document.getElementById('record').innerText); */
@@ -32,12 +34,13 @@ let col = 30;
 let cellWidth = canvas.width / col;
 let cellHight = canvas.height / row;
 //this creates a raster with cells
-
+let imgXc = Math.floor(Math.random() * col);
+let imgYc = Math.floor(Math.random() * row);
 
 placeFood();
 placeAnimal();
 placeSpider();
-/* placeInsect(); */
+placeImg();
 
 
 function addCube(x, y) {
@@ -47,6 +50,10 @@ function addCube(x, y) {
     /* } else {ctx.drawImage(img, 20, 20, 15, 10);} */
     } else { ctx.fillStyle = 'yellow'; }
     //...(x-pos, y-pos, width, height) of painted object
+};
+
+function addImage(x,y) {
+    ctx.drawImage(document.getElementById('spider'), x * cellWidth, y * cellHight, cellWidth - 1, cellHight - 1);
 };
 
 
@@ -61,24 +68,25 @@ function draw() {
     addCube(food.x, food.y);
 
     //Animal
-    ctx.fillStyle = 'black';
+/*     ctx.fillStyle = 'black';
+ */ ctx.fillStyle = 'black';
     addCube(animal.x, animal.y);
 
     //Spider
-    ctx.fillStyle = 'pink';
+    /* ctx.fillStyle = 'pink';
     ctx.fillRect(spider.x * cellWidth + 3, spider.y * cellWidth + 1, cellWidth/2, cellHight/2);
     ctx.fillRect(spider.x * cellWidth + 1, spider.y * cellWidth + 3, cellWidth/2, cellHight/2);
     ctx.fillRect(spider.x * cellWidth + 5, spider.y * cellWidth + 3, cellWidth/2, cellHight/2);
-    ctx.fillRect(spider.x * cellWidth + 3, spider.y * cellWidth + 5, cellWidth/2, cellHight/2)
+    ctx.fillRect(spider.x * cellWidth + 3, spider.y * cellWidth + 5, cellWidth/2, cellHight/2) */
     /* ctx.drawImage(img, spider.x, spider.y, cellWidth, cellHight); */
     /* ctx.fillStyle = ctx.drawImage(img, 50, 100, 15, 10);
     ctx.drawImage(img, spider.x, spider.y, cellWidth, cellHight); */
     /* ctx.rect(0, 0, 50, 50); */
     /* ctx.fillStyle = pat; */
     /* ctx.fill(); */
-    /* ctx.fillStyle = ctx.drawImage(img, img.x, img.y, cellWidth, cellHight); */
+    /* ctx.fillStyle = ctx.drawImage(img, img.x, img.y, cellWidth-1, cellHight-1); */
+    addImage(img.x, img.y)
     
-    ctx.drawImage(insect, insect.x, insect.y, cellWidth, cellHight);
     /* addCube(img.x, img.y); */
     /* addCube(img, spider.x, spider.y); */
 
@@ -118,11 +126,11 @@ function placeSpider() {
     spider = {x: spiderX, y: spiderY}
 }
 
-function placeInsect() {
-    let insectY = Math.floor(Math.random() * row);
-    let insectX = Math.floor(Math.random() * col);
+function placeImg() {
+    let imgY = Math.floor(Math.random() * row);
+    let imgX = Math.floor(Math.random() * col);
 
-    something = {x: insectX, y: insectY}
+    img = {x: imgX, y: imgY}
 }
 
 function scoreCounter() {
@@ -133,13 +141,13 @@ function scoreCounter() {
     /* console.log(record, 'test'); */
     document.getElementById('score').innerText = oldScore + 10;
     let oldRecord = oldScore + 10;
-    console.log(oldRecord, 'test');
+    /* console.log(oldRecord, 'test'); */
     newRecord.push(oldRecord)
-    console.log(newRecord, 'check')
+    /* console.log(newRecord, 'check') */
     if (newRecord[0] > oR) {
         oR + newRecord[0];
     };
-    console.log(oR, 'DB');
+    /* console.log(oR, 'DB'); */
 }
 
 function snakeGrowth() {
@@ -169,7 +177,7 @@ function gameEnd() {
         placeFood();
         placeAnimal();
         placeSpider();
-        placeInsect();
+        placeImg();
         snake = [{ x: 25, y: 2 }];
         document.getElementById('score').innerText = oldScore;
         /* document.getElementById('record').innerText */
@@ -189,7 +197,7 @@ function gameEnd() {
         placeFood();
         placeAnimal();
         placeSpider();
-        placeInsect();
+        placeImg();
         snake = [{ x: 25, y: 2 }];
         document.getElementById('score').innerText = oldScore;
         for (i=0; i<newRecord.length; i++){
@@ -245,8 +253,8 @@ function gameLoop() {
     }
 
     if (snake[0].x == spider.x && snake[0].y == spider.y) {
-        console.log(spider.x, spider.y)
-        console.log(snake[0].x, snake[0].y)
+        /* console.log(spider.x, spider.y)
+        console.log(snake[0].x, snake[0].y) */
         scoreCounter();
         placeSpider();
         gotSpider = true;
@@ -258,13 +266,13 @@ function gameLoop() {
         }
     }
 
-    if (snake[0].x == insect.x && snake[0].y == insect.y) {
-        console.log(insect.x, insect.y)
-        console.log(snake[0].x, snake[0].y)
+    if (snake[0].x == img.x && snake[0].y == img.y) {
+        console.log(img.x, img.y, 'db')
+        console.log(snake[0].x, snake[0].y, 'db2')
         scoreCounter();
-        placeInsect();
-        gotInsect = true;
-        if (gotInsect) {
+        placeImg();
+        gotImg = true;
+        if (gotImg) {
             snake = [
                 { x: snake[0].x, y: snake[0].y },
                 ...snake
