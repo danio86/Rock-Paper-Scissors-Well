@@ -70,8 +70,8 @@ function draw() {
     ctx.fillRect(spider.x * cellWidth + 5, spider.y * cellWidth + 3, cellWidth/2, cellHight/2);
     ctx.fillRect(spider.x * cellWidth + 3, spider.y * cellWidth + 5, cellWidth/2, cellHight/2)
     /* ctx.drawImage(img, spider.x, spider.y, cellWidth, cellHight); */
-    ctx.fillStyle = ctx.drawImage(img, 50, 100, 15, 10);
-    ctx.drawImage(img, spider.x, spider.y, cellWidth, cellHight);
+    /* ctx.fillStyle = ctx.drawImage(img, 50, 100, 15, 10);
+    ctx.drawImage(img, spider.x, spider.y, cellWidth, cellHight); */
     /* ctx.rect(0, 0, 50, 50); */
     /* ctx.fillStyle = pat; */
     /* ctx.fill(); */
@@ -119,7 +119,7 @@ function placeImg() {
     let imgY = Math.floor(Math.random() * row);
     let imgX = Math.floor(Math.random() * col);
 
-    spider = {x: imgX, y: imgY}
+    img = {x: imgX, y: imgY}
 }
 
 function scoreCounter() {
