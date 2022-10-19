@@ -32,11 +32,11 @@ let gameOver = false;
 let win = false;
 
 //sounds:
-/* let eatSound;
+let eatSound;
 function preload() {
-    eatSound = loadSound("assets/sounds/gulp.mp3")
-} */
-const gulpSound = new Audio("gulp.mp3");
+    eatSound = loadSound("gulp.mp3")
+}
+/* const gulpSound = new Audio("gulp.mp3"); */
 
 /* while (speed) {
     let actualLevel = parseInt(document.getElementById('level').innerText);
@@ -356,7 +356,8 @@ function gameLoop() {
     if (snake[0].x == food.x && snake[0].y == food.y) {
         scoreCounter(10);
         placeFood();
-        gulpSound.play;
+        /* gulpSound.play; */
+        /* eatSound.play; */
         gotFood = true;
         if (gotFood) {
             snake = [
