@@ -17,42 +17,54 @@
 
 <body>
     <header>
-        <h1 class="heading">Snake</h1>
+        <h1 class="heading">Snake 2001</h1>
         <img class="logo" src="assets/images/animals-g13a0b5bb3_1280.png" alt="logo"> 
     </header>
 
     <div class="score-area">
-        <p class="scores">Score: <span id="score">0</span></p>
-        <p class="record">Current Record: <span id="record">0</span></p>
+        <p class="scores"><b>Score:<span id="score">0</span></b></p>
+        <p class="record"><b>Current Record:<span id="record">0</span></b></p>
+        <p class="level"><b>Level:<span id="level">1</span></b></p>
     </div>
 
-
+    <!-- <img id="spider" src="assets/images/spider-transp.png" alt="Spider"> -->
     <div id="pictures">
-        <img id="spider" src="assets/images/spider-transp.png" alt="Spider" style="display:none">
+        <img id="1" src="assets/images/spider-transp.png" alt="Spider" style="display:none">
+        <img id="2" src="assets/images/elephant.png" alt="Elephant" style="display:none">
+        <img id="3" src="assets/images/lion.png" alt="Lion" style="display:none">
+        <img id="win" src="assets/images/you-win.png" alt="win">
     </div>
 
-    <canvas id="game-area">
-        <span class="food">tets</span> -->
-        <img src="assets/images/spider.png" alt="Spider">
+    <div id="messages">
+        <h2 id="lost">Game Over!</h2>
+        <h2 id="win">Congratulations! You win!</h2>
+    </div>
+        
+
+    <!-- <canvas class="game-area-start game-area-L3" id="game-area"> -->
+    <canvas class="game-area-start" id="game-area">
+        
+        <!-- <span class="food">tets</span> -->
+        <!-- <img src="assets/images/spider-transp.png" alt="Spider"> -->
     </canvas>
    <!----------------  Control keys --------------------->
     <section class="control-area">
         <div>
             <button type="button" class="btn-up" id="up">
-                2<i class="fas fa-times"></i>
+                2 <i class="fa fa-angle-up"></i>
             </button>
         </div>
         <div>
             <button type="button" class="btn-left" id="left">
-                4<i class="fas fa-plus"></i>
+                <i class="fa fa-angle-left"></i> 4
             </button>
             <button type="button" class="btn-right" id="right">
-                6<i class="fas fa-minus"></i>
+                6 <i class="fa fa-angle-right"></i>
             </button>
         </div>
         <div>
             <button type="button" class="btn-down" id="down">
-                8<i class="fas fa-divide"></i>
+                8 <i class="fa fa-angle-down"></i>
             </button>
         </div>
     </section>

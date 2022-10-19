@@ -15,33 +15,71 @@ let snake = [
 //an array of jsons is 1 element/value
 /* let img = document.getElementById('spider'); */
 let img;
-let imgImg;
 let food;
-let animal;
-let spider;
+let elephant;
+let lion;
 let gotFood = false;
-let gotAnimal = false;
-let gotSpider = false;
+let gotElephant = false;
+let gotLion = false;
 let gotImg = false;
-let direction = 'LEFT';
+/* let direction = 'LEFT'; */
+let direction;
 let oldScore = parseInt(document.getElementById('score').innerText);
-/* let record = parseInt(document.getElementById('record').innerText); */
 let newRecord = []
 let largest = 0;
+let speed = 200;
+let gameOver = false;
+let win = false;
+
+//sounds:
+/* let eatSound;
+function preload() {
+    eatSound = loadSound("assets/sounds/gulp.mp3")
+} */
+const gulpSound = new Audio("gulp.mp3");
+
+/* while (speed) {
+    let actualLevel = parseInt(document.getElementById('level').innerText);
+    if (actualLevel === 1) {
+        speed = 200;
+    } else if (actualLevel === 2) {
+        speed = 150;
+    } else if (actualLevel === 3) {
+        speed = 100;
+        break
+    };
+};
+console.log(speed, 'how?') */
+/* function speed() {
+    let speed = parseInt(document.getElementById('level').innerText);
+    console.log(speed, 'start0')
+    if (speed === 1) {
+        speed = 200;
+    } else if (speed === 2) {
+        speed = 150;
+    } else if (speed === 3) {
+        speed = 100;
+    };
+};
+speed(); */
+/* console.log(speed, 'start1') */
 
 let row = 30;
 let col = 30;
 let cellWidth = canvas.width / col;
 let cellHight = canvas.height / row;
 //this creates a raster with cells
-let imgXc = Math.floor(Math.random() * col);
-let imgYc = Math.floor(Math.random() * row);
+
+let rId = Math.floor(Math.random() * 3) + 1;
+/* console.log(rId, 'random2') */
 
 placeFood();
-placeAnimal();
-placeSpider();
+placeElephant();
+placeLion();
 placeImg();
 
+setInterval(placeImg, 8000);
+//gameLoop function is called every 800ms (the higher the nummer the slowlier)
 
 function addCube(x, y) {
     ctx.fillRect(x * cellWidth, y * cellHight, cellWidth - 1, cellHight - 1);
@@ -52,12 +90,9 @@ function addCube(x, y) {
     //...(x-pos, y-pos, width, height) of painted object
 };
 
-function addImage(x,y) {
-    ctx.drawImage(document.getElementById('spider'), x * cellWidth, y * cellHight, cellWidth - 1, cellHight - 1);
+function addImage(x, y) {
+    ctx.drawImage(document.getElementById(rId), x * cellWidth, y * cellHight, cellWidth+1, cellHight+1);
 };
-
-
-
 
 function draw() {
     ctx.fillStyle = 'lightgreen';
@@ -67,29 +102,39 @@ function draw() {
     ctx.fillStyle = 'red';
     addCube(food.x, food.y);
 
-    //Animal
-/*     ctx.fillStyle = 'black';
- */ ctx.fillStyle = 'black';
-    addCube(animal.x, animal.y);
+    //Animals
+    addImage(img.x, img.y);
 
-    //Spider
-    /* ctx.fillStyle = 'pink';
-    ctx.fillRect(spider.x * cellWidth + 3, spider.y * cellWidth + 1, cellWidth/2, cellHight/2);
-    ctx.fillRect(spider.x * cellWidth + 1, spider.y * cellWidth + 3, cellWidth/2, cellHight/2);
-    ctx.fillRect(spider.x * cellWidth + 5, spider.y * cellWidth + 3, cellWidth/2, cellHight/2);
-    ctx.fillRect(spider.x * cellWidth + 3, spider.y * cellWidth + 5, cellWidth/2, cellHight/2) */
-    /* ctx.drawImage(img, spider.x, spider.y, cellWidth, cellHight); */
-    /* ctx.fillStyle = ctx.drawImage(img, 50, 100, 15, 10);
-    ctx.drawImage(img, spider.x, spider.y, cellWidth, cellHight); */
-    /* ctx.rect(0, 0, 50, 50); */
-    /* ctx.fillStyle = pat; */
-    /* ctx.fill(); */
-    /* ctx.fillStyle = ctx.drawImage(img, img.x, img.y, cellWidth-1, cellHight-1); */
-    addImage(img.x, img.y)
+    //Wall
+    if (document.getElementById('level').innerText == 3) {
+        ctx.fillStyle = 'brown';
+        ctx.fillRect(canvas.width/2, 0, cellWidth, canvas.height);
+        ctx.fillStyle = 'brown';
+        ctx.fillRect(0, canvas.height/2, canvas.width, cellHight);
+    };
+
+    //Text
+    if (gameOver) {
+        ctx.fillStyle = 'red'
+        ctx.font = "30px Courier";
+        ctx.fillText("Game Over!", canvas.width/4, canvas.height/2);
+    }
+
+    if (win){
+        ctx.drawImage(document.getElementById('win'), canvas.width/33.3, canvas.height/8, 300, 100)
+        gameEnd();
+    } 
     
-    /* addCube(img.x, img.y); */
-    /* addCube(img, spider.x, spider.y); */
+    /* {
+        console.log(oldScore, 'wie viel?')
+        ctx.fillStyle = 'gold'
+        ctx.font = "40px Courier";
+        ctx.fillText("Congratulations! You win!", canvas.width/4, canvas.height/2);
+    } */
+    /* console.log(oldScore, 'wie viel?') */
+    
 
+    
 
     //Snake
     ctx.fillStyle = 'yellow';
@@ -97,6 +142,8 @@ function draw() {
     snake.forEach(part => addCube(part.x, part.y));
     //we need part => because the items are jsons.
 
+    
+    
 
     requestAnimationFrame(draw);
     //repeats draw function permanently  
@@ -112,18 +159,18 @@ function placeFood() {
     //{x:..,y:..} this is 1 value called json! withs this a var can have '2' values!
 }// places the food object randomly in Game Area
 
-function placeAnimal() {
-    let animalY = Math.floor(Math.random() * row);
-    let animalX = Math.floor(Math.random() * col);
+function placeElephant() {
+    let elephantY = Math.floor(Math.random() * row);
+    let elephantX = Math.floor(Math.random() * col);
 
-    animal = {x: animalX, y: animalY}
+    elephant = {x: elephantX, y: elephantY}
 }
 
-function placeSpider() {
-    let spiderY = Math.floor(Math.random() * row);
-    let spiderX = Math.floor(Math.random() * col);
+function placeLion() {
+    let lionY = Math.floor(Math.random() * row);
+    let lionX = Math.floor(Math.random() * col);
 
-    spider = {x: spiderX, y: spiderY}
+    lion = {x: lionX, y: lionY}
 }
 
 function placeImg() {
@@ -133,21 +180,57 @@ function placeImg() {
     img = {x: imgX, y: imgY}
 }
 
-function scoreCounter() {
+function scoreCounter(n) {
     /* console.log('caled!') */
     let oldScore = parseInt(document.getElementById('score').innerText);
-    
-    let oR = 0
+    /* let level = parseInt(document.getElementById('level').innerText); */
+    let oR = 0;
     /* console.log(record, 'test'); */
-    document.getElementById('score').innerText = oldScore + 10;
-    let oldRecord = oldScore + 10;
+    document.getElementById('score').innerText = oldScore + n;
+    let oldRecord = oldScore + n;
     /* console.log(oldRecord, 'test'); */
     newRecord.push(oldRecord)
     /* console.log(newRecord, 'check') */
     if (newRecord[0] > oR) {
         oR + newRecord[0];
     };
-    /* console.log(oR, 'DB'); */
+    if (oldScore >= 90 && oldScore <= 240) {
+        /* console.log(oR, 'DB'); */
+        document.getElementById('level').innerText = 2;
+        speed = 150;
+        /* setInterval(gameLoop, 150); */
+        console.log(speed, 'l2')
+    } else if (oldScore >= 240) {
+        document.getElementById('level').innerText = 3;
+        speed = 100;
+        console.log(speed, 'l3')
+        /* let levThreeSpeed = 75;
+        setInterval(gameLoop, levThreeSpeed); */
+    }
+    //game ends positivly! User is Winner!
+    if (oldScore >= 1000) {
+        /* console.log(oldScore, 'wie viel?'); */
+        win = true;
+        direction = 0;
+        placeFood();
+        placeElephant();
+        placeLion();
+        placeImg();
+        snake = [{ x: 25, y: 2 }];
+        oldScore = 0;
+        document.getElementById('score').innerText = oldScore;
+        document.getElementById('level').innerText = 1;
+        console.log(document.getElementById('level').innerText)
+        speed = 200;
+        for (i=0; i<newRecord.length; i++){
+            if (newRecord[i]>largest) {
+                largest=newRecord[i];
+                /* console.log(largest, 'please') */
+            }
+            document.getElementById('record').innerText = largest
+        };
+    }
+    
 }
 
 function snakeGrowth() {
@@ -166,6 +249,30 @@ function gameEnd() {
     let snakeBody = snake.slice(2);
     let sameCoordinares = snakeBody.find(part => part.x == snakeHead.x && part.y == snakeHead.y);
     //array.find(or forEach)(part =>) works like a loop: For each part do(in this case find) something
+    
+    if (document.getElementById('level').innerText == 3 && snake[0].x == col/2 - 1 || 
+    document.getElementById('level').innerText == 3 && snake[0].x == row/2 - 1 ||
+    document.getElementById('level').innerText == 3 && snake[0].y == row/2 - 1 /* || 
+    document.getElementById('level').innerText == 3 && snake[0].y > col/2 - 1 */) {
+        direction = 0;
+        gameOver = true;
+        placeFood();
+        placeElephant();
+        placeLion();
+        placeImg();
+        snake = [{ x: 25, y: 2 }];
+        document.getElementById('score').innerText = oldScore;
+        document.getElementById('level').innerText = 1;
+        console.log(document.getElementById('level').innerText)
+        speed = 200;
+        document.getElementById('game-area').setAttribute('class', 'game-area-start');
+        for (i=0; i<newRecord.length; i++){
+            if (newRecord[i]>largest) {
+                largest=newRecord[i];
+            }
+            document.getElementById('record').innerText = largest
+        };
+    }; // if snake touches the inner wall in level3.
 
     if (snake[0].x > col - 1 ||
         snake[0].x < 0 ||
@@ -173,13 +280,19 @@ function gameEnd() {
         snake[0].y < 0 /* ||
         sameCoordinares */  //this would ask if the variable has a value of true
     ) {
-        direction = 'LEFT'
+        /* direction = 'LEFT' */
+        direction = 0;
+        gameOver = true;
         placeFood();
-        placeAnimal();
-        placeSpider();
+        placeElephant();
+        placeLion();
         placeImg();
         snake = [{ x: 25, y: 2 }];
         document.getElementById('score').innerText = oldScore;
+        document.getElementById('level').innerText = 1;
+        console.log(document.getElementById('level').innerText)
+        speed = 200;
+        /* console.log(speed, 'end1') */
         /* document.getElementById('record').innerText */
         
         for (i=0; i<newRecord.length; i++){
@@ -193,12 +306,17 @@ function gameEnd() {
     }// if snake touches a wall
 
     if (sameCoordinares) {
-        direction = 'LEFT'
+        /* direction = 'LEFT' */
+        direction = 0;
+        gameOver = true;
         placeFood();
-        placeAnimal();
-        placeSpider();
+        placeElephant();
+        placeLion();
         placeImg();
         snake = [{ x: 25, y: 2 }];
+        document.getElementById('level').innerText = 1;
+        speed = 200;
+        console.log(speed, 'end2')
         document.getElementById('score').innerText = oldScore;
         for (i=0; i<newRecord.length; i++){
             if (newRecord[i]>largest) {
@@ -206,9 +324,10 @@ function gameEnd() {
             }
             document.getElementById('record').innerText = largest
         };
-        alert('Game Over!')
+        /* alert('Game Over!') */
     }// if snake bites itself
 
+      
 };
 
 
@@ -218,17 +337,26 @@ function gameLoop() {
     snakeGrowth();
     if (direction == 'LEFT') {
         snake[0].x--; //-1 does not work!
+        gameOver = false;
+        win = false;
     } else if (direction == 'RIGHT') {
         snake[0].x++;
+        gameOver = false;
+        win = false;
     } else if (direction == 'DOWN') {
         snake[0].y++;
-    } else/* if(direction == 'UP') */ {
+        gameOver = false;
+        win = false;
+    } else if(direction == 'UP') {
         snake[0].y--;
+        gameOver = false;
+        win = false;
     }
 
     if (snake[0].x == food.x && snake[0].y == food.y) {
-        scoreCounter();
+        scoreCounter(10);
         placeFood();
+        gulpSound.play;
         gotFood = true;
         if (gotFood) {
             snake = [
@@ -240,49 +368,60 @@ function gameLoop() {
         }
     }// if snake-head is at the same pos like food > food get placed on an other pos.
     // and skake growth and counter grows.
-    if (snake[0].x == animal.x && snake[0].y == animal.y) {
-        scoreCounter();
-        placeAnimal();
-        gotAnimal = true;
-        if (gotAnimal) {
-            snake = [
-                { x: snake[0].x, y: snake[0].y },
-                ...snake
-            ];
-        }
-    }
-
-    if (snake[0].x == spider.x && snake[0].y == spider.y) {
-        /* console.log(spider.x, spider.y)
-        console.log(snake[0].x, snake[0].y) */
-        scoreCounter();
-        placeSpider();
-        gotSpider = true;
-        if (gotSpider) {
-            snake = [
-                { x: snake[0].x, y: snake[0].y },
-                ...snake
-            ];
-        }
-    }
 
     if (snake[0].x == img.x && snake[0].y == img.y) {
-        console.log(img.x, img.y, 'db')
-        console.log(snake[0].x, snake[0].y, 'db2')
-        scoreCounter();
         placeImg();
         gotImg = true;
         if (gotImg) {
             snake = [
-                { x: snake[0].x, y: snake[0].y },
+                {x: snake[0].x, y: snake[0].y},
                 ...snake
             ];
         }
+        if (rId === 1) {
+            scoreCounter(20);
+            rId = Math.floor(Math.random() * 3) + 1
+        } else if (rId === 2) {
+            scoreCounter(50);
+            rId = Math.floor(Math.random() * 3) + 1
+        } else if (rId === 3) {
+            scoreCounter(80);
+            rId = Math.floor(Math.random() * 3) + 1
+        }
+    };
+    
+    if (document.getElementById('level').innerText == 2) {
+        speed = 100;
+    } else if (document.getElementById('level').innerText == 3) {
+        speed = 50;
+    };
+
+    if (document.getElementById('level').innerText == 3) {
+        document.getElementById('game-area').setAttribute('class', 'game-area-start game-area-L3'); 
+        // this adds a second class to canvas(Game Area)
     }
+
+    //level3: Snake can go through wall
+    if (document.getElementById('level').innerText == 3 && snake[0].x > col - 1) {
+            snake[0] = {x: 0, y: snake[0].y};
+    };
+    if (document.getElementById('level').innerText == 3 && snake[0].x < 0) {
+        snake[0] = {x: 29, y: snake[0].y};
+    };
+    if (document.getElementById('level').innerText == 3 && snake[0].y > row - 1) {
+    snake[0] = { x: snake[0].x, y: 0};
+    };
+    if (document.getElementById('level').innerText == 3 && snake[0].y < 0) {
+    snake[0] = { x: snake[0].x, y: 29 };
+    };
+    
+    setTimeout(gameLoop, speed);
+    //the gameLoop runns all 200ms at the beginning
 };
 
-setInterval(gameLoop, 100);
-//gameLoop function is called every 100ms (the higher the nummer the slowlier)
+gameLoop();
+/* setInterval(gameLoop, 200) */
+
 document.addEventListener('keydown', keyPress);
 //if a key is pressed ('keydown') the keyPress function is called
 

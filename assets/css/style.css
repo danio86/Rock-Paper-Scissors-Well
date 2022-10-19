@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&family=Roboto+Mono&family=Rubik&display=swap');
 /* --------- Global style ---------  */
 * {
     margin: 0;
@@ -8,11 +8,12 @@
 }
 
 body {
+    font-family: Courier, sans-serif;
     text-align: center;
     background-color: blueviolet;
     background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat center center teal;
-    background-size: 80%;
-    background-position-y: -320px;
+    background-size: 78%;
+    background-position-y: -263px;
 }
 
 header {
@@ -21,13 +22,15 @@ header {
 }
 
 header h1 {
-    float: right
+    float: right;
+    margin: 50px 158px;
 }
 
 .logo {
     width: 20%;
     height: auto;
     float: left;
+    margin: 50px 101px;
 }
 
 #pictures {
@@ -41,33 +44,59 @@ header h1 {
 
 .score-area {
     float: right;
-    /* width: 100%; */
-    background-color: aqua;
+    background-color: rgb(1, 200, 200);
     text-align: right;
     position: relative;
     top: 100px;
-    right: 125px;
+    left: 370px;
+    text-align: center;
+    font-size: 125%;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.game-area-start {
+    background-color: whitesmoke;
+    width: 365px;
+    height: 338px;
+    border: 20px solid rgb(168 188 160);
+    margin-top: -57px;
+    margin-right: -7px;
+    box-shadow: black 0px 10px 50px;
+    /* left: -23px; */
+    /* position: unset; */
+    border-radius: 27px;
+}
+
+.game-area-L3 {
+    /* background-color: whitesmoke;
+    width: 365px;
+    height: 338px; */
+    border: 20px solid brown;
+    /* margin-top: -57px;
+    margin-right: -7px;
+    box-shadow: black 0px 10px 50px;
+    border-radius: 27px; */
 }
 
 #game-area {
-    /* background-color: whitesmoke; */
-    width: 360px;
-    height: 315px;
-    border: 1px solid black;
-    margin-top: 5px;
-    margin-right: 106px;
-    box-shadow: black 20px 10px 50px;
-    /* left: -23px; */
-    /* position: unset; */
-    border-radius: 5px;
+    background-color: whitesmoke;
+    width: 365px;
+    height: 338px;
+    /* border: 20px solid brown; */
+    margin-top: -110px;
+    margin-right: -7px;
+    box-shadow: black 0px 10px 50px;
+    border-radius: 27px;
 }
 
 .control-area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 66px;
+    position: relative;
 }
 
 .control-area {
@@ -80,11 +109,12 @@ header h1 {
 #up {
     margin: 50px;
     position: relative;
-    top: 42px;
+    top: 50px;
     left: 225px;
     width: 50px;
-    height: 23px;
-    border-radius: 15px;
+    height: 35px;
+    border-radius: 45px;
+    background-color: rgb(200 195 195);
 }
 
 #left {
@@ -93,8 +123,9 @@ header h1 {
     top: 108px;
     right: 75px;
     width: 50px;
-    height: 23px;
-    border-radius: 15px;
+    height: 35px;
+    border-radius: 45px;
+    background-color: rgb(200 195 195);
 }
 
 #right {
@@ -103,17 +134,31 @@ header h1 {
     top: 108px;
     left: 75px;
     width: 50px;
-    height: 23px;
-    border-radius: 15px;
+    height: 35px;
+    border-radius: 45px;
+    background-color: rgb(200 195 195);
 }
 
 #down {
     margin: 50px;
     position: relative;
-    top: 212px;
+    top: 211px;
     right: 225px;
     width: 50px;
-    height: 23px;
-    border-radius: 15px;
+    height: 35px;
+    border-radius: 45px;
+    background-color: rgb(200 195 195);
 }
 
+#messages {
+    display: none;
+    text-align: center;
+    position: relative;
+}
+/* #win {
+    color: gold;
+}
+
+#lost {
+    color:red;
+} */
