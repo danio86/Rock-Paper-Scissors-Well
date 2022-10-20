@@ -32,10 +32,10 @@ let gameOver = false;
 let win = false;
 
 //sounds:
-let eatSound;
-function preload() {
+let eatSound = loadSound("assets/sounds/gulp.mp3");
+/* function preload() {
     eatSound = loadSound("gulp.mp3")
-}
+} */
 /* const gulpSound = new Audio("gulp.mp3"); */
 
 /* while (speed) {
