@@ -11,28 +11,28 @@ body {
     font-family: Courier, sans-serif;
     text-align: center;
     background-color: blueviolet;
-    /* background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat center center teal;
-    background-size: 78%;
-    background-position-y: -263px; */
+    background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat center center teal;
+    background-size: 70%;
+    /* background-position-y: -263px; */
 }
 
 header {
     width: 100%;
     position: fixed;
     /* height: 220px; */
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     text-align: center;
 }
 
 header h1 {
     float: right;
-    margin: 50px 100px 0 100px;
+    margin: 70px 166px 0 106px;
 }
 
 .logo {
     width: 20%;
     float: left;
-    margin: 50px 100px 0 100px;
+    margin: 50px 106px 0 100px;
   
 }
 
@@ -51,30 +51,24 @@ header h1 {
     border-radius: 10px;
     width: 33.3%;
     position: relative;
-    top: -130px;
-    margin: 50px 0 0 100px;
+    margin: 50px 0 0 106px;
     font-size: 150%;
     padding: 10px;
 }
 
 .game-area-start {
-    /* background-color: whitesmoke;
     width: 365px;
     height: 338px;
     border: 20px solid rgb(168 188 160);
-    margin-top: -57px;
-    margin-right: -7px;
-    box-shadow: black 0px 10px 50px; */
-    /* left: -23px; */
-    /* position: unset; */
-    /* border-radius: 27px; */
+    box-shadow: black 0px 10px 50px;
+    border-radius: 27px;
 }
 
 .game-area-L3 {
     /* background-color: whitesmoke;
     width: 365px;
     height: 338px; */
-    /* border: 20px solid brown; */
+    border: 20px solid brown;
     /* margin-top: -57px;
     margin-right: -7px;
     box-shadow: black 0px 10px 50px;
@@ -82,15 +76,14 @@ header h1 {
 }
 
 #game-area {
-    /* background-color: whitesmoke;
+    background-color: whitesmoke;
     width: 365px;
     height: 338px;
-    /* border: 20px solid brown; */
-    /* margin-top: -110px;
-    margin-right: -7px;
-    box-shadow: black 0px 10px 50px;
+    /* box-shadow: black 0px 10px 50px;
     border-radius: 27px; */
-} */
+    position: relative;
+    /* margin: 25px; */
+}
 
 .control-area {
     /* display: flex;
@@ -109,52 +102,52 @@ header h1 {
 }
 
 #up {
-    /* margin: 50px;
-    position: relative;
-    top: 50px;
-    left: 225px;
+    margin: 25px;
+    /* position: relative; */
+    /* top: 50px;
+    left: 225px; */
     width: 50px;
     height: 35px;
     border-radius: 45px;
-    background-color: rgb(200 195 195); */
+    background-color: rgb(200 195 195);
 }
 
 #left {
-    /* margin: 50px;
-    position: relative;
+    margin: 25px;
+    /* position: relative;
     top: 108px;
-    right: 75px;
+    right: 75px; */
     width: 50px;
     height: 35px;
     border-radius: 45px;
-    background-color: rgb(200 195 195); */
+    background-color: rgb(200 195 195);
 }
 
 #right {
-    /* margin: 50px;
-    position: relative;
+    margin: 25px;
+    /* position: relative;
     top: 108px;
-    left: 75px;
+    right: 75px; */
     width: 50px;
     height: 35px;
     border-radius: 45px;
-    background-color: rgb(200 195 195); */
+    background-color: rgb(200 195 195);
 }
 
 #down {
-    /* margin: 50px;
-    position: relative;
-    top: 211px;
-    right: 225px;
+    margin: 25px;
+    /* position: relative;
+    top: 108px;
+    right: 75px; */
     width: 50px;
     height: 35px;
     border-radius: 45px;
-    background-color: rgb(200 195 195); */
+    background-color: rgb(200 195 195);
 }
 
 #messages {
-    /* display: none;
-    text-align: center;
+    display: none;
+    /* text-align: center;
     position: relative; */
 }
 /* #win {

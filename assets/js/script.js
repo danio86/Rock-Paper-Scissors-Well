@@ -32,10 +32,23 @@ let gameOver = false;
 let win = false;
 
 //sounds:
-let eatSound = loadSound("assets/sounds/gulp.mp3");
-/* function preload() {
-    eatSound = loadSound("gulp.mp3")
+let soundStop = false;
+let soundL3 = true;
+let finalSound = new Audio('assets/sounds/last-round.mp3')
+function sounds(s) {
+    let playlist = ['assets/sounds/bite.mp3', 'assets/sounds/goodresult-82807.mp3', 
+            'assets/sounds/success.mp3']
+    let sound = new Audio(playlist[s]);
+    sound.play(sound);
+};
+
+/* function soundsStop(s) {
+    let playlist = ['assets/sounds/bite.mp3', 'assets/sounds/goodresult-82807.mp3', 
+            'assets/sounds/success.mp3', 'assets/sounds/last-round.mp3']
+    let sound = new Audio(playlist[s]);
+    sound.pause(sound);
 } */
+
 /* const gulpSound = new Audio("gulp.mp3"); */
 
 /* while (speed) {
@@ -204,6 +217,8 @@ function scoreCounter(n) {
         document.getElementById('level').innerText = 3;
         speed = 100;
         console.log(speed, 'l3')
+        finalSound.play();
+
         /* let levThreeSpeed = 75;
         setInterval(gameLoop, levThreeSpeed); */
     }
@@ -211,11 +226,13 @@ function scoreCounter(n) {
     if (oldScore >= 1000) {
         /* console.log(oldScore, 'wie viel?'); */
         win = true;
+        soundStop = false
         direction = 0;
         placeFood();
         placeElephant();
         placeLion();
         placeImg();
+        sounds(2);
         snake = [{ x: 25, y: 2 }];
         oldScore = 0;
         document.getElementById('score').innerText = oldScore;
@@ -230,6 +247,19 @@ function scoreCounter(n) {
             document.getElementById('record').innerText = largest
         };
     }
+    if (oldScore >= 90 && soundStop == false) {
+        sounds(1);
+        soundStop = true;
+    } 
+    
+    /* if (oldScore >= 40 && soundL3 == true) {
+        sounds(3);
+        soundL3 = false;
+    } */
+    /* if (oldScore >= 40) {
+        finalSound.play();
+    } */
+
     
 }
 
@@ -256,6 +286,10 @@ function gameEnd() {
     document.getElementById('level').innerText == 3 && snake[0].y > col/2 - 1 */) {
         direction = 0;
         gameOver = true;
+        soundStop = false;
+        soundL3 = true;
+        finalSound.pause();
+        /* sounds(); */
         placeFood();
         placeElephant();
         placeLion();
@@ -283,6 +317,9 @@ function gameEnd() {
         /* direction = 'LEFT' */
         direction = 0;
         gameOver = true;
+        soundStop = false;
+        /* soundL3 = true; */
+        finalSound.pause();
         placeFood();
         placeElephant();
         placeLion();
@@ -309,6 +346,8 @@ function gameEnd() {
         /* direction = 'LEFT' */
         direction = 0;
         gameOver = true;
+        soundStop = false;
+        finalSound.pause();
         placeFood();
         placeElephant();
         placeLion();
@@ -356,8 +395,8 @@ function gameLoop() {
     if (snake[0].x == food.x && snake[0].y == food.y) {
         scoreCounter(10);
         placeFood();
+        sounds(0);
         /* gulpSound.play; */
-        /* eatSound.play; */
         gotFood = true;
         if (gotFood) {
             snake = [
@@ -372,6 +411,7 @@ function gameLoop() {
 
     if (snake[0].x == img.x && snake[0].y == img.y) {
         placeImg();
+        sounds(0);
         gotImg = true;
         if (gotImg) {
             snake = [
