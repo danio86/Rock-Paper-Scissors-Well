@@ -29,21 +29,20 @@ header h1 {
     margin: 70px 166px 0 106px;
 }
 
+/* #cellphone {
+    width: 100%;
+    height: auto;
+} */
+
 .logo {
     width: 20%;
     float: left;
     margin: 50px 106px 0 100px;
-  
 }
 
-#pictures {
+/* #pictures {
     display: none;
-}
-
-#cellphone {
-    /* width: 100%;
-    height: auto; */
-}
+} */
 
 .score-area {
     float: right;
@@ -85,21 +84,21 @@ header h1 {
     /* margin: 25px; */
 }
 
-.control-area {
-    /* display: flex;
+/* .control-area {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     top: 66px;
-    position: relative; */
-}
+    position: relative;
+} */
 
-.control-area {
-    /* display: flex;
+/* .control-area {
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 100% */
-}
+    width: 100%
+} */
 
 #up {
     margin: 25px;
@@ -157,3 +156,54 @@ header h1 {
 #lost {
     color:red;
 } */
+
+
+/*Media queries*/
+/*everything coded in ths area is only applied for those screens. For lager screens wide and down*/
+@media screen and (max-width: 1400px) {
+    body {
+        background-size: 86%;
+    }
+
+    header h1 {
+        margin: 50px 100px 0 50px;
+    }
+
+    .score-area {
+        width: 25%;
+        margin: 50px;
+    }
+
+}
+
+@media screen and (max-width: 1130px) {
+    body {
+        background-size: 130%;
+    }
+    .score-area {
+        width: 20%;
+        font-size: 97%;
+    }
+    .score-area {
+        width: 20%;
+        margin-top: 25px;
+        font-size: 97%;
+    }
+
+    .logo {
+        width: 20%;
+        float: left;
+        margin: 150px 5px 0 5px;
+    }
+
+    header h1 {
+        margin: 100px 10px 20px 10px;
+        font-size: 150%;
+      }
+
+    .score-area {
+        font-size: 97%;
+        margin: 150px 0 0 0;
+        position: inherit;
+        right: 0px;}
+}
