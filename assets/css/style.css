@@ -11,7 +11,7 @@ body {
     font-family: Courier, sans-serif;
     text-align: center;
     background-color: blueviolet;
-    background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat center center teal;
+    background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat center center rgb(0, 128, 128);
     background-size: 70%;
     /* background-position-y: -263px; */
 }
@@ -40,9 +40,9 @@ header h1 {
     margin: 50px 106px 0 100px;
 }
 
-/* #pictures {
+#pictures {
     display: none;
-} */
+}
 
 .score-area {
     float: right;
@@ -84,14 +84,11 @@ header h1 {
     /* margin: 25px; */
 }
 
-/* .control-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    top: 66px;
+.control-area {
     position: relative;
-} */
+    top: 50px;
+    width: 100%;
+}
 
 /* .control-area {
     display: flex;
@@ -101,7 +98,7 @@ header h1 {
 } */
 
 #up {
-    margin: 25px;
+    /* margin: 25px; */
     /* position: relative; */
     /* top: 50px;
     left: 225px; */
@@ -112,7 +109,7 @@ header h1 {
 }
 
 #left {
-    margin: 25px;
+    /* margin: 0 170px 50px 130px; */
     /* position: relative;
     top: 108px;
     right: 75px; */
@@ -120,10 +117,13 @@ header h1 {
     height: 35px;
     border-radius: 45px;
     background-color: rgb(200 195 195);
+    top: 20px;
+    right: 105px;
+    position: relative;
 }
 
 #right {
-    margin: 25px;
+    /* margin: 0 127px 50px 53px; */
     /* position: relative;
     top: 108px;
     right: 75px; */
@@ -131,10 +131,13 @@ header h1 {
     height: 35px;
     border-radius: 45px;
     background-color: rgb(200 195 195);
+    top: 20px;
+    left: 105px;
+    position: relative;
 }
 
 #down {
-    margin: 25px;
+    /* margin: 25px; */
     /* position: relative;
     top: 108px;
     right: 75px; */
@@ -142,6 +145,8 @@ header h1 {
     height: 35px;
     border-radius: 45px;
     background-color: rgb(200 195 195);
+    top: 80px;
+    position: relative;
 }
 
 #messages {
@@ -157,9 +162,28 @@ header h1 {
     color:red;
 } */
 
-
 /*Media queries*/
 /*everything coded in ths area is only applied for those screens. For lager screens wide and down*/
+@media screen and (max-width: 1420px) {
+    .control-area {
+        top: 35px;
+    }
+
+    #left {
+        top: 16px;
+        right: 94px;
+    }
+
+    #right {
+        top: 16px;
+        left: 94px;
+    }
+
+    #down {
+        top: 67px;
+    }
+}
+
 @media screen and (max-width: 1400px) {
     body {
         background-size: 86%;
@@ -171,14 +195,33 @@ header h1 {
 
     .score-area {
         width: 25%;
-        margin: 50px;
+        margin: 50px 0 0 205px;
     }
 
-}
+    .control-area {
+        position: relative;
+        top: 80px;
+        width: 100%;
+    }
 
+    #left {
+        right: 120px;
+    }
+
+    #right {
+        left: 120px;
+    }
+
+    #down {
+        top: 90px;
+    }
+        
+
+}
+/*-------------------- MQ-1130--------------------------------- */
 @media screen and (max-width: 1130px) {
     body {
-        background-size: 130%;
+        background-size: 100%;
     }
     .score-area {
         width: 20%;
@@ -205,5 +248,71 @@ header h1 {
         font-size: 97%;
         margin: 150px 0 0 0;
         position: inherit;
-        right: 0px;}
+        right: 0px;
+    }
+
+        .control-area {
+            top: 30px;
+        }
+
+        #left {
+            right: 93px;
+        }
+
+        #right {
+            left: 93px;
+        }
+}
+
+@media screen and (max-width: 750px) {
+    body {
+        background-size: 155%;
+    }
+
+    header {
+        background-color: rgb(0, 128, 128);
+    }
+
+    header h1 {
+        margin: 380px 0 20px 10px;
+        font-size: 150%;
+        width: 50%;
+        border-radius: 5px;
+        padding: 0 10px;
+    }
+
+    .score-area {
+        font-size: 117%;
+        margin: 400px 0 0 0;
+        position: inherit;
+        right: 0px;
+        width: 50%;
+        border-radius: unset;
+        background-color: unset;
+    }
+
+    .logo {
+        width: 27%;
+        float: left;
+        margin: 380px 0 0 0;
+        padding: 10px;
+    }
+
+    #game-area {
+        border-radius: 2px;
+    }
+
+
+}
+
+@media screen and (max-width: 405px) {
+    body {
+        background-size: 155%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    body {
+        background-size: 345%;
+    }
 }
