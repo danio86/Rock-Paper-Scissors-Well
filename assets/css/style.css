@@ -1066,6 +1066,26 @@ footer img {
 
 /* --------------MQ 320 x 480----------------- */
 @media screen and (max-width: 320px) {
+
+    footer {
+        bottom: 0;
+    }
+
+    .control-area {
+        top: unset;
+        bottom: unset;
+        bottom: 48px;
+    }
+
+    #facebook {
+        top: 4px;
+    }
+
+    #startKey {
+        font-size: 100%;
+        width: 207px;
+        margin-top: -2px;
+    }
     /* .logo { */
         /* width: 27%; */
         /* float: left; */
