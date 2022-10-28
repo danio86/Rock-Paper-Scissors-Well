@@ -84,7 +84,7 @@ header h1 {
 .game-area-start {
     width: 365px;
     height: 338px;
-    border: 20px solid rgb(88, 98, 78);
+    border: 10px solid rgb(88, 98, 78);
     /* border: 20px solid rgb(51, 172, 51) */
     box-shadow: black 0px 10px 50px;
     border-radius: 27px;
@@ -95,7 +95,7 @@ header h1 {
     width: 365px;
     height: 338px; */
     /* border: 20px solid brown; */
-    border: 20px solid transparent;
+    border: 10px solid transparent;
     border-image-repeat: round;
     border-image-slice: 50;
     border-image-source:url(../images/rainforest.png); 
@@ -109,13 +109,13 @@ header h1 {
 
 #game-area {
     /* background-color: whitesmoke; */
-    width: 350px;
-    height: 350px;
+    width: 275px;
+    height: 275px;
     /* box-shadow: black 0px 10px 50px;
     border-radius: 27px; */
     position: relative;
     border-radius: 10px;
-    margin: 122px 0 0 0;
+    margin: 100px 0 0 0;
 }
 
 .control-area {
