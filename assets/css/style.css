@@ -120,14 +120,14 @@ header h1 {
 
 .control-area {
     position: relative;
-    top: 144px;
+    top: 88px;
     width: 100%;
 }
 
 button {
     background-color: rgb(178, 178, 178);
-    width: 95px;
-    height: 53px;
+    width: 62px;
+    height: 36px;
     border-radius: 45px;
     font-family: Courier, sans-serif;
     font-size: 110%;
@@ -142,7 +142,7 @@ button:hover {
 
 #middle-buttons {
     position: relative;
-    top: -30px;
+    top: -21px;
 }
 
 /* #up { */
@@ -166,7 +166,7 @@ button:hover {
     border-radius: 45px;
     background-color: rgb(200 195 195); */
     top: 24px;
-    right: 69px;
+    right: 52px;
     position: relative;
 }
 
@@ -180,7 +180,7 @@ button:hover {
     border-radius: 45px;
     background-color: rgb(200 195 195); */
     top: 24px;
-    left: 69px;
+    left: 52px;
     position: relative;
 }
 
@@ -209,12 +209,12 @@ footer {
     width: 100%;
     background-color: rgb(0, 128, 128, 0.8);
     text-align: center;
-    height: 142px;
+    /* height: 142px; */
 }
 
 footer p {
-    padding: 5px 3px 0 3px;
-    font-size: 110%;
+    padding: 2px 0 14px 0;
+    font-size: 100%;
     color: whitesmoke;
 }
 
@@ -243,37 +243,37 @@ footer img {
 
 #facebook {
     background-color: rgb(1, 200, 200);;
-    font-size: 42px;
-    width: 89px;
     position: relative;
-    top: 2px;
+    top: -15px;
     border-radius: 27px;
     color: black;
-    height: 42px;
+    height: 33px;
+    width: 61px;
+    font-size: 31px;
 }
 
 #twitter {
     background-color: rgb(1, 200, 200);;
-    font-size: 42px;
-    width: 89px;
     position: relative;
-    top: -20px;
+    top: -31px;
     border-radius: 27px;
     color: black;
-    left: 42px;
-    height: 49px;
+    left: 47px;
+    height: 33px;
+    width: 61px;
+    font-size: 31px;
 }
 
 #instagram {
     background-color: rgb(1, 200, 200);;
-    font-size: 42px;
-    width: 89px;
     position: relative;
-    top: -17px;
+    top: -29px;
     border-radius: 27px;
     color: black;
-    left: -45px;
-    height: 49px;
+    left: -50px;
+    height: 33px;
+    width: 61px;
+    font-size: 31px;
 }
 
 #startInfo {
