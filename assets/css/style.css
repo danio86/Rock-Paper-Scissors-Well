@@ -193,7 +193,7 @@ button:hover {
     height: 47px;
     border-radius: 45px;
     background-color: rgb(200 195 195); */
-    top: 26px;
+    top: 28px;
     position: relative;
 }
 
@@ -285,9 +285,10 @@ footer img {
 
 #startKey {
     padding: 5px 15px;
-    width: fit-content;
+    width: max-content;
     border-radius: 5px;
-}
+    height: auto;
+  }
 
 .startBtnBefore {
     border: 2px solid lawngreen /* rgb(0, 128, 128, 0.8) */;
