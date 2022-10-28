@@ -23,21 +23,23 @@ let gotElephant = false;
 let gotLion = false;
 let gotImg = false;
 /* let direction = 'LEFT'; */
-let direction;
+let direction = false;
 let oldScore = parseInt(document.getElementById('score').innerText);
 let newRecord = []
 let largest = 0;
-let speed = 200;
+let speed = 180;
 let gameOver = false;
 let win = false;
+let attention = false;
 
 //sounds:
 let soundStop = false;
 let soundL3 = true;
+let attentionSound = true;
 let finalSound = new Audio('assets/sounds/last-round.mp3')
 function sounds(s) {
     let playlist = ['assets/sounds/bite.mp3', 'assets/sounds/goodresult-82807.mp3', 
-            'assets/sounds/success.mp3']
+            'assets/sounds/success.mp3', 'assets/sounds/game-over.mp3', 'assets/sounds/alarm.mp3', 'assets/sounds/yeah.mp3' ]
     let sound = new Audio(playlist[s]);
     sound.play(sound);
 };
@@ -106,9 +108,10 @@ function addCube(x, y) {
 function addImage(x, y) {
     ctx.drawImage(document.getElementById(rId), x * cellWidth, y * cellHight, cellWidth+1, cellHight+1);
 };
-
+//game area
 function draw() {
-    ctx.fillStyle = 'lightgreen';
+    /* ctx.fillStyle = 'rgb(51, 172, 51)'; */
+    ctx.fillStyle = 'lawngreen';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     //Food
@@ -120,9 +123,19 @@ function draw() {
 
     //Wall
     if (document.getElementById('level').innerText == 3) {
-        ctx.fillStyle = 'brown';
+        /* ctx.fillStyle = 'brown'; */
+        /* ctx.fillRect(canvas.width/2, 0, cellWidth, canvas.height); */
+        ctx.drawImage(document.getElementById('fire'), canvas.width/2, 0, cellWidth, canvas.height);
+        /* ctx.fillStyle = 'brown'; */
+        ctx.drawImage(document.getElementById('fire'), 0, canvas.height/2, canvas.width, cellHight);
+        /* ctx.fillRect(0, canvas.height/2, canvas.width, cellHight); */
+    };
+
+    //Attention - Wall
+    if (attention == true) {
+        ctx.fillStyle = 'rgb(255, 255, 255 , 0.2)';
         ctx.fillRect(canvas.width/2, 0, cellWidth, canvas.height);
-        ctx.fillStyle = 'brown';
+        ctx.fillStyle = 'rgb(255, 255, 255 , 0.2)';
         ctx.fillRect(0, canvas.height/2, canvas.width, cellHight);
     };
 
@@ -150,7 +163,7 @@ function draw() {
     
 
     //Snake
-    ctx.fillStyle = 'yellow';
+    ctx.fillStyle = 'rgb(253, 190, 0)';
     // we need to place every part of the snake(array) > for 'each'-loop!
     snake.forEach(part => addCube(part.x, part.y));
     //we need part => because the items are jsons.
@@ -218,16 +231,24 @@ function scoreCounter(n) {
         speed = 100;
         console.log(speed, 'l3')
         finalSound.play();
-
-        /* let levThreeSpeed = 75;
-        setInterval(gameLoop, levThreeSpeed); */
     }
+
+    if (oldScore > 200 && oldScore <= 240 && attentionSound) {
+        sounds(4);
+        attentionSound = false;
+        attention = true;
+
+    }
+
     //game ends positivly! User is Winner!
-    if (oldScore >= 1000) {
+    if (oldScore >= 300) {
         /* console.log(oldScore, 'wie viel?'); */
         win = true;
-        soundStop = false
-        direction = 0;
+        soundStop = false;
+        attention = false;
+        attentionSound = true;
+        finalSound.pause();
+        direction = false;
         placeFood();
         placeElephant();
         placeLion();
@@ -237,8 +258,10 @@ function scoreCounter(n) {
         oldScore = 0;
         document.getElementById('score').innerText = oldScore;
         document.getElementById('level').innerText = 1;
-        console.log(document.getElementById('level').innerText)
-        speed = 200;
+        document.getElementById('startKey').setAttribute('class', '');
+        document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
+        /* console.log(document.getElementById('level').innerText) */
+        speed = 180;
         for (i=0; i<newRecord.length; i++){
             if (newRecord[i]>largest) {
                 largest=newRecord[i];
@@ -280,14 +303,19 @@ function gameEnd() {
     let sameCoordinares = snakeBody.find(part => part.x == snakeHead.x && part.y == snakeHead.y);
     //array.find(or forEach)(part =>) works like a loop: For each part do(in this case find) something
     
-    if (document.getElementById('level').innerText == 3 && snake[0].x == col/2 - 1 || 
-    document.getElementById('level').innerText == 3 && snake[0].x == row/2 - 1 ||
-    document.getElementById('level').innerText == 3 && snake[0].y == row/2 - 1 /* || 
-    document.getElementById('level').innerText == 3 && snake[0].y > col/2 - 1 */) {
-        direction = 0;
+    if (document.getElementById('level').innerText == 3 && snake[0].x == col/2 + 1 || 
+    document.getElementById('level').innerText == 3 && snake[0].x == col/2 - 1 && direction == 'RIGHT'||
+    document.getElementById('level').innerText == 3 && snake[0].y == row/2 - 1 && direction == 'DOWN'||
+    document.getElementById('level').innerText == 3 && snake[0].y == row/2 + 1 /* || 
+    document.getElementById('level').innerText == 3 && direction == 'LEFT' && snake[0].x == col/2 ||
+    document.getElementById('level').innerText == 3 && direction == 'UP' && snake[0].y == row/2 */) {
+        direction = false;
         gameOver = true;
+        sounds(3);
         soundStop = false;
         soundL3 = true;
+        attention = false;
+        attentionSound = true;
         finalSound.pause();
         /* sounds(); */
         placeFood();
@@ -297,8 +325,10 @@ function gameEnd() {
         snake = [{ x: 25, y: 2 }];
         document.getElementById('score').innerText = oldScore;
         document.getElementById('level').innerText = 1;
+        document.getElementById('startKey').setAttribute('class', '');
+        document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
         console.log(document.getElementById('level').innerText)
-        speed = 200;
+        speed = 180;
         document.getElementById('game-area').setAttribute('class', 'game-area-start');
         for (i=0; i<newRecord.length; i++){
             if (newRecord[i]>largest) {
@@ -315,10 +345,12 @@ function gameEnd() {
         sameCoordinares */  //this would ask if the variable has a value of true
     ) {
         /* direction = 'LEFT' */
-        direction = 0;
+        direction = false;
         gameOver = true;
+        sounds(3);
         soundStop = false;
-        /* soundL3 = true; */
+        attention = false;
+        attentionSound = true;
         finalSound.pause();
         placeFood();
         placeElephant();
@@ -327,8 +359,10 @@ function gameEnd() {
         snake = [{ x: 25, y: 2 }];
         document.getElementById('score').innerText = oldScore;
         document.getElementById('level').innerText = 1;
+        document.getElementById('startKey').setAttribute('class', '');
+        document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
         console.log(document.getElementById('level').innerText)
-        speed = 200;
+        speed = 180;
         /* console.log(speed, 'end1') */
         /* document.getElementById('record').innerText */
         
@@ -344,9 +378,12 @@ function gameEnd() {
 
     if (sameCoordinares) {
         /* direction = 'LEFT' */
-        direction = 0;
+        direction = false;
         gameOver = true;
+        sounds(3);
         soundStop = false;
+        attention = false;
+        attentionSound = true;
         finalSound.pause();
         placeFood();
         placeElephant();
@@ -354,7 +391,9 @@ function gameEnd() {
         placeImg();
         snake = [{ x: 25, y: 2 }];
         document.getElementById('level').innerText = 1;
-        speed = 200;
+        document.getElementById('startKey').setAttribute('class', '');
+        document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
+        speed = 180;
         console.log(speed, 'end2')
         document.getElementById('score').innerText = oldScore;
         for (i=0; i<newRecord.length; i++){
@@ -423,14 +462,26 @@ function gameLoop() {
             scoreCounter(20);
             rId = Math.floor(Math.random() * 3) + 1
         } else if (rId === 2) {
-            scoreCounter(50);
+            scoreCounter(30);
             rId = Math.floor(Math.random() * 3) + 1
         } else if (rId === 3) {
-            scoreCounter(80);
+            scoreCounter(40);
             rId = Math.floor(Math.random() * 3) + 1
         }
     };
-    
+
+    /* ----------------possible bugs:---------------------  */
+    if (img.x == food.x && img.y == food.y) {
+        placeImg();
+    }// food and animals should not be on the same place
+
+    if (document.getElementById('level').innerText == 3 && food.x == 15 ||
+        document.getElementById('level').innerText == 3 && food.y == 15) {
+            placeFood(); // In level 3 food should not be placed in the wall.
+
+    }
+    /* ----------------possible bugs end---------------------  */
+
     if (document.getElementById('level').innerText == 2) {
         speed = 100;
     } else if (document.getElementById('level').innerText == 3) {
@@ -440,6 +491,8 @@ function gameLoop() {
     if (document.getElementById('level').innerText == 3) {
         document.getElementById('game-area').setAttribute('class', 'game-area-start game-area-L3'); 
         // this adds a second class to canvas(Game Area)
+    } else {
+        document.getElementById('game-area').setAttribute('class', 'game-area-start');
     }
 
     //level3: Snake can go through wall
@@ -457,11 +510,10 @@ function gameLoop() {
     };
     
     setTimeout(gameLoop, speed);
-    //the gameLoop runns all 200ms at the beginning
+    //the gameLoop runns all 180ms at the beginning
 };
 
 gameLoop();
-/* setInterval(gameLoop, 200) */
 
 document.addEventListener('keydown', keyPress);
 //if a key is pressed ('keydown') the keyPress function is called
@@ -473,14 +525,29 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', clickDirection)
     }
     function clickDirection() {
-        if (this.getAttribute('id') === 'left' && direction != 'RIGHT') {
+        if (this.getAttribute('id') === 'startKey' && direction == false) {
+            direction = true;
+            win = false;
+            sounds(5);
+            document.getElementById('startKey').innerText = 'Press an arrow key!';
+            document.getElementById('startKey').setAttribute('class', 'startBtnBefore');
+        }
+
+        if (direction && this.getAttribute('id') === 'left' && direction != 'RIGHT') {
             direction = 'LEFT';
-        } else if (this.getAttribute('id') === 'right' && direction != 'LEFT') {
+            document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+        }
+        if (direction && this.getAttribute('id') === 'right' && direction != 'LEFT') {
             direction = 'RIGHT';
-        } else if (this.getAttribute('id') === 'up' && direction != 'DOWN') {
+            document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+        }
+        if (direction && this.getAttribute('id') === 'up' && direction != 'DOWN') {
             direction = 'UP';
-        } else if (this.getAttribute('id') === 'down' && direction != 'UP') {
+            document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+        }
+        if (direction && this.getAttribute('id') === 'down' && direction != 'UP') {
             direction = 'DOWN';
+            document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
         }
 
 
@@ -488,18 +555,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+/* function startDirection(k) {
+    if (direction == false && k.keyCode == 32) {
+        direction = true;
+    }
+
+}; */
+console.log(direction, 'dir-test')
 function keyPress(e) {
-    if (e.keyCode == 37 && direction != 'RIGHT') {
+    if (direction == false && e.keyCode == 32) {
+        direction = true;
+        win = false;
+        sounds(5);
+        document.getElementById('startKey').innerText = 'Press an arrow key!';
+        document.getElementById('startKey').setAttribute('class', 'startBtnBefore');
+        /* console.log(direction, 'dir-test2') */
+    }
+        if (direction && e.keyCode == 37 && direction != 'RIGHT') {
         direction = 'LEFT';
-    }
-    if (e.keyCode == 38 && direction != 'DOWN') {
+        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+        }
+        if (direction && e.keyCode == 38 && direction != 'DOWN') {
         direction = 'UP';
-    }
-    if (e.keyCode == 39 && direction != 'LEFT') {
+        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+        }
+        if (direction && e.keyCode == 39 && direction != 'LEFT') {
         direction = 'RIGHT';
-    }
-    if (e.keyCode == 40 && direction != 'UP') {
+        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+        }
+        if (direction && e.keyCode == 40 && direction != 'UP') {
         direction = 'DOWN';
-    }
+        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+        }
 };
 

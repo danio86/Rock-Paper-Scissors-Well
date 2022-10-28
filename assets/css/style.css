@@ -16,6 +16,8 @@ body {
     /* background-position-y: -263px; */
 }
 
+
+
 header {
     width: 100%;
     position: fixed;
@@ -26,7 +28,14 @@ header {
 
 header h1 {
     float: right;
-    margin: 70px 166px 0 106px;
+    /* margin: 70px 166px 0 106px; */
+}
+
+.heading {
+    /* background-color: blue; */
+    width: 33.3%;
+    margin: 70px 0 0 0;
+    padding: 10px;
 }
 
 /* #cellphone {
@@ -53,12 +62,14 @@ header h1 {
     margin: 50px 0 0 106px;
     font-size: 150%;
     padding: 10px;
+    border: 2px solid lawngreen;
 }
 
 .game-area-start {
     width: 365px;
     height: 338px;
-    border: 20px solid rgb(168 188 160);
+    border: 20px solid rgb(88, 98, 78);
+    /* border: 20px solid rgb(51, 172, 51) */
     box-shadow: black 0px 10px 50px;
     border-radius: 27px;
 }
@@ -67,58 +78,79 @@ header h1 {
     /* background-color: whitesmoke;
     width: 365px;
     height: 338px; */
-    border: 20px solid brown;
+    /* border: 20px solid brown; */
+    border: 20px solid transparent;
+    border-image-repeat: round;
+    border-image-slice: 50;
+    border-image-source:url(../images/rainforest.png); 
+    border-radius: 27px;
+    /* border: 20px; */
     /* margin-top: -57px;
     margin-right: -7px;
     box-shadow: black 0px 10px 50px;
-    border-radius: 27px; */
+     */
 }
 
 #game-area {
     background-color: whitesmoke;
-    width: 365px;
-    height: 338px;
+    width: 390px;
+    height: 320px;
     /* box-shadow: black 0px 10px 50px;
     border-radius: 27px; */
     position: relative;
+    border-radius: 10px;
     /* margin: 25px; */
 }
 
 .control-area {
     position: relative;
-    top: 50px;
+    top: 75px;
     width: 100%;
 }
 
-/* .control-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%
-} */
+button {
+    background-color: rgb(178, 178, 178);
+    width: 95px;
+    height: 53px;
+    border-radius: 45px;
+    font-family: Courier, sans-serif;
+    font-size: 110%;
+}
 
-#up {
+button:hover {
+    background-color: rgb(56, 56, 75);
+    color: rgb(178, 178, 178);
+    cursor: pointer;
+    border: 1px solid rgb(178, 178, 178);;
+  }
+
+#middle-buttons {
+    position: relative;
+    top: -13px;
+}
+
+/* #up { */
     /* margin: 25px; */
     /* position: relative; */
     /* top: 50px;
     left: 225px; */
-    width: 50px;
-    height: 35px;
-    border-radius: 45px;
-    background-color: rgb(200 195 195);
-}
+    /* width: 91px;
+    height: 47px;
+    border-radius: 45px; */
+    /* background-color: rgb(200 195 195); */
+/* } */
 
 #left {
     /* margin: 0 170px 50px 130px; */
     /* position: relative;
     top: 108px;
     right: 75px; */
-    width: 50px;
-    height: 35px;
+    /* width: 91px;
+    height: 47px;
     border-radius: 45px;
-    background-color: rgb(200 195 195);
+    background-color: rgb(200 195 195); */
     top: 20px;
-    right: 105px;
+    right: 80px;
     position: relative;
 }
 
@@ -127,12 +159,12 @@ header h1 {
     /* position: relative;
     top: 108px;
     right: 75px; */
-    width: 50px;
-    height: 35px;
+    /* width: 91px;
+    height: 47px;
     border-radius: 45px;
-    background-color: rgb(200 195 195);
+    background-color: rgb(200 195 195); */
     top: 20px;
-    left: 105px;
+    left: 80px;
     position: relative;
 }
 
@@ -141,11 +173,11 @@ header h1 {
     /* position: relative;
     top: 108px;
     right: 75px; */
-    width: 50px;
-    height: 35px;
+    /* width: 91px;
+    height: 47px;
     border-radius: 45px;
-    background-color: rgb(200 195 195);
-    top: 80px;
+    background-color: rgb(200 195 195); */
+    top: 42px;
     position: relative;
 }
 
@@ -153,6 +185,102 @@ header h1 {
     display: none;
     /* text-align: center;
     position: relative; */
+}
+
+footer {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(0, 128, 128, 0.8);
+    text-align: center;
+    /* height: 110px; */
+}
+
+footer p {
+    padding: 3px;
+    font-size: 110%;
+    color: whitesmoke;
+}
+
+/* footer ul {
+    display: flex;
+    margin: 0 350px;
+} */
+
+footer li {
+    list-style: none;
+    display: inline;
+}
+
+footer a {
+    /* float: left;
+    width: 50px;
+    height: auto; */
+    margin: 0 30px;
+}
+
+footer img {
+    width: 90px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+#facebook {
+    background-color: rgb(1, 200, 200);;
+    font-size: 42px;
+    width: 89px;
+    position: relative;
+    top: 5px;
+    border-radius: 27px;
+    color: black;
+    height: 42px;
+}
+
+#twitter {
+    background-color: rgb(1, 200, 200);;
+    font-size: 42px;
+    width: 89px;
+    position: relative;
+    top: -20px;
+    border-radius: 27px;
+    color: black;
+    left: 37px;
+    height: 49px;
+}
+
+#instagram {
+    background-color: rgb(1, 200, 200);;
+    font-size: 42px;
+    width: 89px;
+    position: relative;
+    top: -17px;
+    border-radius: 27px;
+    color: black;
+    left: -41px;
+    height: 49px;
+}
+
+#startInfo {
+    left: 0;
+    position: absolute;
+    margin: 0 100px;
+    width: 350px;
+}
+
+#startKey {
+    padding: 5px 15px;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.startBtnBefore {
+    border: 2px solid lawngreen /* rgb(0, 128, 128, 0.8) */;
+    background-color: rgb(1, 200, 200);
+    /* background-color: rgb(253, 190, 0); */
+}
+
+.startbtnAfter {
+    display: none;
 }
 /* #win {
     color: gold;
@@ -164,27 +292,118 @@ header h1 {
 
 /*Media queries*/
 /*everything coded in ths area is only applied for those screens. For lager screens wide and down*/
-@media screen and (max-width: 1420px) {
+@media screen and (max-width: 1496px) {
+    body {
+        /* clear: left; */
+        /* background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat; */
+        background-size: 600px;
+        background-position: center;
+        /* height: 522px; */
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        /* margin-top: 100px; */
+        width: 100%;
+        background-attachment: fixed;
+    }
+
+    #game-area {
+        background-color: whitesmoke;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        border-radius: 10px;
+        /* margin: 25px; */
+        margin-top: 110px;
+        border: 10px solid rgb(88, 98, 78);
+    }
+
     .control-area {
-        top: 35px;
+        top: 88px;
+    }
+
+    button {
+        width: 55px;
+        height: 35px;
+    }
+
+    button:hover {
+        background-color: rgb(56, 56, 75);
+        color: rgb(178, 178, 178);
+        cursor: pointer;
+        border: 1px solid rgb(178, 178, 178);;
+      }
+
+    #middle-buttons {
+        position: relative;
+        top: -18px;
     }
 
     #left {
-        top: 16px;
-        right: 94px;
+        top: 20px;
+        right: 42px;
     }
 
     #right {
-        top: 16px;
-        left: 94px;
+        top: 20px;
+        left: 42px;
     }
 
     #down {
-        top: 67px;
+        top: 13px;
+    }
+
+    footer p {
+        /* padding: unset; */
+        font-size: 85%;
+        /* padding-bottom: 27px;
+        padding-top: 11px; */
+        margin-top: -11px;
+        /* padding-left: 2px; */
+        padding: 11px 2px 27px 2px;
+    }
+
+    footer img {
+        width: 52px;
+        height: 30px;
+    }
+
+    
+
+    #twitter {
+        top: -37px;
+        left: 48px;
+        height: 29px;
+        font-size: 30px;
+        width: 47px;
+    }
+
+    #facebook {
+        top: -27px;
+        left: 0px;
+        height: 29px;
+        font-size: 30px;
+        width: 47px;
+    }
+
+    #instagram {
+        top: -37px;
+        left: -50px;
+        height: 29px;
+        font-size: 30px;
+        width: 47px;
+    }
+
+    #startInfo {
+        margin: 0 50px;
+        width: unset;
     }
 }
+        /* width: 350px;
+}
 
-@media screen and (max-width: 1400px) {
+/* ----------------MQ 1400px------------------ */
+/* @media screen and (max-width: 1400px) {
     body {
         background-size: 86%;
     }
@@ -215,11 +434,30 @@ header h1 {
     #down {
         top: 90px;
     }
-        
+} */
 
+/*-------------------- MQ-1150--------------------------------- */
+/* @media screen and (max-width: 1150px) {
+    .control-area {
+        top: 34px;
+    }
+
+    #left {
+        right: 94px;
+    }
+
+    #right {
+        left: 94px;
+    }
+
+    #down {
+        top: 65px;
+    }
 }
+ */
+
 /*-------------------- MQ-1130--------------------------------- */
-@media screen and (max-width: 1130px) {
+/* @media screen and (max-width: 1130px) {
     body {
         background-size: 100%;
     }
@@ -262,57 +500,401 @@ header h1 {
         #right {
             left: 93px;
         }
-}
+} */
 
-@media screen and (max-width: 750px) {
-    body {
-        background-size: 155%;
+/*-------------------- MQ-1120--------------------------------- */
+/* @media screen and (max-width: 1120px) {
+    .control-area {
+        top: 60px;
     }
 
-    header {
-        background-color: rgb(0, 128, 128);
+    #left {
+        right: 116px;
+    }
+
+    #right {
+        left: 116px;
+    }
+
+    #down {
+        top: 85px;
+    }
+
+}
+ */
+/*-------------------- MQ-1150--------------------------------- */
+@media screen and (max-width: 1150px) {
+    #startInfo {
+        margin: 0 15px;
+    }
+}
+
+/*-------------------- MQ-1000--------------------------------- */
+@media screen and (max-width: 1000px) {
+    body {
+        /* clear: left; */
+        /* background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat; */
+        background-size: 610px;
+        background-position: center;
+        /* height: 522px; */
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        /* margin-top: 100px; */
+        width: 100%;
+        background-attachment: fixed;
     }
 
     header h1 {
-        margin: 380px 0 20px 10px;
+        margin: 0 auto;
+        font-size: 150%;
+        float: unset;
+        margin-top: 90px;
+    }
+
+    .heading {
+        background-color: unset;
+        width: unset;
+        color: whitesmoke;
+        padding-top: 20px;
+    }
+
+    .logo {
+        /* width: 20%; */
+        /* float: left; */
+        margin: -120px 0 0 50px;
+        padding: 10px;
+    }
+
+    .score-area {
+        margin: 20px 10px 0 0;
+        top: 0px;
+        position: inherit;
+        right: 0px;
+    }
+
+    #game-area {
+        background-color: whitesmoke;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin: 115px 0 0 0;
+    }
+
+    .game-area-start {
+        border: 10px solid rgb(168 188 160);
+    }
+
+    .control-area {
+        top: 85px;
+    }
+
+    #middle-buttons {
+        top: -15px;
+        position: relative;
+    }
+    
+
+    #left {
+        right: 44px;
+    }
+
+    #right {
+        left: 44px;
+    }
+
+    #down {
+        top: 15px;
+    }
+
+    /* footer p {
+        font-size: 100%;
+    } */
+
+    footer img {
+        width: 50px;
+        height: 30px;
+    }
+
+    footer p {
+        color: whitesmoke;
+        margin-top: -12px;
+    }
+
+    #twitter {
+        left: 49px;
+        width: 49px;
+    }
+
+    #instagram {
+        top: -35px;
+        left: -50px;
+        height: 29px;
+        font-size: 30px;
+        width: 49px;
+    }
+
+    #facebook {
+        top: -25px;
+        left: 0px;
+        height: 29px;
+        font-size: 30px;
+        width: 49px;
+    }
+
+    #startInfo {
+        margin: 20px auto;
+        width: 100%;
+    }
+
+    #startKey {
+        width: 250px;
+        height: auto;
+    }
+
+
+
+}
+
+/* -----------------MQ 850px----------------------- */
+@media screen and (max-width: 850px) {
+    .score-area {
+        width: 25%;
+        font-size: 99%;
+    }
+}
+
+
+/* -----------------MQ 600px----------------------- */
+@media screen and (max-width: 600px) {
+    body {
+        clear: left;
+        /* background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat; */
+        /* background-size: cover; */
+        background-position: center;
+        height: 600px;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        /* margin-top: 100px; */
+        width: 100%;
+    }
+
+    header {
+        background-color: rgb(0, 128, 128 , 0.5);
+    }
+
+    header h1 {
+        margin: 72px auto;
         font-size: 150%;
         width: 50%;
         border-radius: 5px;
         padding: 0 10px;
+        float: unset;
+    }
+
+    .heading {
+        padding: unset;
+        padding-top: 33px;
     }
 
     .score-area {
-        font-size: 117%;
-        margin: 400px 0 0 0;
-        position: inherit;
-        right: 0px;
-        width: 50%;
-        border-radius: unset;
+        font-size: 88%;
+        /* margin: -90px 5px 0 0; */
+        /* position: inherit; */
+        /* right: 0px; */
+        width: 32%;
+        /* border-radius: unset; */
         background-color: unset;
+        padding: 0 0px 0 0;
+        border: unset;
+        margin-right: 0px;
+        color: whitesmoke;
     }
 
     .logo {
-        width: 27%;
-        float: left;
-        margin: 380px 0 0 0;
-        padding: 10px;
+        /* width: 27%; */
+        /* float: left; */
+        /* margin: 380px 0 0 0; */
+        /* padding: 10px; */
+        /* width: 25%; */
+        /* float: left; */
+        /* margin: -90px 0px 0 25px;
+        padding: unset; */
+        margin: -120px 0 0 10px;
     }
 
+    
+
+    
     #game-area {
-        border-radius: 2px;
+        /* background-color: whitesmoke; */
+        width: 190px;
+        height: 190px;
+        position: relative;
+        margin: unset;
+        top: 130px;
+        /* border-radius: 3px;
+        border-radius: 8px;
+        /* border: 79px; */
+        /* border: 10px solid rgb(168 188 160); */
     }
 
+    .control-area {
+        top: 215px;
+    }
+
+    #middle-buttons {
+        top: -19px;
+        position: relative;
+    }
+
+    #left {
+        right: 40px;
+    }
+
+    #right {
+        left: 40px;
+    }
+
+    #down {
+        top: 11px;
+    }
+
+    #startInfo {
+        margin-top: 150px;
+    }
+
+    /* .logo {
+        width: 25%;
+        float: left;
+        margin: -100px 0 0 10px;
+    } */
+
+    /* .score-area {
+        font-size: 117%;
+        margin: 5px 5px 0 0
+    } */
+
+    /* header h1 {
+        margin: 73px 97px 0 0;
+    } */
 
 }
 
-@media screen and (max-width: 405px) {
-    body {
-        background-size: 155%;
+/* ----------------MQ 500px--------------- */
+@media screen and (max-width: 500px) {
+    .logo {
+        /* margin: -95px 0 2px -106px; */
+        /* background-color: blanchedalmond; */
+        width: 70px;
+        height: auto;
+        position: absolute;
+        /* top: -33px; */
+        /* padding-bottom: 23px; */
+        margin-top: -92px;
+    /* padding-left: 83px; */
+        margin-left: -96px;
+        /* margin-right: -26px; */
+    }
+
+    .score-area {
+        font-size: 55%;
+        margin: 60px 0px 0 0;
+        position: inherit;
+        right: 0px;
+        width: 100%;
+        border-radius: unset;
+        /* background-color: rgb(0, 128, 128, 0.5); */
+        /* padding: 0 5px 0 0; */
+    }
+
+    .score-area p {
+        margin-left: 94px;
+    }
+}
+/* ----------------MQ 360px--------------- */
+@media screen and (max-width: 360px) {
+    /* .logo { */
+        /* width: 27%; */
+        /* float: left; */
+        /* margin: 380px 0 0 0; */
+        /* padding: 10px;
+        width: 25%; */
+        /* float: left; */
+       /*  margin: -90px 0 0 0px;
+    } */
+
+    /* .score-area { */
+        /* font-size: 90%;
+        margin: 54px 10px 0 0;
+        position: inherit;
+        right: 0px;
+        width: 45%;
+        border-radius: unset;
+        background-color: rgb(0, 128, 128, 0.5); */
+        /* padding: 0 5px 0 0; */
+    /* } */
+
+    footer a {
+        margin: 0 15px;
+    }
+
+    #twitter {
+        left: 19px;
+        /* top: -37px; */
+    }
+
+    #instagram {
+        left: -21px;
+        /* top: -31px; */
     }
 }
 
-@media screen and (max-width: 280px) {
-    body {
-        background-size: 345%;
+/* --------------MQ 340----------------- */
+/* @media screen and (max-width: 340px) {
+    footer img {
+        width: 25px;
+        height: 25px;
     }
+} */
+
+/* ----------------MQ 300px--------------- */
+/* @media screen and (max-width: 300px) {
+    .score-area {
+        font-size: 57%; */
+        /* margin: -170px 12px 0 0; */
+        /* position: inherit; */
+        /* right: 0px; */
+       /*  width: 45%; */
+        /* border-radius: unset; */
+      /*   background-color: unset;
+        margin: 60px 29px 0 0;
+    }
+} */
+
+/* --------------MQ 288----------------- */
+@media screen and (max-width: 288px) {
+    /* .logo { */
+        /* width: 27%; */
+        /* float: left; */
+        /* margin: 380px 0 0 0; */
+       /*  padding: 10px;
+        width: 25%; */
+        /* float: left; */
+      /*   margin: -90px 0 0 35px;
+    } */
+
+    /* .score-area {
+        font-size: 57%; */
+        /* margin: -170px 12px 0 0; */
+        /* position: absolute; */
+      /*   right: 0px; */
+        /* width: 45%; */
+        /* border-radius: unset; */
+        /* background-color: unset;
+        margin: 62px -47px 0 -185px; */
+        /* padding-left: 26px; */
+       /*  width: 100%;
+    } */
 }
