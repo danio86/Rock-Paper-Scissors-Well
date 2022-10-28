@@ -120,14 +120,14 @@ header h1 {
 
 .control-area {
     position: relative;
-    top: 88px;
+    top: 157px;
     width: 100%;
 }
 
 button {
     background-color: rgb(178, 178, 178);
-    width: 62px;
-    height: 36px;
+    width: 85px;
+    height: 45px;
     border-radius: 45px;
     font-family: Courier, sans-serif;
     font-size: 110%;
