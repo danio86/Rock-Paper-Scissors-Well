@@ -119,9 +119,9 @@ header h1 {
 }
 
 .control-area {
-    position: relative;
-    top: 157px;
+    position: absolute;
     width: 100%;
+    bottom: 186px;
 }
 
 button {
@@ -165,8 +165,8 @@ button:hover {
     height: 47px;
     border-radius: 45px;
     background-color: rgb(200 195 195); */
-    top: 24px;
-    right: 52px;
+    top: 26px;
+    right: 70px;
     position: relative;
 }
 
@@ -179,8 +179,8 @@ button:hover {
     height: 47px;
     border-radius: 45px;
     background-color: rgb(200 195 195); */
-    top: 24px;
-    left: 52px;
+    top: 26px;
+    left: 70px;
     position: relative;
 }
 
@@ -193,7 +193,7 @@ button:hover {
     height: 47px;
     border-radius: 45px;
     background-color: rgb(200 195 195); */
-    top: 28px;
+    top: 46px;
     position: relative;
 }
 
@@ -213,7 +213,7 @@ footer {
 }
 
 footer p {
-    padding: 2px 0 14px 0;
+    padding: 5px 0 29px 0;
     font-size: 100%;
     color: whitesmoke;
 }
@@ -244,36 +244,39 @@ footer img {
 #facebook {
     background-color: rgb(1, 200, 200);;
     position: relative;
-    top: -15px;
+    top: -24px;
     border-radius: 27px;
     color: black;
-    height: 33px;
-    width: 61px;
+    height: 34px;
+    width: 80px;
     font-size: 31px;
+    padding-top: 3px;
 }
 
 #twitter {
     background-color: rgb(1, 200, 200);;
     position: relative;
-    top: -31px;
+    top: -45px;
     border-radius: 27px;
     color: black;
-    left: 47px;
-    height: 33px;
-    width: 61px;
+    left: 38px;
+    height: 34px;
+    width: 80px;
     font-size: 31px;
+    padding-top: 3px;
 }
 
 #instagram {
     background-color: rgb(1, 200, 200);;
     position: relative;
-    top: -29px;
+    top: -45px;
     border-radius: 27px;
     color: black;
-    left: -50px;
-    height: 33px;
-    width: 61px;
+    left: -38px;
+    height: 34px;
+    width: 80px;
     font-size: 31px;
+    padding-top: 3px;
 }
 
 #startInfo {
@@ -310,7 +313,8 @@ footer img {
 
 /*Media queries*/
 /*everything coded in ths area is only applied for those screens. For lager screens wide and down*/
-@media screen and (max-width: 1350px) {
+/* 1280 x 802 */
+@media screen and (max-width: 1280px) {
     /* body { */
         /* clear: left; */
         /* background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat; */
@@ -325,18 +329,15 @@ footer img {
         background-attachment: fixed;
     } */
 
-    /* #game-area {
-        background-color: whitesmoke;
-        width: 200px;
-        height: 200px;
-        position: relative;
-        border-radius: 10px; */
-        /* margin: 25px; */
-       /*  margin-top: 110px;
-        border: 10px solid rgb(88, 98, 78);
-    } */
+    #game-area {
+        width: 294px;
+        height: 294px;
+        border-radius: 10px;
+        margin-top: 111px;
+
+    }
     .heading {
-        margin: 76px 0 0 0;
+        margin: 70px 0 0 0;
         padding: 10px;
         float: unset;
         color: whitesmoke;
@@ -356,37 +357,46 @@ footer img {
         position: inherit;
         right: 0px;
         font-size: 120%;
-      }
+    }
+
+    .control-area {
+        bottom: 164px;
+    }
 
     /* .control-area {
         top: 88px;
     } */
 
-    /* button {
-        width: 55px;
-        height: 35px;
-    } */
+    button {
+        width: 67px;
+        height: 36px;
+    }
 
     button:hover {
         background-color: rgb(56, 56, 75);
         color: rgb(178, 178, 178);
         cursor: pointer;
         border: 1px solid rgb(178, 178, 178);;
-      }
+    }
+
+    #up {
+        top: 6px;
+        position: relative;
+    }
 
     #middle-buttons {
         /* position: relative; */
-        top: -18px;
+        top: -4px;
     }
 
     #left {
         top: 17px;
-        right: 63px;
+        right: 58px;
     }
 
     #right {
         top: 17px;
-        left: 63px;
+        left: 58px;
     }
 
     /* #down {
@@ -408,37 +418,48 @@ footer img {
         height: 30px;
     } */
 
-    
+    footer p {
+        padding: 2px 0 20px 0;
+      }
 
-   /*  #twitter {
-        top: -37px;
+    #twitter {
+        top: -30px;
         left: 48px;
-        height: 29px;
         font-size: 30px;
-        width: 47px;
-    } */
+        height: 33px;
+        width: 74px;
+    }
 
-  /*   #facebook {
-        top: -27px;
+    #facebook {
+        top: -20px;
         left: 0px;
-        height: 29px;
         font-size: 30px;
-        width: 47px;
-    } */
+        height: 33px;
+        width: 74px;
+    }
 
-    /* #instagram {
-        top: -37px;
+    #instagram {
+        top: -30px;
         left: -50px;
-        height: 29px;
         font-size: 30px;
-        width: 47px;
-    } */
+        height: 33px;
+        width: 74px;
+    }
 
     #startInfo {
         margin: 0 auto;
         width: 100%;
         margin-top: 45px;
     }
+
+    #startKey {
+        padding: 10px 15px;
+        width: 310px;
+        border-radius: 5px;
+        height: auto;
+        text-transform: uppercase;
+        margin-top: -30px;
+      }
 }
         /* width: 350px;
 }
@@ -586,9 +607,9 @@ footer img {
         background-attachment: fixed;
     } */
 
-    body {
+    /* body {
         background-size: cover;
-      }
+      } */
 
     header h1 {
         margin: 0 auto;
@@ -626,7 +647,7 @@ footer img {
     }
 
     .control-area {
-        top: 163px;
+        /* top: 163px; */
     }
 
     /* #middle-buttons {
@@ -696,8 +717,8 @@ footer img {
 
 }
 
-/* -----------------MQ 850px----------------------- */
-@media screen and (max-width: 850px) {
+/* -----------------MQ 768px----------------------- */
+@media screen and (max-width: 768px) {
 
     .score-area {
         font-size: 85%;
@@ -734,7 +755,15 @@ footer img {
         margin: -106px 0 41px -132px;
         top: unset;
         left: unset;
-      }
+    }
+
+    .control-area {
+        bottom: 407px;
+    }
+
+    footer {
+        bottom:254px;
+    }
 
     
 }
@@ -1035,8 +1064,8 @@ footer img {
     }
 } */
 
-/* --------------MQ 288----------------- */
-@media screen and (max-width: 288px) {
+/* --------------MQ 320 x 480----------------- */
+@media screen and (max-width: 320px) {
     /* .logo { */
         /* width: 27%; */
         /* float: left; */
