@@ -288,6 +288,7 @@ footer img {
     width: max-content;
     border-radius: 5px;
     height: auto;
+    text-transform: uppercase;
   }
 
 .startBtnBefore {
