@@ -313,6 +313,60 @@ footer img {
 
 /*Media queries*/
 /*everything coded in ths area is only applied for those screens. For lager screens wide and down*/
+/* 1500 x 700px */
+@media screen and (max-width: 1536px) {
+    #game-area {
+        width: 245px;
+        height: 245px;
+        margin-top: 103px;
+    }
+
+    button {
+        width: 70px;
+        height: 37px;
+    }
+
+    .control-area {
+        bottom: 148px;
+    }
+
+    #left {
+        top: 37px;
+        right: 44px;
+    }
+
+    #right {
+        top: 37px;
+        left: 44px;
+    }
+
+    #facebook {
+        height: 33px;
+        width: 72px;
+        top: -14px;
+    }
+
+    #twitter {
+        height: 33px;
+        width: 72px;
+        top: -14px;
+        top: -33px;
+        left: 55px;
+    }
+
+    #instagram {
+        height: 33px;
+        width: 72px;
+        top: -33px;
+        left: -55px;
+    }
+
+    footer p {
+        padding: 1px 0 13px 0;
+    }
+}
+
+
 /* 1280 x 802 */
 @media screen and (max-width: 1280px) {
     /* body { */
