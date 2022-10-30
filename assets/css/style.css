@@ -10,127 +10,121 @@
 body {
     font-family: Courier, sans-serif;
     text-align: center;
-    /* clear: left; */
-    background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat teal;
-        /* background-position-x: 0%;
-        background-position-y: 0%;
-        background-attachment: scroll;
-        background-size: auto; */
-    background-size: contain;
-    background-position: top;
-    /* height: 522px;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px; */
-    width: 100%;
-    background-attachment: fixed;
+    background-image: url(../images/rainforest.png);
 }
 
-
+#the-whole-thing {
+    background-color: aquamarine;
+    width: 280px;
+    height: 480px;
+    background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat;
+    background-size: 480px;
+    background-size: 610px;
+    background-position: top;
+    background-position-y: -95px;
+    border-radius: 10px;
+}
 
 header {
-    width: 100%;
-    position: fixed;
-    /* height: 220px; */
-    /* background-color: aquamarine; */
-    text-align: center;
+    color: whitesmoke;
+    /* background-color: rgb(0, 128, 128, 0.8); */
 }
 
-header h1 {
-    float: right;
-    /* margin: 70px 166px 0 106px; */
-}
-
-.heading {
-    /* background-color: blue; */
-    width: 33.3%;
-    margin: 70px 0 0 0;
-    padding: 10px;
-}
-
-/* #cellphone {
-    width: 100%;
-    height: auto;
-} */
 
 .logo {
-    width: 20%;
+    width: 40px;
+    height: auto;
     float: left;
-    margin: 50px 0 0 100px;
-    top: 0px;
-    position: inherit;
-    left: 0px;
-  }
+    margin: 6px 0 0 65px;
+    /* background-color: teal; */
 
-#pictures {
-    display: none;
 }
 
 .score-area {
+    clear: both;
+    font-size: 66%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(56, 56, 75, 0.8);
+    width: 88%;
+    margin: 0 auto;
+}
+
+.score-area p {
+    margin: 0 9px;
+}
+
+.heading {
     float: right;
-    background-color: rgb(1, 200, 200);
-    border-radius: 10px;
-    width: auto;
-    position: inherit;
-    margin: 140px 100px;
-    font-size: 150%;
-    padding: 10px 40px;
-    border: 2px solid lawngreen;
-    top: 0px;
-    right: 0px;
+    font-size: 110%;
+    margin: 17px 69px 0 0;
+    width: fit-content;
+    background-color: rgb(56, 56, 75);
+}
+
+#game-area {
+    width: 200px;
+    height: 200px;
+    
 }
 
 .game-area-start {
-    width: 365px;
-    height: 338px;
+    /* width: 365px;
+    height: 338px; */
     border: 10px solid rgb(88, 98, 78);
-    /* border: 20px solid rgb(51, 172, 51) */
     box-shadow: black 0px 10px 50px;
     border-radius: 27px;
 }
 
 .game-area-L3 {
-    /* background-color: whitesmoke;
-    width: 365px;
-    height: 338px; */
-    /* border: 20px solid brown; */
     border: 10px solid transparent;
     border-image-repeat: round;
     border-image-slice: 50;
     border-image-source:url(../images/rainforest.png); 
     border-radius: 27px;
-    /* border: 20px; */
-    /* margin-top: -57px;
-    margin-right: -7px;
-    box-shadow: black 0px 10px 50px;
-     */
 }
 
-#game-area {
-    /* background-color: whitesmoke; */
-    width: 325px;
-    height: 325px;
-    /* box-shadow: black 0px 10px 50px;
-    border-radius: 27px; */
-    position: relative;
+#startInfo {
+    height: 30px;
+}
+
+#startKey {
+    width: 40%;
     border-radius: 10px;
-    margin: 159px 0 0 0
+    height: auto;
+    text-transform: uppercase;
+    font-size: 75%;
+  }
+
+.startBtnBefore {
+    border: 2px solid lawngreen /* rgb(0, 128, 128, 0.8) */;
+    background-color: rgb(1, 200, 200);
+    /* background-color: rgb(253, 190, 0); */
+}
+
+.startbtnAfter {
+    display: none;
 }
 
 .control-area {
-    position: absolute;
+    position: relative;
     width: 100%;
-    bottom: 186px;
+    bottom: -8px;
 }
 
 button {
     background-color: rgb(178, 178, 178);
-    width: 85px;
-    height: 45px;
+    width: 50px;
+    height: 30px;
     border-radius: 45px;
     font-family: Courier, sans-serif;
     font-size: 110%;
+    position: relative;
 }
 
 button:hover {
@@ -138,10 +132,10 @@ button:hover {
     color: rgb(178, 178, 178);
     cursor: pointer;
     border: 1px solid rgb(178, 178, 178);;
-  }
+}
 
-#middle-buttons {
-    position: relative;
+  #middle-buttons {
+    /* position: relative; */
     top: -21px;
 }
 
@@ -157,1007 +151,450 @@ button:hover {
 /* } */
 
 #left {
-    /* margin: 0 170px 50px 130px; */
-    /* position: relative;
-    top: 108px;
-    right: 75px; */
-    /* width: 91px;
-    height: 47px;
-    border-radius: 45px;
-    background-color: rgb(200 195 195); */
-    top: 26px;
-    right: 70px;
-    position: relative;
+    right: 43px;
 }
 
 #right {
-    /* margin: 0 127px 50px 53px; */
-    /* position: relative;
-    top: 108px;
-    right: 75px; */
-    /* width: 91px;
-    height: 47px;
-    border-radius: 45px;
-    background-color: rgb(200 195 195); */
-    top: 26px;
-    left: 70px;
-    position: relative;
+    left: 43px;
 }
 
 #down {
-    /* margin: 25px; */
-    /* position: relative;
-    top: 108px;
-    right: 75px; */
-    /* width: 91px;
-    height: 47px;
-    border-radius: 45px;
-    background-color: rgb(200 195 195); */
-    top: 46px;
-    position: relative;
-}
-
-#messages {
-    display: none;
-    /* text-align: center;
-    position: relative; */
+    top: 24px;
 }
 
 footer {
     position: relative;
-    bottom: -37px;
-    background-color: rgb(0, 128, 128, 0.8);
+    bottom: -34px;
+    width: 100%;
+    /* background-color: rgb(0, 128, 128, 0.8); */
     text-align: center;
+    font-size: 72%;
+}
+
+footer li {
+        list-style: none;
+        display: inline;
+        margin: 0px 20px;
+        /* background-color: gray; */
+        font-size: 150%;
+        /* border-radius: 10px; */
+        position: relative;
+        bottom: -33px;
 }
 
 footer p {
-    padding: 5px 0 29px 0;
-    font-size: 100%;
+    /* padding-top: 0px; */
+    margin-bottom: -26px;
     color: whitesmoke;
 }
 
-/* footer ul {
-    display: flex;
-    margin: 0 350px;
-} */
-
-footer li {
-    list-style: none;
-    display: inline;
-}
-
-footer a {
-    /* float: left;
-    width: 50px;
-    height: auto; */
-    margin: 0 30px;
-}
-
-footer img {
-    width: 90px;
-    height: 50px;
-    border-radius: 20px;
-}
-
 #facebook {
-    background-color: rgb(1, 200, 200);;
+    background-color: lawngreen;
     position: relative;
-    top: -24px;
+    top: -7px;
     border-radius: 27px;
     color: black;
-    height: 34px;
-    width: 80px;
-    font-size: 31px;
+    height: 22px;
+    width: 50px;
+    /* font-size: 31px; */
     padding-top: 3px;
+    left: -50px;
 }
 
 #twitter {
-    background-color: rgb(1, 200, 200);;
+    background-color: lawngreen;
     position: relative;
-    top: -45px;
+    top: -18px;
     border-radius: 27px;
     color: black;
-    left: 38px;
-    height: 34px;
-    width: 80px;
-    font-size: 31px;
+    left: -19px;
+    height: 22px;
+    width: 50px;
+    /* font-size: 31px; */
     padding-top: 3px;
 }
 
 #instagram {
-    background-color: rgb(1, 200, 200);;
+    background-color: lawngreen;
     position: relative;
-    top: -45px;
+    top: -41px;
     border-radius: 27px;
     color: black;
-    left: -38px;
-    height: 34px;
-    width: 80px;
-    font-size: 31px;
+    left: 67px;
+    height: 22px;
+    width: 50px;
+    /* font-size: 31px; */
     padding-top: 3px;
 }
 
-#startInfo {
-    left: 0;
-    position: absolute;
-    margin: 0 100px;
-    width: 350px;
-}
 
-#startKey {
-    padding: 5px 15px;
-    width: max-content;
-    border-radius: 5px;
-    height: auto;
-    text-transform: uppercase;
-  }
-
-.startBtnBefore {
-    border: 2px solid lawngreen /* rgb(0, 128, 128, 0.8) */;
-    background-color: rgb(1, 200, 200);
-    /* background-color: rgb(253, 190, 0); */
-}
-
-.startbtnAfter {
+#messages {
     display: none;
 }
-/* #win {
-    color: gold;
+
+#pictures {
+    display: none
 }
 
-#lost {
-    color:red;
-} */
 
 /*Media queries*/
-/*everything coded in ths area is only applied for those screens. For lager screens wide and down*/
-/* 1500 x 700px */
-@media screen and (max-width: 1536px) {
-    #game-area {
-        width: 245px;
-        height: 245px;
-        margin-top: 103px;
-    }
-
-    button {
-        width: 70px;
-        height: 37px;
-    }
-
-    .control-area {
-        bottom: 148px;
-    }
-
-    #left {
-        top: 37px;
-        right: 44px;
-    }
-
-    #right {
-        top: 37px;
-        left: 44px;
-    }
-
-    #facebook {
-        height: 33px;
-        width: 72px;
-        top: -14px;
-    }
-
-    #twitter {
-        height: 33px;
-        width: 72px;
-        top: -14px;
-        top: -33px;
-        left: 55px;
-    }
-
-    #instagram {
-        height: 33px;
-        width: 72px;
-        top: -33px;
-        left: -55px;
-    }
-
-    footer p {
-        padding: 1px 0 13px 0;
-    }
-}
-
-
-/* 1280 x 802 */
-@media screen and (max-width: 1280px) {
-    /* body { */
-        /* clear: left; */
-        /* background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat; */
-       /*  background-size: 600px;
-        background-position: center; */
-        /* height: 522px; */
-        /* display: flex; */
-        /* justify-content: center;
-        align-items: center; */
-        /* margin-top: 100px; */
-        /* width: 100%;
-        background-attachment: fixed;
-    } */
-
-    #game-area {
-        width: 294px;
-        height: 294px;
-        border-radius: 10px;
-        margin-top: 111px;
-
-    }
-    .heading {
-        margin: 70px 0 0 0;
-        padding: 10px;
-        float: unset;
-        color: whitesmoke;
-        width: unset;
-    }
-
-    .score-area {
-        float: right;
-        background-color: rgb(1, 200, 200);
-        border-radius: 10px;
-        /* width: 25%; */
-        font-size: 150%;
-        padding: 5px;
-        border: 2px solid lawngreen;
-        top: 0px;
-        margin: 20px 10px 0 0;
-        position: inherit;
-        right: 0px;
-        font-size: 120%;
-    }
-
-    .control-area {
-        bottom: 164px;
-    }
-
-    /* .control-area {
-        top: 88px;
-    } */
-
-    button {
-        width: 67px;
-        height: 36px;
-    }
-
-    button:hover {
-        background-color: rgb(56, 56, 75);
-        color: rgb(178, 178, 178);
-        cursor: pointer;
-        border: 1px solid rgb(178, 178, 178);;
-    }
-
-    #up {
-        top: 6px;
-        position: relative;
-    }
-
-    #middle-buttons {
-        /* position: relative; */
-        top: -4px;
-    }
-
-    #left {
-        top: 17px;
-        right: 58px;
-    }
-
-    #right {
-        top: 17px;
-        left: 58px;
-    }
-
-    /* #down {
-        top: 13px;
-    } */
-
-    /* footer p { */
-        /* padding: unset; */
-       /*  font-size: 85%; */
-        /* padding-bottom: 27px;
-        padding-top: 11px; */
-        /* margin-top: -11px; */
-        /* padding-left: 2px; */
-    /*     padding: 11px 2px 27px 2px;
-    } */
-
-   /*  footer img {
-        width: 52px;
-        height: 30px;
-    } */
-
-    footer p {
-        padding: 2px 0 20px 0;
-      }
-
-    #twitter {
-        top: -30px;
-        left: 48px;
-        font-size: 30px;
-        height: 33px;
-        width: 74px;
-    }
-
-    #facebook {
-        top: -20px;
-        left: 0px;
-        font-size: 30px;
-        height: 33px;
-        width: 74px;
-    }
-
-    #instagram {
-        top: -30px;
-        left: -50px;
-        font-size: 30px;
-        height: 33px;
-        width: 74px;
-    }
-
-    #startInfo {
-        margin: 0 auto;
-        width: 100%;
-        margin-top: 45px;
-    }
-
-    #startKey {
-        padding: 10px 15px;
-        width: 310px;
-        border-radius: 5px;
-        height: auto;
-        text-transform: uppercase;
-        margin-top: -30px;
-      }
-}
-        /* width: 350px;
-}
-
-/* ----------------MQ 1400px------------------ */
-/* @media screen and (max-width: 1400px) {
-    body {
-        background-size: 86%;
-    }
-
-    header h1 {
-        margin: 50px 100px 0 50px;
-    }
-
-    .score-area {
-        width: 25%;
-        margin: 50px 0 0 205px;
-    }
-
-    .control-area {
-        position: relative;
-        top: 80px;
-        width: 100%;
-    }
-
-    #left {
-        right: 120px;
-    }
-
-    #right {
-        left: 120px;
-    }
-
-    #down {
-        top: 90px;
-    }
-} */
-
-/*-------------------- MQ-1150--------------------------------- */
-/* @media screen and (max-width: 1150px) {
-    .control-area {
-        top: 34px;
-    }
-
-    #left {
-        right: 94px;
-    }
-
-    #right {
-        left: 94px;
-    }
-
-    #down {
-        top: 65px;
-    }
-}
- */
-
-/*-------------------- MQ-1130--------------------------------- */
-/* @media screen and (max-width: 1130px) {
-    body {
-        background-size: 100%;
-    }
-    .score-area {
-        width: 20%;
-        font-size: 97%;
-    }
-    .score-area {
-        width: 20%;
-        margin-top: 25px;
-        font-size: 97%;
-    }
-
-    .logo {
-        width: 20%;
-        float: left;
-        margin: 150px 5px 0 5px;
-    }
-
-    header h1 {
-        margin: 100px 10px 20px 10px;
-        font-size: 150%;
-      }
-
-    .score-area {
-        font-size: 97%;
-        margin: 150px 0 0 0;
-        position: inherit;
-        right: 0px;
-    }
-
-        .control-area {
-            top: 30px;
-        }
-
-        #left {
-            right: 93px;
-        }
-
-        #right {
-            left: 93px;
-        }
-} */
-
-/*-------------------- MQ-1120--------------------------------- */
-/* @media screen and (max-width: 1120px) {
-    .control-area {
-        top: 60px;
-    }
-
-    #left {
-        right: 116px;
-    }
-
-    #right {
-        left: 116px;
-    }
-
-    #down {
-        top: 85px;
-    }
-
-}
- */
-/*-------------------- MQ-1150--------------------------------- */
-/* @media screen and (max-width: 1150px) {
-    #startInfo {
-        margin: 0 15px;
-    }
-} */
-
-/*-------------------- MQ-1000--------------------------------- */
-@media screen and (max-width: 1000px) {
-   /*  body { */
-        /* clear: left; */
-        /* background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat; */
-        /* background-size: 610px;
-        background-position: center; */
-        /* height: 522px; */
-        /* display: flex; */
-        /* justify-content: center;
-        align-items: center; */
-        /* margin-top: 100px; */
-        /* width: 100%;
-        background-attachment: fixed;
-    } */
-
-    /* body {
-        background-size: cover;
-      } */
-
-    header h1 {
-        margin: 0 auto;
-        font-size: 150%;
-        float: unset;
-        margin-top: 90px;
-    }
-
-    .heading {
-        background-color: unset;
-        width: unset;
-        color: whitesmoke;
-        padding-top: 20px;
-    }
-
-    .logo {
-        margin: 20px 0 0 20px;
-    }
-
-    .score-area {
-        width: auto;
-        font-size: 125%;
-    }
-
-    /* #game-area {
-        background-color: whitesmoke;
-        width: 200px;
-        height: 200px;
-        position: relative;
-        margin: 115px 0 0 0;
-    } */
-
-    .game-area-start {
-        border: 10px solid rgb(168 188 160);
-    }
-
-    .control-area {
-        /* top: 163px; */
-    }
-
-    /* #middle-buttons {
-        top: -15px;
-        position: relative;
-    } */
-    
-
-   /*  #left {
-        right: 44px;
-    }
-
-    #right {
-        left: 44px;
-    } */
-
-    #down {
-        top: 28px;
-    }
-
-    /* footer p {
-        font-size: 100%;
-    } */
-
-    /* footer img {
-        width: 50px;
-        height: 30px;
-    }
-
-    footer p {
-        color: whitesmoke;
-        margin-top: -12px;
-    }
-
-    #twitter {
-        left: 49px;
-        width: 49px;
-    }
-
-    #instagram {
-        top: -35px;
-        left: -50px;
-        height: 29px;
-        font-size: 30px;
-        width: 49px;
-    }
-
-    #facebook {
-        top: -25px;
-        left: 0px;
-        height: 29px;
-        font-size: 30px;
-        width: 49px;
-    } */
-
-   /*  #startInfo {
-        margin: 20px auto;
-        width: 100%;
-    }
-
-    #startKey {
-        width: 250px;
-        height: auto;
-    } */
-
-
-
-}
-
-/* -----------------MQ 768px----------------------- */
-@media screen and (max-width: 768px) {
-
-    .score-area {
-        font-size: 85%;
-        margin: 60px 0 0 0;
-        /* position: inherit;
-        right: 0px; */
-        width: 100%;
-        /* border-radius: unset;
-        background-color: rgb(0, 128, 128, 0.5);
-        padding: 0 5px 0 0; */
-        background-color: unset;
-        border: unset;
-        color: whitesmoke;
-        top: -32px;
-        left: 17px;
-    }
-
-    .score-area p {
-        margin-left: 94px;
-    }
-
-    .logo {
-        /* margin: -95px 0 2px -106px;
-        background-color: blanchedalmond; */
-        width: 100px;
-        height: auto;
-        /* position: absolute; */
-        /* top: -33px;
-        padding-bottom: 23px;
-        margin-top: -92px;
-        padding-left: 83px;
-        margin-left: -96px;
-        margin-right: 275px; */
-        margin: -106px 0 41px -132px;
-        top: unset;
-        left: unset;
-    }
-
-    .control-area {
-        bottom: 407px;
-    }
-
-    footer {
-        bottom:254px;
-    }
-
-    
-}
-
-
-/* -----------------MQ 600px----------------------- */
-@media screen and (max-width: 600px) {
-    /* body {
-        clear: left; */
-        /* background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat; */
-        /* background-size: cover; */
-       /*  background-position: center;
-        height: 600px; */
-        /* display: flex; */
-        /* justify-content: center;
-        align-items: center; */
-        /* margin-top: 100px; */
-        /* width: 100%;
-    } */
-
-   /*  header {
-        background-color: rgb(0, 128, 128 , 0.5);
-    }
-
-    header h1 {
-        margin: 72px auto;
-        font-size: 150%;
-        width: 50%;
-        border-radius: 5px;
-        padding: 0 10px;
-        float: unset;
-    }
-
-    .heading {
-        padding: unset;
-        padding-top: 33px;
-    }
- */
-    /* .score-area {
-        font-size: 88%; */
-        /* margin: -90px 5px 0 0; */
-        /* position: inherit; */
-        /* right: 0px; */
-        /* width: 32%; */
-        /* border-radius: unset; */
-        /* background-color: unset; */
-       /*  padding: 0 0px 0 0;
-        border: unset;
-        margin-right: 0px;
-        color: whitesmoke;
-    } */
-
-    .logo {
-        /* width: 27%; */
-        /* float: left; */
-        /* margin: 380px 0 0 0; */
-        /* padding: 10px; */
-        /* width: 25%; */
-        /* float: left; */
-        /* margin: -90px 0px 0 25px;
-        padding: unset; */
-       /*  margin: -120px 0 0 10px; */
-    }
-
-    
-
-    
-    #game-area {
-        /* background-color: whitesmoke; */
-       /*  width: 190px;
-        height: 190px;
-        position: relative;
-        margin: unset;
-        top: 130px; */
-        /* border-radius: 3px;
-        border-radius: 8px;
-        /* border: 79px; */
-        /* border: 10px solid rgb(168 188 160); */
-    }
-
-   /*  .control-area {
-        top: 215px;
-    }
-
-    #middle-buttons {
-        top: -19px;
-        position: relative;
-    }
-
-    #left {
-        right: 40px;
-    }
-
-    #right {
-        left: 40px;
-    }
-
-    #down {
-        top: 11px;
-    }
-
-    #startInfo {
-        margin-top: 150px;
-    }
- */
-    /* .logo {
-        width: 25%;
-        float: left;
-        margin: -100px 0 0 10px;
-    } */
-
-    /* .score-area {
-        font-size: 117%;
-        margin: 5px 5px 0 0
-    } */
-
-    /* header h1 {
-        margin: 73px 97px 0 0;
-    } */
-
-}
-
-/* ----------------MQ 500px--------------- */
-@media screen and (max-width: 500px) {
-    .logo {
-        /* margin: -95px 0 2px -106px;
-        background-color: blanchedalmond; */
-        width: 100px;
-        height: auto;
-        /* position: absolute; */
-        /* top: -33px;
-        padding-bottom: 23px;
-        margin-top: -92px;
-        padding-left: 83px;
-        margin-left: -96px;
-        margin-right: 275px; */
-        margin: -106px 0 41px -132px;
-        top: unset;
-        left: unset;
-      }
-
-    .score-area {
-        font-size: 55%;
-        margin: 60px 0px 0 0;
-        position: inherit;
-        right: 0px;
-        width: 100%;
-        border-radius: unset;
-        /* background-color: rgb(0, 128, 128, 0.5); */
-        /* padding: 0 5px 0 0; */
-    }
-
-    .score-area p {
-        margin-left: 94px;
-    }
-}
-/* ----------------MQ 450px--------------- */
-@media screen and (max-width: 450px) {
-
-    body {
-        background-size: 515px;
+/*everything coded in ths area is only applied for those screens. For bigger screen width than ...*/
+/* 600px - */
+@media screen and (min-width: 600px) {
+    #the-whole-thing {
+        margin: 50px 0;
+        width: 400px;
+        height: 700px;
+        background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat;
+        background-size: 480px;
+        background-size: 800px;
+        background-position: top;
+        background-position-y: -54px;
+    }
+
+    header {
+        font-size: 123%;
     }
 
     .logo {
         width: 60px;
-        margin: -112px 0 41px -74px;
+        margin: 6px 0 0 102px;
+        background-color: unset;
+    }
+
+    .heading {
+        margin: 11px 50px 11px 0;
+        font-size: 120%;
     }
 
     .score-area {
-        font-size: 50%;
-        margin: 56px 0 0 -31px;
+        font-size: 72%;
+        width: 78%;
     }
 
     #game-area {
-        width: 188px;
-        height: 188px;
-        margin: 70px 0 0 0;
+        width: 260px;
+        height: 260px;
     }
 
     #startInfo {
-        margin-top: 0px;
-        width: 206px;
-        position: inherit;
-    }
-
-    button {
-        width: 50px;
-        height: 30px;
+        height: 44px;
     }
 
     #startKey {
-        height: 50px;
-      }
+        width: 37%;
+        border-radius: 30px;
+        height: auto;
+        text-transform: uppercase;
+        font-size: 96%;
+        margin-top: 10px;
+    }
 
     .control-area {
-        top: 15px;
+        bottom: -85px;
+    }
+
+    button {
+        width: 70px;
+        height: 35px;
     }
 
     #middle-buttons {
         position: relative;
-        top: -26px;
+        top: 6px;
     }
 
     #left {
-        top: 19px;
-        right: 31px;
+        right: 58px;
     }
 
     #right {
-        top: 19px;
-        left: 31px;
+        left: 58px;
     }
 
     #down {
-        top: 2px;
+        top: 41px;
     }
 
     footer {
-        height: unset;
+        bottom: -128px;
     }
-    /* .logo { */
-        /* width: 27%; */
-        /* float: left; */
-        /* margin: 380px 0 0 0; */
-        /* padding: 10px;188
-        width: 25%; */
-        /* float: left; */
-       /*  margin: -90px 0 0 0px;
-    } */
-
-    /* .score-area { */
-        /* font-size: 90%;
-        margin: 54px 10px 0 0;
-        position: inherit;
-        right: 0px;
-        width: 45%;
-        border-radius: unset;
-        background-color: rgb(0, 128, 128, 0.5); */
-        /* padding: 0 5px 0 0; */
-    /* } */
 
     footer p {
-        padding: 0 3px 0 3px;
-        font-size: 50%;
-    }
-
-    footer a {
-        margin: 0 15px;
+        padding-top: 1px;
+        margin-bottom: unset;
+        font-size: 127%;
     }
 
     #facebook {
-        font-size: 20px;
-        width: 40px;
-        /* position: relative;
-        top: -20px; */
-        /* left: 42px; */
-        height: 20px;
+        top: -34px;
+        height: 30px;
+        width: 64px;
+        padding-top: 6px;
+        left: unset;
+        font-size: 140%;
     }
 
     #twitter {
-        font-size: 20px;
-        width: 40px;
-        /* position: relative; */
-        top: -4px;
-        left: 21px;
-        height: 22px;
-      }
+        top: -49px;
+        height: 30px;
+        width: 64px;
+        padding-top: 6px;
+        left: 23px;
+        font-size: 140%;
+    }
 
     #instagram {
-        font-size: 20px;
-        width: 40px;
-        /* position: relative; */
-        top: -3px;
-        left: -24px;
-        height: 21px;
+        top: -47px;
+        height: 30px;
+        width: 64px;
+        padding-top: 6px;
+        left: -25px;
+        font-size: 140%;
     }
+
 }
 
-/* --------------MQ 340----------------- */
-/* @media screen and (max-width: 340px) {
-    footer img {
-        width: 25px;
-        height: 25px;
+/*-----------------MQ - 1250 x 700px - -------------------------*/
+@media screen and (min-width: 1250px) {
+    #the-whole-thing {
+        margin: unset;
+        width: 440px;
+        height: 650px;
+        background-size: 670px;
+        background-position: top;
+        background-position-y: unset;
     }
-} */
 
-/* ----------------MQ 300px--------------- */
-/* @media screen and (max-width: 300px) {
+    header {
+        font-size: 100%;
+    }
+
+    .logo {
+        float: left;
+        width: 80px;
+        margin: 25px 0 0 123px;
+        background-color: unset;
+    }
+
+    .heading {
+        float: right;
+        font-size: 118%;
+        margin: 44px 97px 0 0;
+        /* background-color: unset; */
+    }
+
     .score-area {
-        font-size: 57%; */
-        /* margin: -170px 12px 0 0; */
-        /* position: inherit; */
-        /* right: 0px; */
-       /*  width: 45%; */
-        /* border-radius: unset; */
-      /*   background-color: unset;
-        margin: 60px 29px 0 0;
-    }
-} */
-
-/* --------------MQ 320 x 480----------------- */
-@media screen and (max-width: 320px) {
-
-    footer {
-        bottom: 0;
+        font-size: 71%;
+        width: 59%;
     }
 
-    .control-area {
-        top: unset;
-        bottom: unset;
-        bottom: 48px;
+    #game-area {
+        width: 250px;
+        height: 250px;
     }
 
-    #facebook {
-        top: 4px;
+    #startInfo {
+        height: 42px;
     }
 
     #startKey {
-        font-size: 100%;
-        width: 207px;
-        margin-top: -2px;
+        width: 43%;
+        border-radius: 30px;
+        height: auto;
+        text-transform: uppercase;
+        font-size: 112%;
+        margin-top: unset;
     }
-    /* .logo { */
-        /* width: 27%; */
-        /* float: left; */
-        /* margin: 380px 0 0 0; */
-       /*  padding: 10px;
-        width: 25%; */
-        /* float: left; */
-      /*   margin: -90px 0 0 35px;
-    } */
 
-    /* .score-area {
-        font-size: 57%; */
-        /* margin: -170px 12px 0 0; */
-        /* position: absolute; */
-      /*   right: 0px; */
-        /* width: 45%; */
-        /* border-radius: unset; */
-        /* background-color: unset;
-        margin: 62px -47px 0 -185px; */
-        /* padding-left: 26px; */
-       /*  width: 100%;
-    } */
+    .control-area {
+        bottom: -30px;
+    }
+
+    button {
+        width: 65px;
+        height: 35px;
+    }
+
+    #middle-buttons {
+        top: 2px;
+    }
+
+    #left {
+        right: 45px;
+    }
+
+    #right {
+        left: 45px;
+    }
+
+    #down {
+        top: 25px;
+    }
+
+    footer {
+        bottom: -56px;
+        height: 73px;
+    }
+
+    footer p {
+        padding-top: 0px;
+        margin-bottom: unset;
+        font-size: 127%;
+        padding-bottom: 2px;
+    }
+
+    #facebook {
+        top: -34px;
+        height: 29px;
+        width: 75px;
+        /* padding-top: 8px; */
+        left: unset;
+        font-size: 167%;
+        padding-bottom: 4px;
+    }
+
+    #twitter {
+        top: -49px;
+        height: 29px;
+        width: 75px;
+        /* padding-top: 8px; */
+        left: 40px;
+        font-size: 167%;
+        padding-bottom: 4px;
+    }
+
+    #instagram {
+        top: -49px;
+        height: 29px;
+        width: 75px;
+        /* padding-top: 8px; */
+        left: -40px;
+        font-size: 167%;
+        padding-bottom: 4px;
+    }
+}
+
+/*-----------------MQ - 1550px - -------------------------*/
+@media screen and (min-width: 1550px) {
+    #the-whole-thing {
+        margin: 25px 0;
+        width: 440px;
+        height: 950px;
+        background-size: 1000px;
+        background-position: top;
+        background-position-y: unset;
+    }
+
+    header {
+        font-size: 150%;
+    }
+
+    .logo {
+        float: unset;
+        width: 100px;
+        margin: 25px 0 0 0;
+        background-color: unset;
+    }
+
+    .heading {
+        float: unset;
+        /* font-size: 110%; */
+        /* margin: 17px 69px 0 0; */
+        background-color: unset;
+        /* width: fit-content; */
+        clear: both;
+        margin: 0 auto;
+    }
+
+    .score-area {
+        font-size: 57%;
+        width: 84%;
+    }
+
+    .score-area p {
+        margin: 0 20px;
+    }
+
+    #game-area {
+        width: 340px;
+        height: 340px;
+    }
+
+    #startInfo {
+        height: 42px;
+    }
+
+    #startKey {
+        width: 43%;
+        border-radius: 30px;
+        height: auto;
+        text-transform: uppercase;
+        font-size: 112%;
+        margin-top: unset;
+    }
+
+    .control-area {
+        bottom: -107px;
+    }
+
+    button {
+        width: 85px;
+        height: 45px;
+    }
+
+    #middle-buttons {
+        top: 4px;
+    }
+
+    #left {
+        right: 71px;
+    }
+
+    #right {
+        left: 71px;
+    }
+
+    #down {
+        top: 42px;
+    }
+
+    footer {
+        bottom: -162px;
+        height: 88px;
+    }
+
+    footer p {
+        padding-top: 3px;
+        margin-bottom: unset;
+        font-size: 127%;
+        padding-bottom: 3px;
+    }
+
+    #facebook {
+        top: -34px;
+        height: 40px;
+        width: 85px;
+        padding-top: 8px;
+        left: unset;
+        font-size: 185%;
+    }
+
+    #twitter {
+        top: -56px;
+        height: 40px;
+        width: 85px;
+        padding-top: 8px;
+        left: 24px;
+        font-size: 185%;
+    }
+
+    #instagram {
+        top: -56px;
+        height: 40px;
+        width: 85px;
+        padding-top: 8px;
+        left: -24px;
+        font-size: 185%;
+    }
 }
