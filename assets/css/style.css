@@ -39,19 +39,19 @@ header {
     width: 40px;
     height: auto;
     float: left;
-    margin: 6px 0 0 65px;
+    margin: 6px 0 0 50px;
     /* background-color: teal; */
 
 }
 
 .score-area {
     clear: both;
-    font-size: 66%;
+    font-size: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(56, 56, 75, 0.8);
-    width: 88%;
+    width: 95%;
     margin: 0 auto;
 }
 
@@ -62,7 +62,7 @@ header {
 .heading {
     float: right;
     font-size: 110%;
-    margin: 17px 69px 0 0;
+    margin: -20px 55px 0 0;
     width: fit-content;
     background-color: rgb(56, 56, 75);
 }
@@ -78,7 +78,7 @@ header {
     height: 338px; */
     border: 10px solid rgb(88, 98, 78);
     box-shadow: black 0px 10px 50px;
-    border-radius: 10px;
+    border-radius: 27px;
 }
 
 .game-area-L3 {
@@ -86,15 +86,15 @@ header {
     border-image-repeat: round;
     border-image-slice: 50;
     border-image-source:url(../images/rainforest.png); 
-    border-radius: 15px;
+    border-radius: 27px;
 }
 
 #startInfo {
-    height: 30px;
+    height: 35px;
 }
 
 #startKey {
-    width: 40%;
+    width: 50%;
     border-radius: 10px;
     height: auto;
     text-transform: uppercase;
@@ -197,7 +197,7 @@ footer p {
     height: 22px;
     width: 50px;
     /* font-size: 31px; */
-    padding-top: 3px;
+    padding-top: 5px;
     left: -50px;
 }
 
@@ -211,20 +211,20 @@ footer p {
     height: 22px;
     width: 50px;
     /* font-size: 31px; */
-    padding-top: 3px;
+    padding-top: 5px;
 }
 
 #instagram {
     background-color: lawngreen;
     position: relative;
-    top: -41px;
+    top: -43px;
     border-radius: 27px;
     color: black;
     left: 67px;
     height: 22px;
     width: 50px;
     /* font-size: 31px; */
-    padding-top: 3px;
+    padding-top: 5px;
 }
 
 
