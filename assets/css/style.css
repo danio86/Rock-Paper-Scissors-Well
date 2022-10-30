@@ -204,12 +204,10 @@ button:hover {
 }
 
 footer {
-    position:absolute;
-    bottom: 0;
-    width: 100%;
+    position: relative;
+    bottom: -37px;
     background-color: rgb(0, 128, 128, 0.8);
     text-align: center;
-    /* height: 142px; */
 }
 
 footer p {
