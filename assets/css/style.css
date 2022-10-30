@@ -445,31 +445,29 @@ footer p {
     }
 
     #facebook {
-        top: -34px;
-        height: 29px;
-        width: 75px;
-        /* padding-top: 8px; */
+        top: -42px;
+        height: 25px;
+        width: 59px;
+        padding-top: 3px;
         left: unset;
-        font-size: 167%;
+        font-size: 146%;
         padding-bottom: 4px;
     }
 
     #twitter {
-        top: -49px;
+        top: -51px;
         height: 29px;
-        width: 75px;
-        /* padding-top: 8px; */
-        left: 40px;
+        width: 57px;
+        left: 30px;
         font-size: 167%;
         padding-bottom: 4px;
     }
 
     #instagram {
-        top: -49px;
+        top: -51px;
         height: 29px;
-        width: 75px;
-        /* padding-top: 8px; */
-        left: -40px;
+        width: 57px;
+        left: -30px;
         font-size: 167%;
         padding-bottom: 4px;
     }
