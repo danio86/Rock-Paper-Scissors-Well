@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
-    <link rel='shortcut icon' type='image/x-icon' href='assets/images/favicon.ico'/>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <!-- <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico"> -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Snake</title>
@@ -18,17 +18,19 @@
 <body>
     <div id="the-whole-thing">
         <header>
-            <img class="logo" src="assets/images/animals-g13a0b5bb3_1280.png" alt="logo"> 
-            <span id="heading"><h1 class="heading">Snake 2001</h1></span>
+            <img class="logo" src="assets/images/animals-g13a0b5bb3_1280.png" alt="logo">
+            <span id="heading">
+                <h2 class="heading">Snake 2001</h2>
+            </span>
             <div class="score-area">
                 <p class="scores"><b>Score:<span id="score">0</span></b></p>
                 <p class="record"><b>Current-Record:<span id="record">0</span></b></p>
                 <p class="level"><b>Level:<span id="level">1</span></b></p>
             </div>
-            
+
         </header>
 
-        
+
 
         <!-- <img id="spider" src="assets/images/spider-transp.png" alt="Spider"> -->
         <div id="pictures">
@@ -39,33 +41,30 @@
             <img id="fire" src="assets/images/fireball.png" alt="fire">
         </div>
 
-        <div id="messages">
+        <!-- <div id="messages">
             <h2 id="lost">Game Over!</h2>
             <h2 id="win">Congratulations! You win!</h2>
-        </div>
-            
+        </div> -->
+
 
         <!-- <canvas class="game-area-start game-area-L3" id="game-area"> -->
         <canvas class="game-area-start" id="game-area">
-            
+
             <!-- <span class="food">tets</span> -->
             <!-- <img src="assets/images/spider-transp.png" alt="Spider"> -->
         </canvas>
 
-        <!-- -----------------------Start Info----------------------------- -->
+        <!-- **********************Start Info********************** -->
         <div id="startInfo">
             <!-- <button type="button" id="startKey" class="startBtnBefore startbtnAfter" >Press here or Space to start!</button> -->
-            <button type="button" id="startKey" class="" >Press "here" or Space to start!</button>
+            <button type="button" id="startKey" class="">Press "here" or Space to start!</button>
             <!-- <h2 id="startKey">Press here or Space to start!</h2> -->
             <!-- <h2>Press an arrow button!</h2> -->
         </div>
 
 
-
-
-
-    <!----------------  Control keys --------------------->
-        <section class="control-area">
+        <!-- **********************  Control keys **********************-->
+        <div class="control-area">
             <div>
                 <button type="button" class="btn-up" id="up">
                     2 <i class="fa fa-angle-up"></i>
@@ -84,22 +83,28 @@
                     8 <i class="fa fa-angle-down"></i>
                 </button>
             </div>
-        </section>
+        </div>
 
         <footer>
             <p>Find us on:</p>
             <ul class="socail-media">
                 <li>
                     <a href="https://twitter.com/" target="_blank" rel="noopener"
-                        aria-label="Visit our Twitter page (opens in a new tab)"><i id="twitter" class="fab fa-twitter"></i><!-- <img id="twitter" src="assets/images/twitter-logo.png" alt="twitter-logo"> --></a>
+                        aria-label="Visit our Twitter page (opens in a new tab)"><i id="twitter"
+                            class="fab fa-twitter"></i>
+                        <!-- <img id="twitter" src="assets/images/twitter-logo.png" alt="twitter-logo"> --></a>
                 </li>
                 <li>
                     <a href="http://facebook.com" target="_blank" rel="noopener"
-                        aria-label="Visit our Facebook page (opens in a new tab)"><i id="facebook" class="fab fa-facebook"></i><!-- <img id="facebook" src="assets/images/facebook-logo.png" alt="facebook-logo"> --></a>
+                        aria-label="Visit our Facebook page (opens in a new tab)"><i id="facebook"
+                            class="fab fa-facebook"></i>
+                        <!-- <img id="facebook" src="assets/images/facebook-logo.png" alt="facebook-logo"> --></a>
                 </li>
                 <li>
                     <a href="http://instagram.com" target="_blank" rel="noopener"
-                        aria-label="Visit our Instagram page (opens in a new tab)"><i id="instagram" class="fab fa-instagram"></i><!-- <img id="instagram" src="assets/images/instagram-logo.png" alt="instagram-logo"> --></a>
+                        aria-label="Visit our Instagram page (opens in a new tab)"><i id="instagram"
+                            class="fab fa-instagram"></i>
+                        <!-- <img id="instagram" src="assets/images/instagram-logo.png" alt="instagram-logo"> --></a>
                 </li>
             </ul>
             <p>Copyright © Game-Developer 2022</p>
@@ -107,8 +112,8 @@
     </div>
 
 
-    
-    
+
+
     <script src="assets/js/script.js"></script>
 </body>
 
