@@ -113,7 +113,7 @@ As a demonstration, the player already wins when he has reached 500 points.
 <img src="assets/images/screenshot-html-validator.png" alt="HTML Validation">
 
 - CSS Validation
-<img src="assets/images/screenshot-css-validator-english.png" alt="CSS Validation">
+<img src="assets/images/screenshot-css-validator.png" alt="CSS Validation">
 
 - JavaScipt Validation
 <img src="assets/images/screenshot-jshint.png" alt="CSS JavaScipt">

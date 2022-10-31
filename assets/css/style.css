@@ -62,7 +62,7 @@ header {
 .heading {
     /* float: right; */
     font-size: 110%;
-    background-color: rgb(57,59,74,255);
+    background-color: rgb(57,59,74);
     width: 50%;
     margin: 19px auto 0;
 }
@@ -78,7 +78,7 @@ header {
     height: 338px; */
     border: 10px solid rgb(88, 98, 78);
     box-shadow: black 0px 10px 50px;
-    border-radius: 27px;
+    border-radius: 10px;
 }
 
 .game-area-L3 {
@@ -86,7 +86,7 @@ header {
     border-image-repeat: round;
     border-image-slice: 50;
     border-image-source:url(../images/rainforest.png); 
-    border-radius: 27px;
+    border-radius: 10px;
 }
 
 #startInfo {
@@ -242,18 +242,18 @@ footer p {
 /* 270px - */
 @media screen and (min-width: 270px) {
     #facebook {
-        left: -6px;
+        left: -10px;
         top: -34px;
     }
 
     #twitter {
         top: -45px;
-        left: 25px;
+        left: 21px;
     }
 
     #instagram {
         top: -44px;
-        left: -40px;
+        left: -44px;
     }
 
     footer p {
