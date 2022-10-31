@@ -263,8 +263,8 @@ footer p {
 
 }
 
-/* 600px - */
-@media screen and (min-width: 600px) {
+/* 400px - */
+@media screen and (min-width: 400px) {
     #the-whole-thing {
         /* margin: 50px 0; */
         width: 400px;
@@ -328,9 +328,13 @@ footer p {
         height: 35px;
     }
 
+    #up {
+        top: 5px;
+    }
+
     #middle-buttons {
         position: relative;
-        top: 6px;
+        top: 12px;
     }
 
     #left {
@@ -342,7 +346,7 @@ footer p {
     }
 
     #down {
-        top: 41px;
+        top: 46px;
     }
 
     footer {
@@ -389,7 +393,7 @@ footer p {
     #the-whole-thing {
         margin: unset;
         width: 440px;
-        height: 650px;
+        height: 700px;
         background-size: 670px;
         background-position: top;
         background-position-y: unset;
