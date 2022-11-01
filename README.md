@@ -150,6 +150,7 @@ As a demonstration, the player already wins when he has reached 500 points.
 ### Unfixed Bugs
 
  - No Bugs are unfixed.
+
  - There were a a lot of bugs at the beginning. Some have taken hours to resolve. 
   - For example, I could quickly create a new snake part. But I couldn't make it to follow the snake head.
   <img src="assets/images/bug-following-snakepart.png" alt="Bug-Following-Snakepart">
@@ -162,9 +163,9 @@ As a demonstration, the player already wins when he has reached 500 points.
             piece.y = frontPiece.y;
         }
 
-  - Another difficulty was the dropdown button (Sport) in the header menu. This had to be formatted separately, just like the other menu buttons.
-
-
+ - Another difficulty was that the snake was not allowed to run back and that it was not allowed to eat itself.
+<img src="assets/images/bug-snake-backwarts-bite-itself.png" alt="Bug-Snake-Backwarts-Bite-itself">
+   
 
 ## Deployment
 
