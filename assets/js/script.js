@@ -19,13 +19,11 @@ let food;
 let elephant;
 let lion;
 let gotFood = false;
-let gotElephant = false;
-let gotLion = false;
 let gotImg = false;
 /* let direction = 'LEFT'; */
 let direction = false;
 let oldScore = parseInt(document.getElementById('score').innerText);
-let newRecord = []
+let newRecord = [];
 let largest = 0;
 let speed = 180;
 let gameOver = false;
@@ -36,13 +34,13 @@ let attention = false;
 let soundStop = false;
 let soundL3 = true;
 let attentionSound = true;
-let finalSound = new Audio('assets/sounds/last-round.mp3')
+let finalSound = new Audio('assets/sounds/last-round.mp3');
 function sounds(s) {
     let playlist = ['assets/sounds/bite.mp3', 'assets/sounds/goodresult-82807.mp3', 
-            'assets/sounds/success.mp3', 'assets/sounds/game-over.mp3', 'assets/sounds/alarm.mp3', 'assets/sounds/yeah.mp3' ]
+            'assets/sounds/success.mp3', 'assets/sounds/game-over.mp3', 'assets/sounds/alarm.mp3', 'assets/sounds/yeah.mp3' ];
     let sound = new Audio(playlist[s]);
     sound.play(sound);
-};
+}
 
 /* function soundsStop(s) {
     let playlist = ['assets/sounds/bite.mp3', 'assets/sounds/goodresult-82807.mp3', 
@@ -103,11 +101,11 @@ function addCube(x, y) {
     /* } else {ctx.drawImage(img, 20, 20, 15, 10);} */
     } else { ctx.fillStyle = 'yellow'; }
     //...(x-pos, y-pos, width, height) of painted object
-};
+}
 
 function addImage(x, y) {
     ctx.drawImage(document.getElementById(rId), x * cellWidth, y * cellHight, cellWidth+1, cellHight+1);
-};
+}
 //game area
 function draw() {
     /* ctx.fillStyle = 'rgb(51, 172, 51)'; */
@@ -129,7 +127,7 @@ function draw() {
         /* ctx.fillStyle = 'brown'; */
         ctx.drawImage(document.getElementById('fire'), 0, canvas.height/2, canvas.width, cellHight);
         /* ctx.fillRect(0, canvas.height/2, canvas.width, cellHight); */
-    };
+    }
 
     //Attention - Wall
     if (attention == true) {
@@ -137,17 +135,17 @@ function draw() {
         ctx.fillRect(canvas.width/2, 0, cellWidth, canvas.height);
         ctx.fillStyle = 'rgb(255, 255, 255 , 0.2)';
         ctx.fillRect(0, canvas.height/2, canvas.width, cellHight);
-    };
+    }
 
     //Text
     if (gameOver) {
-        ctx.fillStyle = 'red'
+        ctx.fillStyle = 'red';
         ctx.font = "30px Courier";
         ctx.fillText("Game Over!", canvas.width/4, canvas.height/2);
     }
 
     if (win){
-        ctx.drawImage(document.getElementById('win'), canvas.width/33.3, canvas.height/8, 300, 100)
+        ctx.drawImage(document.getElementById('win'), canvas.width/33.3, canvas.height/8, 300, 100);
         gameEnd();
     } 
     
@@ -181,7 +179,7 @@ function placeFood() {
     let foodY = Math.floor(Math.random() * row);
     let foodX = Math.floor(Math.random() * col);
 
-    food = {x: foodX, y: foodY}
+    food = {x: foodX, y: foodY};
     //{x:..,y:..} this is 1 value called json! withs this a var can have '2' values!
 }// places the food object randomly in Game Area
 
@@ -189,21 +187,21 @@ function placeElephant() {
     let elephantY = Math.floor(Math.random() * row);
     let elephantX = Math.floor(Math.random() * col);
 
-    elephant = {x: elephantX, y: elephantY}
+    elephant = {x: elephantX, y: elephantY};
 }
 
 function placeLion() {
     let lionY = Math.floor(Math.random() * row);
     let lionX = Math.floor(Math.random() * col);
 
-    lion = {x: lionX, y: lionY}
+    lion = {x: lionX, y: lionY};
 }
 
 function placeImg() {
     let imgY = Math.floor(Math.random() * row);
     let imgX = Math.floor(Math.random() * col);
 
-    img = {x: imgX, y: imgY}
+    img = {x: imgX, y: imgY};
 }
 
 function scoreCounter(n) {
@@ -215,21 +213,22 @@ function scoreCounter(n) {
     document.getElementById('score').innerText = oldScore + n;
     let oldRecord = oldScore + n;
     /* console.log(oldRecord, 'test'); */
-    newRecord.push(oldRecord)
+    newRecord.push(oldRecord);
     /* console.log(newRecord, 'check') */
-    if (newRecord[0] > oR) {
-        oR + newRecord[0];
-    };
+    /* if (newRecord[0] > oR) {
+        return oR + newRecord[0];
+    } */
+    
     if (oldScore >= 90 && oldScore <= 240) {
         /* console.log(oR, 'DB'); */
         document.getElementById('level').innerText = 2;
         speed = 150;
         /* setInterval(gameLoop, 150); */
-        console.log(speed, 'l2')
+        console.log(speed, 'l2');
     } else if (oldScore >= 240) {
         document.getElementById('level').innerText = 3;
         speed = 100;
-        console.log(speed, 'l3')
+        console.log(speed, 'l3');
         finalSound.play();
     }
 
@@ -262,18 +261,22 @@ function scoreCounter(n) {
         document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
         /* console.log(document.getElementById('level').innerText) */
         speed = 180;
-        for (i=0; i<newRecord.length; i++){
+        for (let i=0; i<newRecord.length; i++){
             if (newRecord[i]>largest) {
                 largest=newRecord[i];
                 /* console.log(largest, 'please') */
             }
-            document.getElementById('record').innerText = largest
-        };
+            document.getElementById('record').innerText = largest;
+        }
     }
     if (oldScore >= 90 && soundStop == false) {
         sounds(1);
         soundStop = true;
     } 
+
+    if (newRecord[0] > oR) {
+        return oR + newRecord[0];
+    }
     
     /* if (oldScore >= 40 && soundL3 == true) {
         sounds(3);
@@ -327,16 +330,16 @@ function gameEnd() {
         document.getElementById('level').innerText = 1;
         document.getElementById('startKey').setAttribute('class', '');
         document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
-        console.log(document.getElementById('level').innerText)
+        console.log(document.getElementById('level').innerText);
         speed = 180;
         document.getElementById('game-area').setAttribute('class', 'game-area-start');
-        for (i=0; i<newRecord.length; i++){
+        for (let i=0; i<newRecord.length; i++){
             if (newRecord[i]>largest) {
                 largest=newRecord[i];
             }
-            document.getElementById('record').innerText = largest
-        };
-    }; // if snake touches the inner wall in level3.
+            document.getElementById('record').innerText = largest;
+        }
+    } // if snake touches the inner wall in level3.
 
     if (snake[0].x > col - 1 ||
         snake[0].x < 0 ||
@@ -361,18 +364,18 @@ function gameEnd() {
         document.getElementById('level').innerText = 1;
         document.getElementById('startKey').setAttribute('class', '');
         document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
-        console.log(document.getElementById('level').innerText)
+        console.log(document.getElementById('level').innerText);
         speed = 180;
         /* console.log(speed, 'end1') */
         /* document.getElementById('record').innerText */
         
-        for (i=0; i<newRecord.length; i++){
+        for (let i=0; i<newRecord.length; i++){
             if (newRecord[i]>largest) {
                 largest=newRecord[i];
                 /* console.log(largest, 'please') */
             }
-            document.getElementById('record').innerText = largest
-        };
+            document.getElementById('record').innerText = largest;
+        }
         /* alert('Game Over!') */
     }// if snake touches a wall
 
@@ -394,19 +397,19 @@ function gameEnd() {
         document.getElementById('startKey').setAttribute('class', '');
         document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
         speed = 180;
-        console.log(speed, 'end2')
+        console.log(speed, 'end2');
         document.getElementById('score').innerText = oldScore;
-        for (i=0; i<newRecord.length; i++){
+        for (let i=0; i<newRecord.length; i++){
             if (newRecord[i]>largest) {
                 largest=newRecord[i];
             }
-            document.getElementById('record').innerText = largest
-        };
+            document.getElementById('record').innerText = largest;
+        }
         /* alert('Game Over!') */
     }// if snake bites itself
 
       
-};
+}
 
 
 //#######################Game Loop: ############################
@@ -460,15 +463,15 @@ function gameLoop() {
         }
         if (rId === 1) {
             scoreCounter(20);
-            rId = Math.floor(Math.random() * 3) + 1
+            rId = Math.floor(Math.random() * 3) + 1;
         } else if (rId === 2) {
             scoreCounter(30);
-            rId = Math.floor(Math.random() * 3) + 1
+            rId = Math.floor(Math.random() * 3) + 1;
         } else if (rId === 3) {
             scoreCounter(40);
-            rId = Math.floor(Math.random() * 3) + 1
+            rId = Math.floor(Math.random() * 3) + 1;
         }
-    };
+    }
 
     /* ----------------possible bugs:---------------------  */
     if (img.x == food.x && img.y == food.y) {
@@ -486,7 +489,7 @@ function gameLoop() {
         speed = 100;
     } else if (document.getElementById('level').innerText == 3) {
         speed = 50;
-    };
+    }
 
     if (document.getElementById('level').innerText == 3) {
         document.getElementById('game-area').setAttribute('class', 'game-area-start game-area-L3'); 
@@ -498,20 +501,20 @@ function gameLoop() {
     //level3: Snake can go through wall
     if (document.getElementById('level').innerText == 3 && snake[0].x > col - 1) {
             snake[0] = {x: 0, y: snake[0].y};
-    };
+    }
     if (document.getElementById('level').innerText == 3 && snake[0].x < 0) {
         snake[0] = {x: 29, y: snake[0].y};
-    };
+    }
     if (document.getElementById('level').innerText == 3 && snake[0].y > row - 1) {
     snake[0] = { x: snake[0].x, y: 0};
-    };
+    }
     if (document.getElementById('level').innerText == 3 && snake[0].y < 0) {
     snake[0] = { x: snake[0].x, y: 29 };
-    };
+    }
     
     setTimeout(gameLoop, speed);
     //the gameLoop runns all 180ms at the beginning
-};
+}
 
 gameLoop();
 
@@ -522,7 +525,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let buttons = document.getElementsByTagName('button');
 
     for (let button of buttons) {
-        button.addEventListener('click', clickDirection)
+        button.addEventListener('click', clickDirection);
     }
     function clickDirection() {
         if (this.getAttribute('id') === 'startKey' && direction == false) {
@@ -561,7 +564,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 }; */
-console.log(direction, 'dir-test')
+console.log(direction, 'dir-test');
 function keyPress(e) {
     if (direction == false && e.keyCode == 32) {
         direction = true;
@@ -587,5 +590,4 @@ function keyPress(e) {
         direction = 'DOWN';
         document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
         }
-};
-
+}

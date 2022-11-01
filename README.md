@@ -103,7 +103,7 @@ As a demonstration, the player already wins when he has reached 500 points.
       - No errors were found when passing through the official (Jigsaw) validator.
 
   - JavaScipt 
-      - No errors were found when passing through the official (Jigsaw) validator.
+      - No errors were found when passing through the JSHint validator.
 
   - Accessibility
       - I confirm that the colors and fonts selected are easy to read and accessible. This was discovered using lighthouse in devtools.
@@ -116,7 +116,7 @@ As a demonstration, the player already wins when he has reached 500 points.
 <img src="assets/images/screenshot-css-validator.png" alt="CSS Validation">
 
 - JavaScipt Validation
-<img src="assets/images/screenshot-jshint.png" alt="CSS JavaScipt">
+<img src="assets/images/screenshot-js-validator.png" alt="CSS JavaScipt">
 
 - Lighthouse-Desktop
 
