@@ -163,8 +163,29 @@ As a demonstration, the player already wins when he has reached 500 points.
             piece.y = frontPiece.y;
         }
 
+
+
  - Another difficulty was that the snake was not allowed to run back and that it was not allowed to eat itself.
-<img src="assets/images/bug-snake-backwarts-bite-itself.png" alt="Bug-Snake-Backwarts-Bite-itself">
+ <img src="assets/images/bug-snake-backwarts-bite-itself.png" alt="Bug-Snake-Backwarts-Bite-itself">
+ The solution is a "for-loop": Ff there is more than one snake part (the snake parts are in a list), the last part gets the position of the previous part. The loop then repeats itself with the penultimate part. Until the loop gets to the head, then it breaks. The function is called whenever the snake encounters food.
+
+  - function snakeGrowth() {
+        for (let i = snake.length - 1; i > 0; i--) {
+            let piece = snake[i];
+            let frontPiece = snake[i - 1];
+            piece.x = frontPiece.x;
+            piece.y = frontPiece.y;
+
+ - To prevent the snake from being able to walk backwards, I simply banned it:
+    - if (direction && e.keyCode == 37 && direction != 'RIGHT') {
+        direction = 'LEFT';
+
+ - The most difficult bug was that the snake eats the animals (images). For this, the images had to behave exactly like canvas pixels. A tutor session lasting several hours was necessary to solve this problem. In the end they helped me to help myself. "Follow the javascript logic": The previously undefined image variable was placed in the canvas drawing function. This placement then called a function. Here an image is drawn with canvas pixel dimensions and in canvas coordinates. The coordinates are chosen randomly in the game loop.
+  - function draw() {
+    //Animals
+    addImage(img.x, img.y);}
+     - function addImage(x, y) {
+     ctx.drawImage(document.getElementById(rId), x * cellWidth, y * cellHight, cellWidth+1, cellHight+1);}
    
 
 ## Deployment
@@ -176,14 +197,10 @@ As a demonstration, the player already wins when he has reached 500 points.
   - push the Save button
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-The live link can be found [here](https://danio86.github.io/coach-finder/index.html)
+The live link can be found [here](https://danio86.github.io/Snake-2001/)
 
 
 ## Credits 
-
-In this section you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-
-You can break the credits section up into Content and Media, depending on what you have included in your project. 
 
 ### Content
 
@@ -204,14 +221,11 @@ You can break the credits section up into Content and Media, depending on what y
 
 ### Media
 
-- The Images used on all pages, except the sport-category page and trainer photos on the specific-sport page are from this Open Source site [Pixabay](https://pixabay.com/de/)
-- The photos used for the coaches on the specific-sport page were taken from [Wikipedia](https://de.wikipedia.org/wiki/Wikipedia:Hauptseite). The authors must be specified in each case.
-  - [Jürgen Klopp: Von Fars Media Corporation, CC-BY 4.0,](https://commons.wikimedia.org/w/index.php?curid=81344322)
-  - [Pep Guardiola: Von Football.ua, CC BY-SA 3.0,](https://commons.wikimedia.org/w/index.php?curid=71584908)
-  - [Steffi Jones: Von © Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons), CC BY-SA 4.0,](https://commons.wikimedia.org/w/index.php?curid=25424821)
-  - [José Mourinho: Von Дмитрий Голубович - https://www.soccer0010.com/galery/1013397/photo/673146, CC BY-SA 3.0,](https://commons.wikimedia.org/w/index.php?curid=62794666)
-  - [Zinédine Zidane: Von Tasnim News Agency, CC-BY 4.0,](https://commons.wikimedia.org/w/index.php?curid=64815490)
-  - [Hansi Flick: Von Steffen Prößdorf, CC BY-SA 4.0,](https://commons.wikimedia.org/w/index.php?curid=121296260)
+- The Images used, except the animal-pixel-images (including the favivon-image) are from this Open Source site [Pixabay](https://pixabay.com/de/)
+- The Pixel-Animal images were taken from: [vectorstock](https://www.vectorstock.com/royalty-free-vector/pixel-art-animals-set-vector-17900732) and [depositphotos](https://de.depositphotos.com/101755934/stock-illustration-animal-cartoon-pixel.html)
+Because these images have not been purchased, they are not legally commercially usable. Due to a lack of artistic skills, these images can only be seen in this practice project.
+
+- All Sounds are from Open Source sites [pixabay](https://pixabay.com/de/sound-effects/), [mixkit](https://mixkit.co/free-sound-effects/)
 
 
 
@@ -221,5 +235,6 @@ You can break the credits section up into Content and Media, depending on what y
 ### Personal Advice
 
   - Thank You!
-    -  Jubril Akolade
+    - Jubril Akolade
     - All people from my Slack Group!
+    - Code-Institute Tutors
