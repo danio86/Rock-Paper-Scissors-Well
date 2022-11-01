@@ -51,7 +51,7 @@ header {
     justify-content: center;
     align-items: center;
     background-color: rgb(56, 56, 75, 0.8);
-    width: 88%;
+    width: 89%;
     margin: 0 auto;
 }
 
@@ -198,7 +198,7 @@ footer p {
     width: 50px;
     /* font-size: 31px; */
     padding-top: 5px;
-    left: -51px;
+    left: -40px;
 }
 
 #twitter {
@@ -207,7 +207,7 @@ footer p {
     top: -20px;
     border-radius: 27px;
     color: black;
-    left: -19px;
+    left: -8px;
     height: 22px;
     width: 50px;
     /* font-size: 31px; */
@@ -220,7 +220,7 @@ footer p {
     top: -45px;
     border-radius: 27px;
     color: black;
-    left: 67px;
+    left: 76px;
     height: 22px;
     width: 50px;
     /* font-size: 31px; */
@@ -242,18 +242,18 @@ footer p {
 /* 270px - */
 @media screen and (min-width: 270px) {
     #facebook {
-        /* left: -10px; */
+        left: -11px;
         top: -13px;
     }
 
     #twitter {
         top: -25px;
-        /* left: 21px; */
+        left: 21px;
     }
 
     #instagram {
-        top: -50px;
-        /* left: -44px; */
+        top: -23px;
+        left: -44px;
     }
 
     footer p {
@@ -288,7 +288,7 @@ footer p {
 
     .logo {
         width: 60px;
-        margin: 48px 0 0 -110px;
+        margin: 47px 0 0 39px;
         background-color: unset;
     }
 
@@ -366,7 +366,7 @@ footer p {
     }
 
     #facebook {
-        top: -30px;
+        top: -28px;
         height: 30px;
         width: 64px;
         padding-top: 6px;
@@ -375,7 +375,7 @@ footer p {
     }
 
     #twitter {
-        top: -45px;
+        top: -44px;
         height: 30px;
         width: 64px;
         padding-top: 6px;
@@ -384,7 +384,7 @@ footer p {
     }
 
     #instagram {
-        top: -41px;
+        top: -40px;
         height: 30px;
         width: 64px;
         padding-top: 6px;
