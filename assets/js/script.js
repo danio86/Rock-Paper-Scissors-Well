@@ -444,7 +444,7 @@ function gameLoop() {
             snake = [
                 { x: snake[0].x, y: snake[0].y },
                 ...snake
-            ];//...snake instead od {x: snake[0].x, y:snake[0].y}
+            ];//...snake instead {x: snake[0].x, y:snake[0].y}
             //works like a loop which adds {x: snake[0].x, y:snake[0].y}
             //if condition is true.
         }

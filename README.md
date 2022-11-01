@@ -129,29 +129,39 @@ As a demonstration, the player already wins when he has reached 500 points.
 
 - user story besed test cases (screenshots):
 
-  - As a visiting user, I can easily understand the main purpose of the website.
-      - Slogan and Slideshow
-      <img src="assets/images/screenshot-slogan-slideshow.png" alt="Slogan-Slideshow">
+  - As a visiting user, I can easily understand the main purpose of the game. 
+      - Heading, Start Button, Animals
+      <img src="assets/images/screenshot-userstory-whats-the-goal.png" alt="Canvas and Start Button">
 
-  - As a visiting user, I can navigate the website without any problems.
-      - Navigation
-      <img src="assets/images/screenshot-userstory-test-navigation.png" alt="Navigation">
+  - As a visiting user, I can navigate the snake without any problems.
+      - Start Butten (after klicking) keybord, arrow/number buttons
+      <img src="assets/images/screenshot-userstory-what-to-do.png" alt="Control-Area">
 
-  - As a visiting user, I will be able to learn about other users and contact them.
-      - Info about other user
-      <img src="assets/images/screenshot-userstory-test-user-contact.png" alt="Info about other user">
+  - As a visiting user, I can learn to navigate the snake more efficiently to earn more points.
+      - User experience. Users get more points.
+      <img src="assets/images/screenshot-userstory-performance.png" alt="Score">
 
-  - As a visiting user, I can easily contact the company service.
-      - Company Service
-      <img src="assets/images/screenshot-contact.png" alt="Company Service">
+  - As a visiting user, I can easily get information about the company through their social media links.
+      - Footer with social media links.
+      <img src="assets/images/screenshot-footer.png" alt="Footer">
 
 
 
 ### Unfixed Bugs
 
  - No Bugs are unfixed.
- - There were a few bugs, but they were fixed within a short time. 
-  - For example, the Sports category page displayed well in Firefox and not in Google Chrome. The image formatting caused free white areas to appear on the page in Google Chrome. 
+ - There were a a lot of bugs at the beginning. Some have taken hours to resolve. 
+  - For example, I could quickly create a new snake part. But I couldn't make it to follow the snake head.
+  <img src="assets/images/bug-following-snakepart.png" alt="Bug-Following-Snakepart">
+  The solution is a "for-loop": Ff there is more than one snake part (the snake parts are in a list), the last part gets the position of the previous part. The loop then repeats itself with the penultimate part. Until the loop gets to the head, then it breaks. The function is called whenever the snake encounters food.
+    - function snakeGrowth() {
+        for (let i = snake.length - 1; i > 0; i--) {
+            let piece = snake[i];
+            let frontPiece = snake[i - 1];
+            piece.x = frontPiece.x;
+            piece.y = frontPiece.y;
+        }
+
   - Another difficulty was the dropdown button (Sport) in the header menu. This had to be formatted separately, just like the other menu buttons.
 
 
