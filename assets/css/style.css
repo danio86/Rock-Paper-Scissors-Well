@@ -35,10 +35,10 @@ header {
 
 
 .logo {
-    width: 40px;
+    width: 100px;
     height: auto;
     float: left;
-    margin: -15px 0 0 -97px;
+    margin: -84px 0 0 -55px;
     /* background-color: teal; */
     position: absolute;
 
@@ -61,10 +61,10 @@ header {
 
 .heading {
     /* float: right; */
-    font-size: 110%;
+    font-size: 150%;
     background-color: rgb(57,59,74);
-    width: 50%;
-    margin: 114px auto 0;
+    width: 64%;
+    margin: 107px auto 0;
 }
 
 #game-area {
@@ -198,7 +198,7 @@ footer p {
     width: 50px;
     /* font-size: 31px; */
     padding-top: 5px;
-    left: -40px;
+    left: -51px;
 }
 
 #twitter {
@@ -207,7 +207,7 @@ footer p {
     top: -20px;
     border-radius: 27px;
     color: black;
-    left: -9px;
+    left: -19px;
     height: 22px;
     width: 50px;
     /* font-size: 31px; */
@@ -220,7 +220,7 @@ footer p {
     top: -45px;
     border-radius: 27px;
     color: black;
-    left: 76px;
+    left: 67px;
     height: 22px;
     width: 50px;
     /* font-size: 31px; */
@@ -242,22 +242,23 @@ footer p {
 /* 270px - */
 @media screen and (min-width: 270px) {
     #facebook {
-        left: -10px;
-        top: -34px;
+        /* left: -10px; */
+        top: -13px;
     }
 
     #twitter {
-        top: -45px;
-        left: 21px;
+        top: -25px;
+        /* left: 21px; */
     }
 
     #instagram {
-        top: -44px;
-        left: -44px;
+        top: -50px;
+        /* left: -44px; */
     }
 
     footer p {
-        margin-bottom: unset;
+        margin-bottom: -20px;
+        font-size: 95%;
     }
 
 }
@@ -287,12 +288,12 @@ footer p {
 
     .logo {
         width: 60px;
-        margin: 2px 0 0 22px;
+        margin: 48px 0 0 -110px;
         background-color: unset;
     }
 
     .heading {
-        margin: 11px 50px 11px 0;
+        margin: 64px 50px 11px 0;
         font-size: 120%;
         float: right;
     }
