@@ -19,12 +19,12 @@ body {
 
 #the-whole-thing {
     width: 280px;
-    height: 520px;
+    height: 610px;
     background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat;
     background-size: 480px;
     background-size: 610px;
     background-position: top;
-    background-position-y: -95px;
+    /* background-position-y: -95px; */
     border-radius: 10px;
 }
 
@@ -64,7 +64,7 @@ header {
     font-size: 110%;
     background-color: rgb(57,59,74);
     width: 50%;
-    margin: 19px auto 0;
+    margin: 114px auto 0;
 }
 
 #game-area {
@@ -262,6 +262,12 @@ footer p {
 
 }
 
+/* @media screen and (min-width: 320px) {
+    #the-whole-thing {
+        background-position-y: 50;
+    }
+} */
+
 /* 400px - */
 @media screen and (min-width: 400px) {
     #the-whole-thing {
@@ -272,7 +278,7 @@ footer p {
         background-size: 480px;
         background-size: 800px;
         background-position: top;
-        background-position-y: -54px;
+        
     }
 
     header {
@@ -516,7 +522,7 @@ footer p {
     #the-whole-thing {
         margin: 25px 0;
         width: 440px;
-        height: 950px;
+        height: 990px;
         background-size: 1000px;
         background-position: top;
         background-position-y: unset;
