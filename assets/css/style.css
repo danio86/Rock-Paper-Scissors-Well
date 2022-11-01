@@ -288,15 +288,16 @@ footer p {
     }
 
     .logo {
-        width: 60px;
-        margin: 47px 0 0 39px;
+        width: 70px;
+        margin: 45px 0 0 7px;
         background-color: unset;
     }
 
     .heading {
-        margin: 64px 50px 11px 0;
+        margin: 64px 87px 11px 0;
         font-size: 120%;
         float: right;
+        width: fit-content;
     }
 
     .score-area {
@@ -422,7 +423,7 @@ footer p {
     .heading {
         float: right;
         font-size: 118%;
-        margin: 44px 97px 0 0;
+        margin: 51px 123px 0 0;
         /* background-color: unset; */
         width: unset;
     }
