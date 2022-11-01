@@ -357,7 +357,8 @@ footer p {
     }
 
     footer {
-        bottom: -128px;
+        /* bottom: -128px; */
+        margin-top: 128px;
     }
 
     footer p {
@@ -481,6 +482,7 @@ footer p {
     footer {
         bottom: -56px;
         height: 73px;
+        margin-top: 57px;
     }
 
     footer p {
@@ -604,8 +606,9 @@ footer p {
     }
 
     footer {
-        bottom: -162px;
+        /* bottom: -162px; */
         height: 88px;
+        margin-top: 161px;
     }
 
     footer p {
