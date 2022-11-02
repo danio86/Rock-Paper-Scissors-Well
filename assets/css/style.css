@@ -125,6 +125,7 @@ header {
     width: 53px;
     height: 30px;
     padding-top: 3px;
+    font-size: 120%;
 }
 
 .control-area {
@@ -353,6 +354,7 @@ footer p {
         width: 66px;
         height: 39px;
         padding-top: 3px;
+        font-size: 140%;
       }
 
     .control-area {
