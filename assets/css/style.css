@@ -290,9 +290,11 @@ footer p {
     }
 
     .logo {
-        width: 70px;
-        margin: 45px 0 0 7px;
+        width: 80px;
+        margin: 35px 0 0 90px;
         background-color: unset;
+        float: left;
+        position: unset;
     }
 
     .heading {
