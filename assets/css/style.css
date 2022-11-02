@@ -111,6 +111,14 @@ header {
     display: none;
 }
 
+.soundOff {
+    display: none;
+}
+
+.soundOn {
+    display: none;
+}
+
 .control-area {
     position: relative;
     width: 100%;

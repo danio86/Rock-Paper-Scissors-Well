@@ -35,12 +35,43 @@ let soundStop = false;
 let soundL3 = true;
 let attentionSound = true;
 let finalSound = new Audio('assets/sounds/last-round.mp3');
+let mute = false;
+
 function sounds(s) {
     let playlist = ['assets/sounds/bite.mp3', 'assets/sounds/goodresult-82807.mp3', 
             'assets/sounds/success.mp3', 'assets/sounds/game-over.mp3', 'assets/sounds/alarm.mp3', 'assets/sounds/yeah.mp3' ];
+    /* tracknumber = s */
     let sound = new Audio(playlist[s]);
     sound.play(sound);
+
+    if (mute) {
+        sound.pause(sound);
+    }
 }
+//---------------Sound-Buttons-----------
+function playAudio() { 
+    mute = false;
+    soundL3 = true;
+    document.getElementById('audioButton').setAttribute('onclick', 'pauseAudio()');
+    /* document.getElementById('audioButton').innerText = 'yes'; */
+    document.getElementById('soundOff').setAttribute('class', 'fas fa-stop-circle soundOff');
+    document.getElementById('soundOn').setAttribute('class', 'fas fa-play-circle');
+  } 
+  
+function pauseAudio() { 
+    mute = true;
+    soundL3 = false;
+    document.getElementById('audioButton').setAttribute('onclick', 'playAudio()');
+    /* document.getElementById('audioButton').innerText = 'no'; */
+    document.getElementById('soundOff').setAttribute('class', 'fas fa-stop-circle');
+    document.getElementById('soundOn').setAttribute('class', 'fas fa-play-circle soundOn');
+  } 
+
+/* function setFullVolume() { 
+    sounds.volume = 0.0;
+    
+  } 
+setFullVolume(); */
 
 /* function soundsStop(s) {
     let playlist = ['assets/sounds/bite.mp3', 'assets/sounds/goodresult-82807.mp3', 
@@ -536,6 +567,12 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('startKey').setAttribute('class', 'startBtnBefore');
         }
 
+        /* if (this.getAttribute('id') === 'mute') {
+            console.log('sound!');
+            sounds(3).sound();
+            finalSound.pause(); 
+        } */
+
         if (direction && this.getAttribute('id') === 'left' && direction != 'RIGHT') {
             direction = 'LEFT';
             document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
@@ -552,8 +589,6 @@ document.addEventListener('DOMContentLoaded', function () {
             direction = 'DOWN';
             document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
         }
-
-
     }
 
 });
