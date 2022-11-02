@@ -61,6 +61,7 @@ function playAudio() {
 function pauseAudio() { 
     mute = true;
     soundL3 = false;
+    finalSound.pause();
     document.getElementById('audioButton').setAttribute('onclick', 'playAudio()');
     /* document.getElementById('audioButton').innerText = 'no'; */
     document.getElementById('soundOff').setAttribute('class', 'fas fa-stop-circle');
@@ -255,19 +256,21 @@ function scoreCounter(n) {
         document.getElementById('level').innerText = 2;
         speed = 150;
         /* setInterval(gameLoop, 150); */
-        console.log(speed, 'l2');
+        /* console.log(speed, 'l2'); */
     } else if (oldScore >= 240) {
+        console.log(soundL3, 's3')
         document.getElementById('level').innerText = 3;
         speed = 100;
-        console.log(speed, 'l3');
-        finalSound.play();
+        /* console.log(speed, 'l3'); */
+        if (soundL3 == true) {
+            finalSound.play();
+        }
     }
 
     if (oldScore > 200 && oldScore <= 240 && attentionSound) {
         sounds(4);
         attentionSound = false;
         attention = true;
-
     }
 
     //game ends positivly! User is Winner!
@@ -567,12 +570,6 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('startKey').setAttribute('class', 'startBtnBefore');
         }
 
-        /* if (this.getAttribute('id') === 'mute') {
-            console.log('sound!');
-            sounds(3).sound();
-            finalSound.pause(); 
-        } */
-
         if (direction && this.getAttribute('id') === 'left' && direction != 'RIGHT') {
             direction = 'LEFT';
             document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
@@ -593,17 +590,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-/* function startDirection(k) {
-    if (direction == false && k.keyCode == 32) {
-        direction = true;
-    }
-
-}; */
-
-/* let avoidBackwarts = [] */
 
 
-/* console.log(direction, 'dir-test'); */
 function keyPress(e) {
     if (direction == false && e.keyCode == 32) {
         direction = true;
@@ -613,6 +601,15 @@ function keyPress(e) {
         document.getElementById('startKey').setAttribute('class', 'startBtnBefore');
         /* console.log(direction, 'dir-test2') */
     }
+
+    if (e.keyCode == 16) {
+        playAudio();
+    }
+
+    if (e.keyCode == 20) {
+        pauseAudio();
+    }
+
         if (direction && e.keyCode == 37 && direction != 'RIGHT') {
             if (document.getElementById('level').innerText == 1) {
                 setTimeout(() => {direction = 'LEFT';}, 130)
