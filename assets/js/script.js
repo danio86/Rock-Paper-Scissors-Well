@@ -564,7 +564,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 }; */
-console.log(direction, 'dir-test');
+
+/* let avoidBackwarts = [] */
+
+
+/* console.log(direction, 'dir-test'); */
 function keyPress(e) {
     if (direction == false && e.keyCode == 32) {
         direction = true;
@@ -575,19 +579,53 @@ function keyPress(e) {
         /* console.log(direction, 'dir-test2') */
     }
         if (direction && e.keyCode == 37 && direction != 'RIGHT') {
-        direction = 'LEFT';
-        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+            if (document.getElementById('level').innerText == 1) {
+                setTimeout(() => {direction = 'LEFT';}, 130)
+        } else {direction = 'LEFT';}
+            /* avoidBackwarts.unshift('LEFT');
+            console.log(avoidBackwarts, 'L?')
+            if (document.getElementById('level').innerText == 1 && avoidBackwarts[2] == 'RIGHT' ) {
+                    setTimeout(() => {direction = 'LEFT';}, 500)
+            } else {direction = 'LEFT';} */
+            /* direction = 'LEFT'; */
+            document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
         }
+
         if (direction && e.keyCode == 38 && direction != 'DOWN') {
-        direction = 'UP';
-        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+            if (document.getElementById('level').innerText == 1) {
+                setTimeout(() => {direction = 'UP';}, 130)
+        } else {direction = 'UP';}
+            /* avoidBackwarts.unshift('UP');
+            console.log(avoidBackwarts, 'U?')
+            if (document.getElementById('level').innerText == 1 && avoidBackwarts[2] == 'DOWN' ) {
+                    setTimeout(() => {direction = 'UP';}, 500)
+            } else {direction = 'UP';} */
+            /* direction = 'UP'; */
+            document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
         }
         if (direction && e.keyCode == 39 && direction != 'LEFT') {
-        direction = 'RIGHT';
-        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+            if (document.getElementById('level').innerText == 1) {
+                setTimeout(() => {direction = 'RIGHT';}, 130)
+        } else {direction = 'RIGHT';}
+            /* avoidBackwarts.unshift('RIGHT');
+            console.log(avoidBackwarts, 'R?')
+            if (document.getElementById('level').innerText == 1 && avoidBackwarts[2] == 'LEFT' ) {
+                    setTimeout(() => {direction = 'RIGHT';}, 500)
+            } else {direction = 'RIGHT';} */
+            /* direction = 'RIGHT'; */
+            document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
         }
+
         if (direction && e.keyCode == 40 && direction != 'UP') {
-        direction = 'DOWN';
-        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+            if (document.getElementById('level').innerText == 1) {
+                setTimeout(() => {direction = 'DOWN';}, 130)
+        } else {direction = 'DOWN';}
+            /* avoidBackwarts.unshift('DOWN');
+            console.log(avoidBackwarts, 'D?')
+            if (document.getElementById('level').innerText == 1 && avoidBackwarts[2] == 'UP') {
+                    setTimeout(() => {direction = 'DOWN';}, 500)
+            } else {direction = 'DOWN';} */
+            /* direction = 'DOWN'; */
+            document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
         }
 }
