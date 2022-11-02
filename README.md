@@ -62,7 +62,7 @@ As a demonstration, the player already wins when he has reached 500 points.
                 - The start button contains instructions on how to start the game. 
                 - It serves as a user manual and as an intermediate step between the "Game Over Status" and the start of the game. This prevents the end screen ("Game Over" or "You Win") from being clicked away immediately by intuitively continuing to play (a direction key is pressed).
                 - The start button changes color by mouse over and by clicking.
-                - The sound button allows the user to mute or reactivate all sounds.
+                - The sound button allows the user to mute or reactivate all sounds by clicking the play/pause button on the screen or the shift or the caps lock key on the keybord.
                 - The control button change color by mouse over.
                 - The Control Area idea and basic code is taken form the **Code-Institute Love-Maths-Project** but has been modified.
 
