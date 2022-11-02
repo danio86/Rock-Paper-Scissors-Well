@@ -119,6 +119,14 @@ header {
     display: none;
 }
 
+#audioButton {
+    position: absolute;
+    margin: -5px 0 0 -101px;
+    width: 53px;
+    height: 30px;
+    padding-top: 3px;
+}
+
 .control-area {
     position: relative;
     width: 100%;
@@ -339,6 +347,14 @@ footer p {
         margin-top: 10px;
     }
 
+    #audioButton {
+        position: absolute;
+        margin: 75px 0 0 -131px;
+        width: 66px;
+        height: 39px;
+        padding-top: 3px;
+      }
+
     .control-area {
         bottom: -85px;
     }
@@ -467,6 +483,14 @@ footer p {
         margin-top: unset;
     }
 
+    #audioButton {
+        position: absolute;
+        margin: 22px 0 0 -110px;
+        width: 56px;
+        height: 33px;
+        padding-top: 3px;
+      }
+
     .control-area {
         bottom: -30px;
     }
@@ -592,6 +616,15 @@ footer p {
         font-size: 112%;
         margin-top: unset;
     }
+
+    #audioButton {
+        position: absolute;
+        margin: 90px 0 0 -164px;
+        width: 85px;
+        height: 47px;
+        padding-top: 3px;
+        font-size: 150%;
+      }
 
     .control-area {
         bottom: -105px;
