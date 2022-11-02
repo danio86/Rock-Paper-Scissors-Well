@@ -102,7 +102,7 @@ header {
   }
 
 .startBtnBefore {
-    border: 2px solid lawngreen /* rgb(0, 128, 128, 0.8) */;
+    border: 2px solid rgb(124, 252, 0) /* rgb(0, 128, 128, 0.8) */;
     background-color: rgb(1, 200, 200);
     /* background-color: rgb(253, 190, 0); */
 }
@@ -148,7 +148,7 @@ button:hover {
     background-color: rgb(56, 56, 75);
     color: rgb(178, 178, 178);
     cursor: pointer;
-    border: 1px solid rgb(178, 178, 178);;
+    border: 1px solid rgb(178, 178, 178);
 }
 
   #middle-buttons {

@@ -58,11 +58,13 @@ As a demonstration, the player already wins when he has reached 500 points.
 
         - __The Control Area__
 
-            - The control panel contains the start button and the control buttons of the snake for mobile devices (phones, tablets).Users on devices with a keyboard will be more likely to use the keyboard. The start button contains instructions on how to start the game. 
-            - It serves as a user manual and as an intermediate step between the "Game Over Status" and the start of the game. This prevents the end screen ("Game Over" or "You Win") from being clicked away immediately by intuitively continuing to play (a direction key is pressed).
-            - The start button changes color by mouse over and by clicking.
-            - The control button change color by mouse over.
-            - The Control Area idea and basic code is taken form the **Code-Institute Love-Maths-Project** but has been modified.
+            - The control panel contains the start button, the sound button and the control buttons of the snake for mobile devices (phones, tablets).Users on devices with a keyboard will be more likely to use the keyboard. 
+                - The start button contains instructions on how to start the game. 
+                - It serves as a user manual and as an intermediate step between the "Game Over Status" and the start of the game. This prevents the end screen ("Game Over" or "You Win") from being clicked away immediately by intuitively continuing to play (a direction key is pressed).
+                - The start button changes color by mouse over and by clicking.
+                - The sound button allows the user to mute or reactivate all sounds.
+                - The control button change color by mouse over.
+                - The Control Area idea and basic code is taken form the **Code-Institute Love-Maths-Project** but has been modified.
 
         - Control Area Image:<br>
             <img src="assets/images/screenshot-control-area.png" alt="Control Area">
@@ -130,26 +132,24 @@ As a demonstration, the player already wins when he has reached 500 points.
 - user story besed test cases (screenshots):
 
   - As a visiting user, I can easily understand the main purpose of the game. 
-      - Heading, Start Button, Animals
-      <img src="assets/images/screenshot-userstory-whats-the-goal.png" alt="Canvas and Start Button">
+      - Heading, Start Button, Animals<br>
+        <img src="assets/images/screenshot-userstory-whats-the-goal.png" alt="Canvas and Start Button">
 
   - As a visiting user, I can navigate the snake without any problems.
-      - Start Butten (after klicking) keybord, arrow/number buttons
-      <img src="assets/images/screenshot-userstory-what-to-do.png" alt="Control-Area">
+      - Start Butten (after klicking) keybord, arrow/number buttons<br>
+        <img src="assets/images/screenshot-userstory-what-to-do.png" alt="Control-Area">
 
   - As a visiting user, I can learn to navigate the snake more efficiently to earn more points.
-      - User experience. Users get more points.
-      <img src="assets/images/screenshot-userstory-performance.png" alt="Score">
+      - User experience. Users get more points.<br>
+        <img src="assets/images/screenshot-userstory-performance.png" alt="Score">
 
   - As a visiting user, I can easily get information about the company through their social media links.
-      - Footer with social media links.
-      <img src="assets/images/screenshot-footer.png" alt="Footer">
+      - Footer with social media links.<br>
+        <img src="assets/images/screenshot-footer.png" alt="Footer">
 
 
 
 ### Unfixed Bugs
-
- - No Bugs are unfixed.
 
  - There were a a lot of bugs at the beginning. Some have taken hours to resolve. 
   - For example, I could quickly create a new snake part. But I couldn't make it to follow the snake head.
@@ -186,6 +186,12 @@ As a demonstration, the player already wins when he has reached 500 points.
     addImage(img.x, img.y);}
      - function addImage(x, y) {
      ctx.drawImage(document.getElementById(rId), x * cellWidth, y * cellHight, cellWidth+1, cellHight+1);}
+
+ - It was difficult to prevent the snake from turning 180 degrees on the same line. For example, if you press up and right very quickly after going left in advance, the snake will turn on the same line. This happens especially in level 1 when the snake moves slowly. Unfortunately nobody could help me with this problem. Nevertheless, I have practically fixed it by making changes of direction in level 1 only possible with a time delay (many other things have also been tried). The snake reacts with a slight time delay when changing direction. The problem almost never occurs anymore. However, if you force it strongly, you can still cause the bug.
+  - if (direction && e.keyCode == 39 && direction != 'LEFT') {
+            if (document.getElementById('level').innerText == 1) {
+                setTimeout(() => {direction = 'RIGHT';}, 130)
+        } else {direction = 'RIGHT';}
    
 
 ## Deployment
@@ -204,17 +210,18 @@ The live link can be found [here](https://danio86.github.io/Snake-2001/)
 
 ### Content
 
-- Instructions on how to implement form validation on the Login, Sign Up and Sign Up Mistake page was taken from [Code Institute - Love Running Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LR101+2021_T1/courseware/4a07c57382724cfda5834497317f24d5/4d85cd1a2c57485abbd8ccec8c00732c/)
-- All icons were taken from [Font Awesome](https://fontawesome.com/)
-- Font styles were taken from [Google Fonts](https://fonts.googleapis.com)
-- The basic code of the header dropdown menu is taken from the following website, but has been changed. [w3schools](https://www.w3schools.com/howto/howto_css_dropdown.asp)
-- The basic code of the clickable burger button menu is taken from the following website, but has been changed. [Álvaro Trigo](https://alvarotrigo.com/blog/hamburger-menu-css/)
-- The basic code of the slide show is taken from the following website, but has been modified. [Specific YouTube Tutorial](https://www.youtube.com/watch?v=0wvrlOyGlq0)
-- Instructions on how to implement a google map into a website was taken from [Code Institute - Coders Coffeehouse Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+HE101+2020/courseware/fcc67a894619420399970ae84fc4802f/13db720675f94dbca6b0fe79467628ca/)
-- Instructions on how to implement links into the footer was taken from [Code Institute - Love Running Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LR101+2021_T1/courseware/4a07c57382724cfda5834497317f24d5/e6d4cda2bc08458ba94d2092be9bad3a/)
-- Instructions on how to implement Textblocks into Images or maps was taken from [Code Institute - Coders Coffeehouse Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+HE101+2020/courseware/fcc67a894619420399970ae84fc4802f/13db720675f94dbca6b0fe79467628ca/)
-- Instructions on how to center content vertically and horizontally was taken from [w3schools](https://www.w3schools.com/howto/howto_css_center-vertical.asp)
-- The code for the password	confirmation is taken from [Codepen](https://codepen.io/diegoleme/pen/qBpyvr)
+- Instructions on how to implement clickable buttons and keyboard shortcuts and how to connect between HTML, CSS and Javascript were taken from Code Institute - Love Maths project. [Code Institute - Love Running Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/234519d86b76411aa181e76a55dabe70/)
+
+- The basic code of the canvas playingfield and how to implement images into canvas is taken from the following website, but has been changed. [w3schools](https://www.w3schools.com/html/html5_canvas.asp)
+- Basic functions inside the Canvas (how the snake moves, grows) were taken from the following website.[Specific YouTube Tutorial](https://www.youtube.com/watch?v=niD3gx4BI9A&t=4505s)
+- Basic functions inside the Canvas (how moving and drawing functions are constantly repeat or how they are called in specific time frames) is taken from the following websit.[Specific YouTube Tutorial](https://www.youtube.com/watch?v=7Azlj0f9vas)
+- Instructions needed for the score counter (for loops, if statements)  were taken from were taken from [Code Institute - Javascript - Lectures](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LMR101+2021_T1/courseware/73e9c0413ead4a21b389e33c77706102/82c33b8076b04831ab06d60299e57d8d/)
+- Instructions on how to implement links into the footer were taken from [Code Institute - Love Running Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LR101+2021_T1/courseware/4a07c57382724cfda5834497317f24d5/e6d4cda2bc08458ba94d2092be9bad3a/)
+- Instructions on how to implement sound and soundeffects were taken from [Go Make Things ](https://gomakethings.com/how-to-play-a-sound-with-javascript/)
+- Instructions on how to implement sound mute functions were taken from [w3schools](https://www.w3schools.com/jsref/prop_audio_paused.asp)
+- Images were edited (scaled (only favicon) and transparencies)  with a free software [GIMP](https://www.gimp.org/)
+- Images were edited (scaled)  with a free software [Microsoft Paint](https://apps.microsoft.com/store/detail/paint/9PCFS5B6T72H?hl=en-us&gl=us)
+- Sounds were converted to mp3 with free online converter [123apps](https://online-audio-converter.com/de/)
 
 - Color-Scheme
   <img src="assets/images/color-scheme.png" alt="Color Scheme">
@@ -227,8 +234,9 @@ Because these images have not been purchased, they are not legally commercially 
 
 - All Sounds are from Open Source sites [pixabay](https://pixabay.com/de/sound-effects/), [mixkit](https://mixkit.co/free-sound-effects/)
 
+- All icons were taken from [Font Awesome](https://fontawesome.com/)
 
-
+- Font styles were taken from [Google Fonts](https://fonts.google.com/)
 
 
 
