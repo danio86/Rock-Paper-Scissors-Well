@@ -184,6 +184,10 @@ function placeFood() {
     lion = {x: lionX, y: lionY};
 } */
 
+/**
+ * Function places Images inside the canvas
+ * * randomly exactly on a canvas cell by creating random x and y coordinates.
+ */
 function placeImg() {
     let imgY = Math.floor(Math.random() * row);
     let imgX = Math.floor(Math.random() * col);
@@ -191,32 +195,27 @@ function placeImg() {
     img = {x: imgX, y: imgY};
 }
 
+/**
+ * Function counts scroe, record, increases the level and speed and ends the game in case of success.
+ */
 function scoreCounter(n) {
-    /* console.log('caled!') */
     let oldScore = parseInt(document.getElementById('score').innerText);
-    /* let level = parseInt(document.getElementById('level').innerText); */
+    //gets first score (0) from html
     let oR = 0;
-    /* console.log(record, 'test'); */
+    //defines old Record (at the beginning)
     document.getElementById('score').innerText = oldScore + n;
     let oldRecord = oldScore + n;
-    /* console.log(oldRecord, 'test'); */
+    //defines that current Record is old Record + n (depends on which animal has been eaten)
     newRecord.push(oldRecord);
-    /* console.log(newRecord, 'check') */
-    /* if (newRecord[0] > oR) {
-        return oR + newRecord[0];
-    } */
+    //calculated record gets pushed in a list (newRecord was defined at the global var part of this script)
     
     if (oldScore >= 90 && oldScore <= 240) {
-        /* console.log(oR, 'DB'); */
         document.getElementById('level').innerText = 2;
         speed = 150;
-        /* setInterval(gameLoop, 150); */
-        /* console.log(speed, 'l2'); */
     } else if (oldScore >= 240) {
         console.log(soundL3, 's3')
         document.getElementById('level').innerText = 3;
         speed = 100;
-        /* console.log(speed, 'l3'); */
         if (soundL3 == true) {
             finalSound.play();
         }
@@ -230,7 +229,6 @@ function scoreCounter(n) {
 
     //game ends positivly! User is Winner!
     if (oldScore >= 500) {
-        /* console.log(oldScore, 'wie viel?'); */
         win = true;
         soundStop = false;
         attention = false;
@@ -248,13 +246,14 @@ function scoreCounter(n) {
         document.getElementById('level').innerText = 1;
         document.getElementById('startKey').setAttribute('class', '');
         document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
-        /* console.log(document.getElementById('level').innerText) */
         speed = 180;
+
+        //all values in newRecord list are checked, the largest value is current record.
         for (let i=0; i<newRecord.length; i++){
             if (newRecord[i]>largest) {
                 largest=newRecord[i];
-                /* console.log(largest, 'please') */
             }
+            //current record is given back to html
             document.getElementById('record').innerText = largest;
         }
     }
@@ -266,18 +265,12 @@ function scoreCounter(n) {
     if (newRecord[0] > oR) {
         return oR + newRecord[0];
     }
-    
-    /* if (oldScore >= 40 && soundL3 == true) {
-        sounds(3);
-        soundL3 = false;
-    } */
-    /* if (oldScore >= 40) {
-        finalSound.play();
-    } */
-
-    
 }
 
+/**
+ * If the number of pieces is >0 the funktion is executed
+ * * The last piece is targeted and the position gets changed to the position of it's frontpiece.
+ */
 function snakeGrowth() {
     for (let i = snake.length - 1; i > 0; i--) {
         let piece = snake[i];
@@ -285,22 +278,23 @@ function snakeGrowth() {
         piece.x = frontPiece.x;
         piece.y = frontPiece.y;
     }
-}//if the number of pieces is >0 the funktion is executed.
-//the last piece is targeted and the position gets changed to 
-// the position of it's frontpiece.
+}
 
+/**
+ * All conditions of snake Game Over (Snake hits wall or it self)
+ * * All conditions and carnvas (speed, sound, walls) are turnd back to level 1.
+ */
 function gameEnd() {
     let snakeHead = snake[0];
     let snakeBody = snake.slice(2);
     let sameCoordinares = snakeBody.find(part => part.x == snakeHead.x && part.y == snakeHead.y);
     //array.find(or forEach)(part =>) works like a loop: For each part do(in this case find) something
+    // and check if there are same parts.
     
     if (document.getElementById('level').innerText == 3 && snake[0].x == col/2 || 
     document.getElementById('level').innerText == 3 && snake[0].x == col/2 - 1 && direction == 'RIGHT'||
     document.getElementById('level').innerText == 3 && snake[0].y == row/2 - 1 && direction == 'DOWN'||
-    document.getElementById('level').innerText == 3 && snake[0].y == row/2 /* || 
-    document.getElementById('level').innerText == 3 && direction == 'LEFT' && snake[0].x == col/2 ||
-    document.getElementById('level').innerText == 3 && direction == 'UP' && snake[0].y == row/2 */) {
+    document.getElementById('level').innerText == 3 && snake[0].y == row/2) {
         direction = false;
         gameOver = true;
         sounds(3);
@@ -309,7 +303,6 @@ function gameEnd() {
         attention = false;
         attentionSound = true;
         finalSound.pause();
-        /* sounds(); */
         placeFood();
         /* placeElephant();
         placeLion(); */
@@ -333,10 +326,9 @@ function gameEnd() {
     if (snake[0].x > col - 1 ||
         snake[0].x < 0 ||
         snake[0].y > row - 1 ||
-        snake[0].y < 0 /* ||
-        sameCoordinares */  //this would ask if the variable has a value of true
+        snake[0].y < 0
+        //sameCoordinares > this would ask if the variable has a value of true
     ) {
-        /* direction = 'LEFT' */
         direction = false;
         gameOver = true;
         sounds(3);
@@ -355,21 +347,16 @@ function gameEnd() {
         document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
         console.log(document.getElementById('level').innerText);
         speed = 180;
-        /* console.log(speed, 'end1') */
-        /* document.getElementById('record').innerText */
         
         for (let i=0; i<newRecord.length; i++){
             if (newRecord[i]>largest) {
                 largest=newRecord[i];
-                /* console.log(largest, 'please') */
             }
             document.getElementById('record').innerText = largest;
         }
-        /* alert('Game Over!') */
     }// if snake touches a wall
 
     if (sameCoordinares) {
-        /* direction = 'LEFT' */
         direction = false;
         gameOver = true;
         sounds(3);
@@ -394,14 +381,17 @@ function gameEnd() {
             }
             document.getElementById('record').innerText = largest;
         }
-        /* alert('Game Over!') */
     }// if snake bites itself
-
-      
 }
 
 
 //#######################Game Loop: ############################
+/**
+ * The loop repeats freaklently
+ * * calls gameEnd, snakeGrowth, makes snake move in klicked direction
+ * * makes snake eat food, calles replace food if eaten
+ * * calls draw wall in level3
+ */
 function gameLoop() {
     gameEnd();
     snakeGrowth();
@@ -427,14 +417,13 @@ function gameLoop() {
         scoreCounter(10);
         placeFood();
         sounds(0);
-        /* gulpSound.play; */
         gotFood = true;
         if (gotFood) {
             snake = [
                 { x: snake[0].x, y: snake[0].y },
                 ...snake
             ];//...snake instead {x: snake[0].x, y:snake[0].y}
-            //works like a loop which adds {x: snake[0].x, y:snake[0].y}
+            //works like a loop which adds {x: snake[0].x, y:snake[0].y} to snake list
             //if condition is true.
         }
     }// if snake-head is at the same pos like food > food get placed on an other pos.
@@ -450,6 +439,7 @@ function gameLoop() {
                 ...snake
             ];
         }
+        //if specific animal is eaten > user gets specific number of points.
         if (rId === 1) {
             scoreCounter(20);
             rId = Math.floor(Math.random() * 3) + 1;
@@ -470,7 +460,7 @@ function gameLoop() {
     if (document.getElementById('level').innerText == 3 && food.x == 15 ||
         document.getElementById('level').innerText == 3 && food.y == 15) {
             placeFood(); // In level 3 food should not be placed in the wall.
-
+            // images can be placed inside the wall but images move anyway.
     }
     /* ----------------possible bugs end---------------------  */
 
@@ -487,7 +477,7 @@ function gameLoop() {
         document.getElementById('game-area').setAttribute('class', 'game-area-start');
     }
 
-    //level3: Snake can go through wall
+    //level3: Snake can go through outer wall
     if (document.getElementById('level').innerText == 3 && snake[0].x > col - 1) {
             snake[0] = {x: 0, y: snake[0].y};
     }
@@ -512,10 +502,16 @@ document.addEventListener('keydown', keyPress);
 
 document.addEventListener('DOMContentLoaded', function () {
     let buttons = document.getElementsByTagName('button');
+    //this creates a list of all buttons in html
 
     for (let button of buttons) {
         button.addEventListener('click', clickDirection);
     }
+
+    /**
+     * if button with specific ID is cklicked:
+     * * direction changes, optical things change(Texts remove), sound changes 
+     */
     function clickDirection() {
         if (this.getAttribute('id') === 'startKey' && direction == false) {
             direction = true;
@@ -546,8 +542,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-
-
+/**
+     * if keybord button with specific keyCode is cklicked:
+     * * direction changes, optical things change(Texts remove), sound changes 
+     */
 function keyPress(e) {
     if (direction == false && e.keyCode == 32) {
         direction = true;
@@ -556,7 +554,6 @@ function keyPress(e) {
         sounds(5);
         document.getElementById('startKey').innerText = 'Press an arrow key!';
         document.getElementById('startKey').setAttribute('class', 'startBtnBefore');
-        /* console.log(direction, 'dir-test2') */
     }
 
     if (e.keyCode == 16) {
@@ -574,13 +571,7 @@ function keyPress(e) {
                 setTimeout(() => {direction = 'LEFT';}, 80)
             }
         else {direction = 'LEFT';}
-            /* avoidBackwarts.unshift('LEFT');
-            console.log(avoidBackwarts, 'L?')
-            if (document.getElementById('level').innerText == 1 && avoidBackwarts[2] == 'RIGHT' ) {
-                    setTimeout(() => {direction = 'LEFT';}, 500)
-            } else {direction = 'LEFT';} */
-            /* direction = 'LEFT'; */
-            document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
         }
 
         if (direction && e.keyCode == 38 && direction != 'DOWN') {
@@ -590,14 +581,9 @@ function keyPress(e) {
                 setTimeout(() => {direction = 'UP';}, 80)
             }
         else {direction = 'UP';}
-            /* avoidBackwarts.unshift('UP');
-            console.log(avoidBackwarts, 'U?')
-            if (document.getElementById('level').innerText == 1 && avoidBackwarts[2] == 'DOWN' ) {
-                    setTimeout(() => {direction = 'UP';}, 500)
-            } else {direction = 'UP';} */
-            /* direction = 'UP'; */
-            document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
         }
+
         if (direction && e.keyCode == 39 && direction != 'LEFT') {
             if (document.getElementById('level').innerText == 1) {
                 setTimeout(() => {direction = 'RIGHT';}, 140)
@@ -605,13 +591,7 @@ function keyPress(e) {
                     setTimeout(() => {direction = 'RIGHT';}, 80)
             }
         else {direction = 'RIGHT';}
-            /* avoidBackwarts.unshift('RIGHT');
-            console.log(avoidBackwarts, 'R?')
-            if (document.getElementById('level').innerText == 1 && avoidBackwarts[2] == 'LEFT' ) {
-                    setTimeout(() => {direction = 'RIGHT';}, 500)
-            } else {direction = 'RIGHT';} */
-            /* direction = 'RIGHT'; */
-            document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
         }
 
         if (direction && e.keyCode == 40 && direction != 'UP') {
@@ -621,12 +601,6 @@ function keyPress(e) {
                 setTimeout(() => {direction = 'DOWN';}, 80)
             }
         else {direction = 'DOWN';}
-            /* avoidBackwarts.unshift('DOWN');
-            console.log(avoidBackwarts, 'D?')
-            if (document.getElementById('level').innerText == 1 && avoidBackwarts[2] == 'UP') {
-                    setTimeout(() => {direction = 'DOWN';}, 500)
-            } else {direction = 'DOWN';} */
-            /* direction = 'DOWN'; */
-            document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
         }
 }
