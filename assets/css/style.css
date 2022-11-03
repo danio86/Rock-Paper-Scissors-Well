@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&family=Roboto+Mono&family=Rubik&display=swap');
+
 /* --------- Global style ---------  */
 * {
     margin: 0;
     padding: 0;
     border: none;
-    
+
 }
 
 body {
     font-family: Courier, sans-serif;
-    text-align: center;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -24,13 +24,11 @@ body {
     background-size: 480px;
     background-size: 610px;
     background-position: top;
-    /* background-position-y: -95px; */
     border-radius: 10px;
 }
 
 header {
     color: whitesmoke;
-    /* background-color: rgb(0, 128, 128, 0.8); */
 }
 
 
@@ -39,7 +37,6 @@ header {
     height: auto;
     float: left;
     margin: -84px 0 0 -55px;
-    /* background-color: teal; */
     position: absolute;
 
 }
@@ -60,7 +57,6 @@ header {
 }
 
 .heading {
-    /* float: right; */
     font-size: 150%;
     background-color: rgb(57, 59, 74);
     width: 64%;
@@ -70,12 +66,10 @@ header {
 #game-area {
     width: 200px;
     height: 200px;
-    
+
 }
 
 .game-area-start {
-    /* width: 365px;
-    height: 338px; */
     border: 10px solid rgb(88, 98, 78);
     box-shadow: black 0px 10px 50px;
     border-radius: 10px;
@@ -85,7 +79,7 @@ header {
     border: 10px solid transparent;
     border-image-repeat: round;
     border-image-slice: 50;
-    border-image-source:url(../images/rainforest.png); 
+    border-image-source: url(../images/rainforest.png);
     border-radius: 10px;
 }
 
@@ -99,12 +93,11 @@ header {
     height: auto;
     text-transform: uppercase;
     font-size: 50%;
-  }
+}
 
 .startBtnBefore {
-    border: 2px solid rgb(124, 252, 0) /* rgb(0, 128, 128, 0.8) */;
+    border: 2px solid rgb(124, 252, 0);
     background-color: rgb(1, 200, 200);
-    /* background-color: rgb(253, 190, 0); */
 }
 
 .startbtnAfter {
@@ -151,21 +144,9 @@ button:hover {
     border: 1px solid rgb(178, 178, 178);
 }
 
-  #middle-buttons {
-    /* position: relative; */
+#middle-buttons {
     top: -21px;
 }
-
-/* #up { */
-    /* margin: 25px; */
-    /* position: relative; */
-    /* top: 50px;
-    left: 225px; */
-    /* width: 91px;
-    height: 47px;
-    border-radius: 45px; */
-    /* background-color: rgb(200 195 195); */
-/* } */
 
 #left {
     right: 43px;
@@ -181,19 +162,15 @@ button:hover {
 
 footer {
     position: inherit;
-    /* bottom: -34px; */
     width: 100%;
-    /* background-color: rgb(0, 128, 128, 0.8); */
     text-align: center;
     font-size: 72%;
-    /* margin-top: 34px; */
 }
 
 footer li {
     list-style: none;
     display: inline;
     margin: 0px 5px;
-    /* background-color: gray; */
     font-size: 150%;
 }
 
@@ -202,7 +179,6 @@ footer a {
 }
 
 footer p {
-    /* padding-top: 0px; */
     margin-bottom: -23px;
     color: whitesmoke;
     margin-top: 33px;
@@ -216,9 +192,7 @@ footer p {
     color: black;
     height: 22px;
     width: 50px;
-    /* font-size: 31px; */
     padding-top: 5px;
-    /* left: -40px; */
 }
 
 #twitter {
@@ -230,7 +204,6 @@ footer p {
     left: 1px;
     height: 22px;
     width: 50px;
-    /* font-size: 31px; */
     padding-top: 5px;
 }
 
@@ -243,7 +216,6 @@ footer p {
     left: -4px;
     height: 22px;
     width: 50px;
-    /* font-size: 31px; */
     padding-top: 5px;
 }
 
@@ -257,49 +229,18 @@ footer p {
 }
 
 
-
-/* 270px - */
-/* @media screen and (min-width: 270px) {
-    #facebook {
-        left: -11px;
-        top: -13px;
-    }
-
-    #twitter {
-        top: -25px;
-        left: 21px;
-    }
-
-    #instagram {
-        top: -23px;
-        left: -44px;
-    }
-
-    footer p {
-        margin-bottom: -20px;
-        font-size: 95%;
-    }
-
-}
- */
-/* @media screen and (min-width: 320px) {
-    #the-whole-thing {
-        background-position-y: 50;
-    }
-} */
 /*Media queries*/
 /*everything coded in ths area is only applied for those screens. For bigger screen width than ...*/
 /* 400px - */
 @media screen and (min-width: 400px) {
     #the-whole-thing {
-        /* margin: 50px 0; */
         width: 400px;
         height: 800px;
         background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat;
         background-size: 480px;
         background-size: 800px;
         background-position: top;
-        
+
     }
 
     header {
@@ -328,7 +269,7 @@ footer p {
 
     .score-area p {
         margin: 0 6px;
-      }
+    }
 
     #game-area {
         width: 260px;
@@ -355,7 +296,7 @@ footer p {
         height: 39px;
         padding-top: 3px;
         font-size: 140%;
-      }
+    }
 
     .control-area {
         bottom: -85px;
@@ -388,13 +329,11 @@ footer p {
     }
 
     footer {
-        /* bottom: -128px; */
         margin-top: 128px;
     }
 
     footer p {
         padding-top: 5px;
-        /* margin-bottom: unset; */
         font-size: 127%;
     }
 
@@ -454,7 +393,6 @@ footer p {
         float: right;
         font-size: 118%;
         margin: 51px 123px 0 0;
-        /* background-color: unset; */
         width: unset;
     }
 
@@ -465,7 +403,7 @@ footer p {
 
     .score-area p {
         margin: 0px 6px;
-      }
+    }
 
     #game-area {
         width: 250px;
@@ -491,7 +429,7 @@ footer p {
         width: 56px;
         height: 33px;
         padding-top: 3px;
-      }
+    }
 
     .control-area {
         bottom: -30px;
@@ -584,10 +522,7 @@ footer p {
 
     .heading {
         float: unset;
-        /* font-size: 110%; */
-        /* margin: 17px 69px 0 0; */
         background-color: unset;
-        /* width: fit-content; */
         clear: both;
         margin: 0 auto;
     }
@@ -626,7 +561,7 @@ footer p {
         height: 47px;
         padding-top: 3px;
         font-size: 150%;
-      }
+    }
 
     .control-area {
         bottom: -105px;
@@ -654,7 +589,6 @@ footer p {
     }
 
     footer {
-        /* bottom: -162px; */
         height: 88px;
         margin-top: 161px;
     }

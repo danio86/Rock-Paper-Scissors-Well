@@ -5,9 +5,10 @@ let ctx = canvas.getContext('2d');
 //ctx is an Object in the Game Area. getContext(2d) allows us to drwaw in 2d in the cavas(game-area)
 
 //Things inside the Canvas
-let snake = [
-    { x: 25, y: 2 }
-];
+let snake = [{
+    x: 25,
+    y: 2
+}];
 //an array of jsons is 1 element/value
 let img;
 let food;
@@ -46,8 +47,9 @@ let mute = false;
  * Sound out of playlist number s (depends on occurrence) is played or muted if sound button is clicked.
  */
 function sounds(s) {
-    let playlist = ['assets/sounds/bite.mp3', 'assets/sounds/goodresult-82807.mp3', 
-            'assets/sounds/success.mp3', 'assets/sounds/game-over.mp3', 'assets/sounds/alarm.mp3', 'assets/sounds/yeah.mp3' ];
+    let playlist = ['assets/sounds/bite.mp3', 'assets/sounds/goodresult-82807.mp3',
+        'assets/sounds/success.mp3', 'assets/sounds/game-over.mp3', 'assets/sounds/alarm.mp3', 'assets/sounds/yeah.mp3'
+    ];
     let sound = new Audio(playlist[s]);
     sound.play(sound);
 
@@ -60,27 +62,25 @@ function sounds(s) {
  * Both functions are called if sound button is clicked. If clicked sound button calls the other function.
  * * This is achieved by changing classes.
  */
-function playAudio() { 
+function playAudio() {
     mute = false;
     soundL3 = true;
     document.getElementById('audioButton').setAttribute('onclick', 'pauseAudio()');
     document.getElementById('soundOff').setAttribute('class', 'fas fa-stop-circle soundOff');
     document.getElementById('soundOn').setAttribute('class', 'fas fa-play-circle');
-  } 
-  
-function pauseAudio() { 
+}
+
+function pauseAudio() {
     mute = true;
     soundL3 = false;
     finalSound.pause();
     document.getElementById('audioButton').setAttribute('onclick', 'playAudio()');
     document.getElementById('soundOff').setAttribute('class', 'fas fa-stop-circle');
     document.getElementById('soundOn').setAttribute('class', 'fas fa-play-circle soundOn');
-  } 
+}
 
 
 placeFood();
-/* placeElephant();
-placeLion(); */
 placeImg();
 setInterval(placeImg, 8000);
 //placeImg is called every 8000ms (the higher the nummer the slowlier)
@@ -93,7 +93,9 @@ function addCube(x, y) {
     ctx.fillRect(x * cellWidth, y * cellHight, cellWidth - 1, cellHight - 1);
     if (snake.length > 1) {
         ctx.fillStyle = 'blue';
-    } else { ctx.fillStyle = 'yellow'; }
+    } else {
+        ctx.fillStyle = 'yellow';
+    }
 }
 
 /**
@@ -101,7 +103,7 @@ function addCube(x, y) {
  * * wich animal is random by random ID createt at the global var part of this script.
  */
 function addImage(x, y) {
-    ctx.drawImage(document.getElementById(rId), x * cellWidth, y * cellHight, cellWidth+1, cellHight+1);
+    ctx.drawImage(document.getElementById(rId), x * cellWidth, y * cellHight, cellWidth + 1, cellHight + 1);
 }
 
 /**
@@ -122,29 +124,29 @@ function draw() {
 
     //Wall
     if (document.getElementById('level').innerText == 3) {
-        ctx.drawImage(document.getElementById('fire'), canvas.width/2, 0, cellWidth, canvas.height);
-        ctx.drawImage(document.getElementById('fire'), 0, canvas.height/2, canvas.width, cellHight);
+        ctx.drawImage(document.getElementById('fire'), canvas.width / 2, 0, cellWidth, canvas.height);
+        ctx.drawImage(document.getElementById('fire'), 0, canvas.height / 2, canvas.width, cellHight);
     }
 
     //Attention - Wall
     if (attention == true) {
         ctx.fillStyle = 'rgb(255, 255, 255 , 0.2)';
-        ctx.fillRect(canvas.width/2, 0, cellWidth, canvas.height);
+        ctx.fillRect(canvas.width / 2, 0, cellWidth, canvas.height);
         ctx.fillStyle = 'rgb(255, 255, 255 , 0.2)';
-        ctx.fillRect(0, canvas.height/2, canvas.width, cellHight);
+        ctx.fillRect(0, canvas.height / 2, canvas.width, cellHight);
     }
 
     //Text
     if (gameOver) {
         ctx.fillStyle = 'red';
         ctx.font = "30px Courier";
-        ctx.fillText("Game Over!", canvas.width/4, canvas.height/2);
+        ctx.fillText("Game Over!", canvas.width / 4, canvas.height / 2);
     }
 
-    if (win){
-        ctx.drawImage(document.getElementById('win'), canvas.width/33.3, canvas.height/8, 300, 100);
+    if (win) {
+        ctx.drawImage(document.getElementById('win'), canvas.width / 33.3, canvas.height / 8, 300, 100);
         gameEnd();
-    } 
+    }
 
     //Snake
     ctx.fillStyle = 'rgb(253, 190, 0)';
@@ -166,23 +168,12 @@ function placeFood() {
     let foodY = Math.floor(Math.random() * row);
     let foodX = Math.floor(Math.random() * col);
 
-    food = {x: foodX, y: foodY};
+    food = {
+        x: foodX,
+        y: foodY
+    };
     //{x:..,y:..} this is 1 value called json! withs this a var can have '2' values!
-}// places the food object randomly in Game Area
-
-/* function placeElephant() {
-    let elephantY = Math.floor(Math.random() * row);
-    let elephantX = Math.floor(Math.random() * col);
-
-    elephant = {x: elephantX, y: elephantY};
-} */
-
-/* function placeLion() {
-    let lionY = Math.floor(Math.random() * row);
-    let lionX = Math.floor(Math.random() * col);
-
-    lion = {x: lionX, y: lionY};
-} */
+} // places the food object randomly in Game Area
 
 /**
  * Function places Images inside the canvas
@@ -191,8 +182,10 @@ function placeFood() {
 function placeImg() {
     let imgY = Math.floor(Math.random() * row);
     let imgX = Math.floor(Math.random() * col);
-
-    img = {x: imgX, y: imgY};
+    img = {
+        x: imgX,
+        y: imgY
+    };
 }
 
 /**
@@ -208,7 +201,7 @@ function scoreCounter(n) {
     //defines that current Record is old Record + n (depends on which animal has been eaten)
     newRecord.push(oldRecord);
     //calculated record gets pushed in a list (newRecord was defined at the global var part of this script)
-    
+
     if (oldScore >= 90 && oldScore <= 240) {
         document.getElementById('level').innerText = 2;
         speed = 150;
@@ -236,11 +229,12 @@ function scoreCounter(n) {
         finalSound.pause();
         direction = false;
         placeFood();
-        /* placeElephant();
-        placeLion(); */
         placeImg();
         sounds(2);
-        snake = [{ x: 25, y: 2 }];
+        snake = [{
+            x: 25,
+            y: 2
+        }];
         oldScore = 0;
         document.getElementById('score').innerText = oldScore;
         document.getElementById('level').innerText = 1;
@@ -249,9 +243,9 @@ function scoreCounter(n) {
         speed = 180;
 
         //all values in newRecord list are checked, the largest value is current record.
-        for (let i=0; i<newRecord.length; i++){
-            if (newRecord[i]>largest) {
-                largest=newRecord[i];
+        for (let i = 0; i < newRecord.length; i++) {
+            if (newRecord[i] > largest) {
+                largest = newRecord[i];
             }
             //current record is given back to html
             document.getElementById('record').innerText = largest;
@@ -260,7 +254,7 @@ function scoreCounter(n) {
     if (oldScore >= 90 && soundStop == false) {
         sounds(1);
         soundStop = true;
-    } 
+    }
 
     if (newRecord[0] > oR) {
         return oR + newRecord[0];
@@ -290,11 +284,11 @@ function gameEnd() {
     let sameCoordinares = snakeBody.find(part => part.x == snakeHead.x && part.y == snakeHead.y);
     //array.find(or forEach)(part =>) works like a loop: For each part do(in this case find) something
     // and check if there are same parts.
-    
-    if (document.getElementById('level').innerText == 3 && snake[0].x == col/2 || 
-    document.getElementById('level').innerText == 3 && snake[0].x == col/2 - 1 && direction == 'RIGHT'||
-    document.getElementById('level').innerText == 3 && snake[0].y == row/2 - 1 && direction == 'DOWN'||
-    document.getElementById('level').innerText == 3 && snake[0].y == row/2) {
+
+    if (document.getElementById('level').innerText == 3 && snake[0].x == col / 2 ||
+        document.getElementById('level').innerText == 3 && snake[0].x == col / 2 - 1 && direction == 'RIGHT' ||
+        document.getElementById('level').innerText == 3 && snake[0].y == row / 2 - 1 && direction == 'DOWN' ||
+        document.getElementById('level').innerText == 3 && snake[0].y == row / 2) {
         direction = false;
         gameOver = true;
         sounds(3);
@@ -304,10 +298,11 @@ function gameEnd() {
         attentionSound = true;
         finalSound.pause();
         placeFood();
-        /* placeElephant();
-        placeLion(); */
         placeImg();
-        snake = [{ x: 25, y: 2 }];
+        snake = [{
+            x: 25,
+            y: 2
+        }];
         document.getElementById('score').innerText = oldScore;
         document.getElementById('level').innerText = 1;
         document.getElementById('startKey').setAttribute('class', '');
@@ -315,9 +310,9 @@ function gameEnd() {
         console.log(document.getElementById('level').innerText);
         speed = 180;
         document.getElementById('game-area').setAttribute('class', 'game-area-start');
-        for (let i=0; i<newRecord.length; i++){
-            if (newRecord[i]>largest) {
-                largest=newRecord[i];
+        for (let i = 0; i < newRecord.length; i++) {
+            if (newRecord[i] > largest) {
+                largest = newRecord[i];
             }
             document.getElementById('record').innerText = largest;
         }
@@ -337,24 +332,25 @@ function gameEnd() {
         attentionSound = true;
         finalSound.pause();
         placeFood();
-        /* placeElephant();
-        placeLion(); */
         placeImg();
-        snake = [{ x: 25, y: 2 }];
+        snake = [{
+            x: 25,
+            y: 2
+        }];
         document.getElementById('score').innerText = oldScore;
         document.getElementById('level').innerText = 1;
         document.getElementById('startKey').setAttribute('class', '');
         document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
         console.log(document.getElementById('level').innerText);
         speed = 180;
-        
-        for (let i=0; i<newRecord.length; i++){
-            if (newRecord[i]>largest) {
-                largest=newRecord[i];
+
+        for (let i = 0; i < newRecord.length; i++) {
+            if (newRecord[i] > largest) {
+                largest = newRecord[i];
             }
             document.getElementById('record').innerText = largest;
         }
-    }// if snake touches a wall
+    } // if snake touches a wall
 
     if (sameCoordinares) {
         direction = false;
@@ -365,23 +361,24 @@ function gameEnd() {
         attentionSound = true;
         finalSound.pause();
         placeFood();
-        /* placeElephant();
-        placeLion(); */
         placeImg();
-        snake = [{ x: 25, y: 2 }];
+        snake = [{
+            x: 25,
+            y: 2
+        }];
         document.getElementById('level').innerText = 1;
         document.getElementById('startKey').setAttribute('class', '');
         document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
         speed = 180;
         console.log(speed, 'end2');
         document.getElementById('score').innerText = oldScore;
-        for (let i=0; i<newRecord.length; i++){
-            if (newRecord[i]>largest) {
-                largest=newRecord[i];
+        for (let i = 0; i < newRecord.length; i++) {
+            if (newRecord[i] > largest) {
+                largest = newRecord[i];
             }
             document.getElementById('record').innerText = largest;
         }
-    }// if snake bites itself
+    } // if snake bites itself
 }
 
 
@@ -397,20 +394,12 @@ function gameLoop() {
     snakeGrowth();
     if (direction == 'LEFT') {
         snake[0].x--; //-1 does not work!
-        /* gameOver = false;
-        win = false; */
     } else if (direction == 'RIGHT') {
         snake[0].x++;
-        /* gameOver = false;
-        win = false; */
     } else if (direction == 'DOWN') {
         snake[0].y++;
-        /* gameOver = false;
-        win = false; */
-    } else if(direction == 'UP') {
+    } else if (direction == 'UP') {
         snake[0].y--;
-        /* gameOver = false;
-        win = false; */
     }
 
     if (snake[0].x == food.x && snake[0].y == food.y) {
@@ -419,14 +408,16 @@ function gameLoop() {
         sounds(0);
         gotFood = true;
         if (gotFood) {
-            snake = [
-                { x: snake[0].x, y: snake[0].y },
+            snake = [{
+                    x: snake[0].x,
+                    y: snake[0].y
+                },
                 ...snake
-            ];//...snake instead {x: snake[0].x, y:snake[0].y}
+            ]; //...snake instead {x: snake[0].x, y:snake[0].y}
             //works like a loop which adds {x: snake[0].x, y:snake[0].y} to snake list
             //if condition is true.
         }
-    }// if snake-head is at the same pos like food > food get placed on an other pos.
+    } // if snake-head is at the same pos like food > food get placed on an other pos.
     // and skake growth and counter grows.
 
     if (snake[0].x == img.x && snake[0].y == img.y) {
@@ -434,8 +425,10 @@ function gameLoop() {
         sounds(0);
         gotImg = true;
         if (gotImg) {
-            snake = [
-                {x: snake[0].x, y: snake[0].y},
+            snake = [{
+                    x: snake[0].x,
+                    y: snake[0].y
+                },
                 ...snake
             ];
         }
@@ -455,12 +448,12 @@ function gameLoop() {
     /* ----------------possible bugs:---------------------  */
     if (img.x == food.x && img.y == food.y) {
         placeImg();
-    }// food and animals should not be on the same place
+    } // food and animals should not be on the same place
 
     if (document.getElementById('level').innerText == 3 && food.x == 15 ||
         document.getElementById('level').innerText == 3 && food.y == 15) {
-            placeFood(); // In level 3 food should not be placed in the wall.
-            // images can be placed inside the wall but images move anyway.
+        placeFood(); // In level 3 food should not be placed in the wall.
+        // images can be placed inside the wall but images move anyway.
     }
     /* ----------------possible bugs end---------------------  */
 
@@ -471,7 +464,7 @@ function gameLoop() {
     }
 
     if (document.getElementById('level').innerText == 3) {
-        document.getElementById('game-area').setAttribute('class', 'game-area-start game-area-L3'); 
+        document.getElementById('game-area').setAttribute('class', 'game-area-start game-area-L3');
         // this adds a second class to canvas(Game Area)
     } else {
         document.getElementById('game-area').setAttribute('class', 'game-area-start');
@@ -479,18 +472,30 @@ function gameLoop() {
 
     //level3: Snake can go through outer wall
     if (document.getElementById('level').innerText == 3 && snake[0].x > col - 1) {
-            snake[0] = {x: 0, y: snake[0].y};
+        snake[0] = {
+            x: 0,
+            y: snake[0].y
+        };
     }
     if (document.getElementById('level').innerText == 3 && snake[0].x < 0) {
-        snake[0] = {x: 29, y: snake[0].y};
+        snake[0] = {
+            x: 29,
+            y: snake[0].y
+        };
     }
     if (document.getElementById('level').innerText == 3 && snake[0].y > row - 1) {
-    snake[0] = { x: snake[0].x, y: 0};
+        snake[0] = {
+            x: snake[0].x,
+            y: 0
+        };
     }
     if (document.getElementById('level').innerText == 3 && snake[0].y < 0) {
-    snake[0] = { x: snake[0].x, y: 29 };
+        snake[0] = {
+            x: snake[0].x,
+            y: 29
+        };
     }
-    
+
     setTimeout(gameLoop, speed);
     //the gameLoop runns all 180ms at the beginning
 }
@@ -543,9 +548,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /**
-     * if keybord button with specific keyCode is cklicked:
-     * * direction changes, optical things change(Texts remove), sound changes 
-     */
+ * if keybord button with specific keyCode is cklicked:
+ * * direction changes, optical things change(Texts remove), sound changes 
+ */
 function keyPress(e) {
     if (direction == false && e.keyCode == 32) {
         direction = true;
@@ -564,43 +569,68 @@ function keyPress(e) {
         pauseAudio();
     }
 
-        if (direction && e.keyCode == 37 && direction != 'RIGHT') {
-            if (document.getElementById('level').innerText == 1) {
-                setTimeout(() => {direction = 'LEFT';}, 140)
-            } if (document.getElementById('level').innerText == 2) {
-                setTimeout(() => {direction = 'LEFT';}, 80)
-            }
-        else {direction = 'LEFT';}
-        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+    if (direction && e.keyCode == 37 && direction != 'RIGHT') {
+        if (document.getElementById('level').innerText == 1) {
+            setTimeout(() => {
+                direction = 'LEFT';
+            }, 140)
+            //slowes down the reaction after clicking to prevent snake of 180 degrees direction change on the same line
         }
+        if (document.getElementById('level').innerText == 2) {
+            setTimeout(() => {
+                direction = 'LEFT';
+            }, 80)
+        } else {
+            direction = 'LEFT';
+        }
+        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+    }
 
-        if (direction && e.keyCode == 38 && direction != 'DOWN') {
-            if (document.getElementById('level').innerText == 1) {
-                setTimeout(() => {direction = 'UP';}, 140)
-            } if (document.getElementById('level').innerText == 2) {
-                setTimeout(() => {direction = 'UP';}, 80)
-            }
-        else {direction = 'UP';}
-        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+    if (direction && e.keyCode == 38 && direction != 'DOWN') {
+        if (document.getElementById('level').innerText == 1) {
+            setTimeout(() => {
+                direction = 'UP';
+            }, 140)
         }
+        if (document.getElementById('level').innerText == 2) {
+            setTimeout(() => {
+                direction = 'UP';
+            }, 80)
+        } else {
+            direction = 'UP';
+        }
+        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+    }
 
-        if (direction && e.keyCode == 39 && direction != 'LEFT') {
-            if (document.getElementById('level').innerText == 1) {
-                setTimeout(() => {direction = 'RIGHT';}, 140)
-            } if (document.getElementById('level').innerText == 2) {
-                    setTimeout(() => {direction = 'RIGHT';}, 80)
-            }
-        else {direction = 'RIGHT';}
-        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+    if (direction && e.keyCode == 39 && direction != 'LEFT') {
+        if (document.getElementById('level').innerText == 1) {
+            setTimeout(() => {
+                direction = 'RIGHT';
+            }, 140)
         }
+        if (document.getElementById('level').innerText == 2) {
+            setTimeout(() => {
+                direction = 'RIGHT';
+            }, 80)
+        } else {
+            direction = 'RIGHT';
+        }
+        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+    }
 
-        if (direction && e.keyCode == 40 && direction != 'UP') {
-            if (document.getElementById('level').innerText == 1) {
-                setTimeout(() => {direction = 'DOWN';}, 140)
-            } if (document.getElementById('level').innerText == 2) {
-                setTimeout(() => {direction = 'DOWN';}, 80)
-            }
-        else {direction = 'DOWN';}
-        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+    if (direction && e.keyCode == 40 && direction != 'UP') {
+        if (document.getElementById('level').innerText == 1) {
+            setTimeout(() => {
+                direction = 'DOWN';
+            }, 140)
         }
+        if (document.getElementById('level').innerText == 2) {
+            setTimeout(() => {
+                direction = 'DOWN';
+            }, 80)
+        } else {
+            direction = 'DOWN';
+        }
+        document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
+    }
 }
