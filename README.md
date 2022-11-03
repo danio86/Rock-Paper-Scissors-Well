@@ -59,7 +59,8 @@ As a demonstration, the player already wins when he has reached 500 points.
         - __The Control Area__
 
             - The control panel contains the start button, the sound button and the control buttons of the snake for mobile devices (phones, tablets).Users on devices with a keyboard will be more likely to use the keyboard. 
-                - The start button contains instructions on how to start the game. 
+                - The start button contains instructions on how to start the game and how mute the sound.
+                 - after the first *Game-Over* sound instructions disapear.
                 - It serves as a user manual and as an intermediate step between the "Game Over Status" and the start of the game. This prevents the end screen ("Game Over" or "You Win") from being clicked away immediately by intuitively continuing to play (a direction key is pressed).
                 - The start button changes color by mouse over and by clicking.
                 - The sound button allows the user to mute or reactivate all sounds by clicking the play/pause button on the screen or the shift or the caps lock key on the keybord.
@@ -163,8 +164,6 @@ As a demonstration, the player already wins when he has reached 500 points.
             piece.y = frontPiece.y;
         }
 
-
-
  - Another difficulty was that the snake was not allowed to run back and that it was not allowed to eat itself.
  <img src="assets/images/bug-snake-backwarts-bite-itself.png" alt="Bug-Snake-Backwarts-Bite-itself">
  The solution is a "for-loop": Ff there is more than one snake part (the snake parts are in a list), the last part gets the position of the previous part. The loop then repeats itself with the penultimate part. Until the loop gets to the head, then it breaks. The function is called whenever the snake encounters food.
@@ -194,6 +193,8 @@ As a demonstration, the player already wins when he has reached 500 points.
             } if (document.getElementById('level').innerText == 2) {
                 setTimeout(() => {direction = 'LEFT';}, 80)
             }
+
+ - An unfixed bug is that the animals can be placed inside the inner wall in level 3. This is on purpose. The images change position anyway and for the user it is slidly more difficult to win. Since it is not moving, This is prevented with red food.
    
 
 ## Deployment
