@@ -14,7 +14,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../images/rainforest.webp);
+    /* background-image: url(../images/rainforest.webp); */
+    background-color: green;
 }
 
 #the-whole-thing {
