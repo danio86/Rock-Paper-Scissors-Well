@@ -274,7 +274,7 @@ function scoreCounter(n) {
     }
 
     //game ends positivly! User is Winner!
-    if (oldScore >= 300) {
+    if (oldScore >= 500) {
         /* console.log(oldScore, 'wie viel?'); */
         win = true;
         soundStop = false;
@@ -340,10 +340,10 @@ function gameEnd() {
     let sameCoordinares = snakeBody.find(part => part.x == snakeHead.x && part.y == snakeHead.y);
     //array.find(or forEach)(part =>) works like a loop: For each part do(in this case find) something
     
-    if (document.getElementById('level').innerText == 3 && snake[0].x == col/2 + 1 || 
+    if (document.getElementById('level').innerText == 3 && snake[0].x == col/2 || 
     document.getElementById('level').innerText == 3 && snake[0].x == col/2 - 1 && direction == 'RIGHT'||
     document.getElementById('level').innerText == 3 && snake[0].y == row/2 - 1 && direction == 'DOWN'||
-    document.getElementById('level').innerText == 3 && snake[0].y == row/2 + 1 /* || 
+    document.getElementById('level').innerText == 3 && snake[0].y == row/2 /* || 
     document.getElementById('level').innerText == 3 && direction == 'LEFT' && snake[0].x == col/2 ||
     document.getElementById('level').innerText == 3 && direction == 'UP' && snake[0].y == row/2 */) {
         direction = false;
@@ -612,8 +612,11 @@ function keyPress(e) {
 
         if (direction && e.keyCode == 37 && direction != 'RIGHT') {
             if (document.getElementById('level').innerText == 1) {
-                setTimeout(() => {direction = 'LEFT';}, 50)
-        } else {direction = 'LEFT';}
+                setTimeout(() => {direction = 'LEFT';}, 140)
+            } if (document.getElementById('level').innerText == 2) {
+                setTimeout(() => {direction = 'LEFT';}, 80)
+            }
+        else {direction = 'LEFT';}
             /* avoidBackwarts.unshift('LEFT');
             console.log(avoidBackwarts, 'L?')
             if (document.getElementById('level').innerText == 1 && avoidBackwarts[2] == 'RIGHT' ) {
@@ -625,8 +628,11 @@ function keyPress(e) {
 
         if (direction && e.keyCode == 38 && direction != 'DOWN') {
             if (document.getElementById('level').innerText == 1) {
-                setTimeout(() => {direction = 'UP';}, 50)
-        } else {direction = 'UP';}
+                setTimeout(() => {direction = 'UP';}, 140)
+            } if (document.getElementById('level').innerText == 2) {
+                setTimeout(() => {direction = 'UP';}, 80)
+            }
+        else {direction = 'UP';}
             /* avoidBackwarts.unshift('UP');
             console.log(avoidBackwarts, 'U?')
             if (document.getElementById('level').innerText == 1 && avoidBackwarts[2] == 'DOWN' ) {
@@ -637,8 +643,11 @@ function keyPress(e) {
         }
         if (direction && e.keyCode == 39 && direction != 'LEFT') {
             if (document.getElementById('level').innerText == 1) {
-                setTimeout(() => {direction = 'RIGHT';}, 50)
-        } else {direction = 'RIGHT';}
+                setTimeout(() => {direction = 'RIGHT';}, 140)
+            } if (document.getElementById('level').innerText == 2) {
+                    setTimeout(() => {direction = 'RIGHT';}, 80)
+            }
+        else {direction = 'RIGHT';}
             /* avoidBackwarts.unshift('RIGHT');
             console.log(avoidBackwarts, 'R?')
             if (document.getElementById('level').innerText == 1 && avoidBackwarts[2] == 'LEFT' ) {
@@ -650,8 +659,11 @@ function keyPress(e) {
 
         if (direction && e.keyCode == 40 && direction != 'UP') {
             if (document.getElementById('level').innerText == 1) {
-                setTimeout(() => {direction = 'DOWN';}, 50)
-        } else {direction = 'DOWN';}
+                setTimeout(() => {direction = 'DOWN';}, 140)
+            } if (document.getElementById('level').innerText == 2) {
+                setTimeout(() => {direction = 'DOWN';}, 80)
+            }
+        else {direction = 'DOWN';}
             /* avoidBackwarts.unshift('DOWN');
             console.log(avoidBackwarts, 'D?')
             if (document.getElementById('level').innerText == 1 && avoidBackwarts[2] == 'UP') {
