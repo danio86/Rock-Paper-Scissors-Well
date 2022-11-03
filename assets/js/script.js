@@ -65,7 +65,7 @@ function sounds(s) {
 function playAudio() {
     mute = false;
     soundL3 = true;
-    document.getElementById('audioButton').setAttribute('onclick', 'pauseAudio()');
+    document.getElementById('audio-button').setAttribute('onclick', 'pauseAudio()');
     document.getElementById('soundOff').setAttribute('class', 'fas fa-stop-circle soundOff');
     document.getElementById('soundOn').setAttribute('class', 'fas fa-play-circle');
 }
@@ -74,7 +74,7 @@ function pauseAudio() {
     mute = true;
     soundL3 = false;
     finalSound.pause();
-    document.getElementById('audioButton').setAttribute('onclick', 'playAudio()');
+    document.getElementById('audio-button').setAttribute('onclick', 'playAudio()');
     document.getElementById('soundOff').setAttribute('class', 'fas fa-stop-circle');
     document.getElementById('soundOn').setAttribute('class', 'fas fa-play-circle soundOn');
 }

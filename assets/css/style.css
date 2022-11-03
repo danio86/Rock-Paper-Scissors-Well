@@ -112,7 +112,7 @@ header {
     display: none;
 }
 
-#audioButton {
+#audio-button {
     position: absolute;
     margin: -5px 0 0 -101px;
     width: 53px;
@@ -289,7 +289,7 @@ footer p {
         margin-top: 10px;
     }
 
-    #audioButton {
+    #audio-button {
         position: absolute;
         margin: 75px 0 0 -131px;
         width: 66px;
@@ -423,7 +423,7 @@ footer p {
         margin-top: unset;
     }
 
-    #audioButton {
+    #audio-button {
         position: absolute;
         margin: 22px 0 0 -110px;
         width: 56px;
@@ -554,7 +554,7 @@ footer p {
         margin-top: unset;
     }
 
-    #audioButton {
+    #audio-button {
         position: absolute;
         margin: 90px 0 0 -164px;
         width: 85px;
