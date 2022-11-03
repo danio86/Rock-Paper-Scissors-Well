@@ -206,7 +206,7 @@ function scoreCounter(n) {
         document.getElementById('level').innerText = 2;
         speed = 150;
     } else if (oldScore >= 240) {
-        console.log(soundL3, 's3')
+        console.log(soundL3, 's3');
         document.getElementById('level').innerText = 3;
         speed = 100;
         if (soundL3 == true) {
@@ -573,13 +573,13 @@ function keyPress(e) {
         if (document.getElementById('level').innerText == 1) {
             setTimeout(() => {
                 direction = 'LEFT';
-            }, 140)
+            }, 140);
             //slowes down the reaction after clicking to prevent snake of 180 degrees direction change on the same line
         }
         if (document.getElementById('level').innerText == 2) {
             setTimeout(() => {
                 direction = 'LEFT';
-            }, 80)
+            }, 80);
         } else {
             direction = 'LEFT';
         }
@@ -590,12 +590,12 @@ function keyPress(e) {
         if (document.getElementById('level').innerText == 1) {
             setTimeout(() => {
                 direction = 'UP';
-            }, 140)
+            }, 140);
         }
         if (document.getElementById('level').innerText == 2) {
             setTimeout(() => {
                 direction = 'UP';
-            }, 80)
+            }, 80);
         } else {
             direction = 'UP';
         }
@@ -606,12 +606,12 @@ function keyPress(e) {
         if (document.getElementById('level').innerText == 1) {
             setTimeout(() => {
                 direction = 'RIGHT';
-            }, 140)
+            }, 140);
         }
         if (document.getElementById('level').innerText == 2) {
             setTimeout(() => {
                 direction = 'RIGHT';
-            }, 80)
+            }, 80);
         } else {
             direction = 'RIGHT';
         }
@@ -622,12 +622,12 @@ function keyPress(e) {
         if (document.getElementById('level').innerText == 1) {
             setTimeout(() => {
                 direction = 'DOWN';
-            }, 140)
+            }, 140);
         }
         if (document.getElementById('level').innerText == 2) {
             setTimeout(() => {
                 direction = 'DOWN';
-            }, 80)
+            }, 80);
         } else {
             direction = 'DOWN';
         }
