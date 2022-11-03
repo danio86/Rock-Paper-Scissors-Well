@@ -3,24 +3,20 @@
 let canvas = document.getElementById('game-area');
 let ctx = canvas.getContext('2d');
 //ctx is an Object in the Game Area. getContext(2d) allows us to drwaw in 2d in the cavas(game-area)
-/* img = document.getElementById('spider'); */
-/* var pat = ctx.createPattern(img, 'no-repeat'); */
 
-
-
-
+//Things inside the Canvas
 let snake = [
     { x: 25, y: 2 }
 ];
 //an array of jsons is 1 element/value
-/* let img = document.getElementById('spider'); */
 let img;
 let food;
-let elephant;
-let lion;
+/* let elephant;
+let lion; */
 let gotFood = false;
 let gotImg = false;
-/* let direction = 'LEFT'; */
+
+//Start conditions
 let direction = false;
 let oldScore = parseInt(document.getElementById('score').innerText);
 let newRecord = [];
@@ -30,6 +26,15 @@ let gameOver = false;
 let win = false;
 let attention = false;
 
+//this creates a raster with specific cells dimensions
+let row = 30;
+let col = 30;
+let cellWidth = canvas.width / col;
+let cellHight = canvas.height / row;
+
+//this creates a random ID between 1-3 for the animal in the canvas
+let rId = Math.floor(Math.random() * 3) + 1;
+
 //sounds:
 let soundStop = false;
 let soundL3 = true;
@@ -37,10 +42,12 @@ let attentionSound = true;
 let finalSound = new Audio('assets/sounds/last-round.mp3');
 let mute = false;
 
+/**
+ * Sound out of playlist number s (depends on occurrence) is played or muted if sound button is clicked.
+ */
 function sounds(s) {
     let playlist = ['assets/sounds/bite.mp3', 'assets/sounds/goodresult-82807.mp3', 
             'assets/sounds/success.mp3', 'assets/sounds/game-over.mp3', 'assets/sounds/alarm.mp3', 'assets/sounds/yeah.mp3' ];
-    /* tracknumber = s */
     let sound = new Audio(playlist[s]);
     sound.play(sound);
 
@@ -49,11 +56,14 @@ function sounds(s) {
     }
 }
 //---------------Sound-Buttons-----------
+/**
+ * Both functions are called if sound button is clicked. If clicked sound button calls the other function.
+ * * This is achieved by changing classes.
+ */
 function playAudio() { 
     mute = false;
     soundL3 = true;
     document.getElementById('audioButton').setAttribute('onclick', 'pauseAudio()');
-    /* document.getElementById('audioButton').innerText = 'yes'; */
     document.getElementById('soundOff').setAttribute('class', 'fas fa-stop-circle soundOff');
     document.getElementById('soundOn').setAttribute('class', 'fas fa-play-circle');
   } 
@@ -63,84 +73,43 @@ function pauseAudio() {
     soundL3 = false;
     finalSound.pause();
     document.getElementById('audioButton').setAttribute('onclick', 'playAudio()');
-    /* document.getElementById('audioButton').innerText = 'no'; */
     document.getElementById('soundOff').setAttribute('class', 'fas fa-stop-circle');
     document.getElementById('soundOn').setAttribute('class', 'fas fa-play-circle soundOn');
   } 
 
-/* function setFullVolume() { 
-    sounds.volume = 0.0;
-    
-  } 
-setFullVolume(); */
-
-/* function soundsStop(s) {
-    let playlist = ['assets/sounds/bite.mp3', 'assets/sounds/goodresult-82807.mp3', 
-            'assets/sounds/success.mp3', 'assets/sounds/last-round.mp3']
-    let sound = new Audio(playlist[s]);
-    sound.pause(sound);
-} */
-
-/* const gulpSound = new Audio("gulp.mp3"); */
-
-/* while (speed) {
-    let actualLevel = parseInt(document.getElementById('level').innerText);
-    if (actualLevel === 1) {
-        speed = 200;
-    } else if (actualLevel === 2) {
-        speed = 150;
-    } else if (actualLevel === 3) {
-        speed = 100;
-        break
-    };
-};
-console.log(speed, 'how?') */
-/* function speed() {
-    let speed = parseInt(document.getElementById('level').innerText);
-    console.log(speed, 'start0')
-    if (speed === 1) {
-        speed = 200;
-    } else if (speed === 2) {
-        speed = 150;
-    } else if (speed === 3) {
-        speed = 100;
-    };
-};
-speed(); */
-/* console.log(speed, 'start1') */
-
-let row = 30;
-let col = 30;
-let cellWidth = canvas.width / col;
-let cellHight = canvas.height / row;
-//this creates a raster with cells
-
-let rId = Math.floor(Math.random() * 3) + 1;
-/* console.log(rId, 'random2') */
 
 placeFood();
-placeElephant();
-placeLion();
+/* placeElephant();
+placeLion(); */
 placeImg();
-
 setInterval(placeImg, 8000);
-//gameLoop function is called every 800ms (the higher the nummer the slowlier)
+//placeImg is called every 8000ms (the higher the nummer the slowlier)
 
+/**
+ * adds a Cube on a cavas cell with exact cell dimensions-1 
+ * * -1 for the gab between snake parts.
+ */
 function addCube(x, y) {
     ctx.fillRect(x * cellWidth, y * cellHight, cellWidth - 1, cellHight - 1);
     if (snake.length > 1) {
         ctx.fillStyle = 'blue';
-    /* } else {ctx.drawImage(img, 20, 20, 15, 10);} */
     } else { ctx.fillStyle = 'yellow'; }
-    //...(x-pos, y-pos, width, height) of painted object
 }
 
+/**
+ * adds a Image (animal) on a cavas cell with exact cell dimensions+1 (looks nicer) 
+ * * wich animal is random by random ID createt at the global var part of this script.
+ */
 function addImage(x, y) {
     ctx.drawImage(document.getElementById(rId), x * cellWidth, y * cellHight, cellWidth+1, cellHight+1);
 }
-//game area
+
+/**
+ * Game Area
+ * *draws everything inside the canvas 
+ * * fillstyle for color, fillRect for x, y and dimensions.
+ */
 function draw() {
-    /* ctx.fillStyle = 'rgb(51, 172, 51)'; */
     ctx.fillStyle = 'lawngreen';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -153,12 +122,8 @@ function draw() {
 
     //Wall
     if (document.getElementById('level').innerText == 3) {
-        /* ctx.fillStyle = 'brown'; */
-        /* ctx.fillRect(canvas.width/2, 0, cellWidth, canvas.height); */
         ctx.drawImage(document.getElementById('fire'), canvas.width/2, 0, cellWidth, canvas.height);
-        /* ctx.fillStyle = 'brown'; */
         ctx.drawImage(document.getElementById('fire'), 0, canvas.height/2, canvas.width, cellHight);
-        /* ctx.fillRect(0, canvas.height/2, canvas.width, cellHight); */
     }
 
     //Attention - Wall
@@ -180,17 +145,6 @@ function draw() {
         ctx.drawImage(document.getElementById('win'), canvas.width/33.3, canvas.height/8, 300, 100);
         gameEnd();
     } 
-    
-    /* {
-        console.log(oldScore, 'wie viel?')
-        ctx.fillStyle = 'gold'
-        ctx.font = "40px Courier";
-        ctx.fillText("Congratulations! You win!", canvas.width/4, canvas.height/2);
-    } */
-    /* console.log(oldScore, 'wie viel?') */
-    
-
-    
 
     //Snake
     ctx.fillStyle = 'rgb(253, 190, 0)';
@@ -198,15 +152,16 @@ function draw() {
     snake.forEach(part => addCube(part.x, part.y));
     //we need part => because the items are jsons.
 
-    
-    
-
     requestAnimationFrame(draw);
     //repeats draw function permanently  
 }
 
 draw();
 
+/**
+ * Functions place Food inside the canvas
+ * * randomly exactly on a canvas cell by creating random x and y coordinates.
+ */
 function placeFood() {
     let foodY = Math.floor(Math.random() * row);
     let foodX = Math.floor(Math.random() * col);
@@ -215,19 +170,19 @@ function placeFood() {
     //{x:..,y:..} this is 1 value called json! withs this a var can have '2' values!
 }// places the food object randomly in Game Area
 
-function placeElephant() {
+/* function placeElephant() {
     let elephantY = Math.floor(Math.random() * row);
     let elephantX = Math.floor(Math.random() * col);
 
     elephant = {x: elephantX, y: elephantY};
-}
+} */
 
-function placeLion() {
+/* function placeLion() {
     let lionY = Math.floor(Math.random() * row);
     let lionX = Math.floor(Math.random() * col);
 
     lion = {x: lionX, y: lionY};
-}
+} */
 
 function placeImg() {
     let imgY = Math.floor(Math.random() * row);
@@ -283,8 +238,8 @@ function scoreCounter(n) {
         finalSound.pause();
         direction = false;
         placeFood();
-        placeElephant();
-        placeLion();
+        /* placeElephant();
+        placeLion(); */
         placeImg();
         sounds(2);
         snake = [{ x: 25, y: 2 }];
@@ -356,8 +311,8 @@ function gameEnd() {
         finalSound.pause();
         /* sounds(); */
         placeFood();
-        placeElephant();
-        placeLion();
+        /* placeElephant();
+        placeLion(); */
         placeImg();
         snake = [{ x: 25, y: 2 }];
         document.getElementById('score').innerText = oldScore;
@@ -390,8 +345,8 @@ function gameEnd() {
         attentionSound = true;
         finalSound.pause();
         placeFood();
-        placeElephant();
-        placeLion();
+        /* placeElephant();
+        placeLion(); */
         placeImg();
         snake = [{ x: 25, y: 2 }];
         document.getElementById('score').innerText = oldScore;
@@ -423,8 +378,8 @@ function gameEnd() {
         attentionSound = true;
         finalSound.pause();
         placeFood();
-        placeElephant();
-        placeLion();
+        /* placeElephant();
+        placeLion(); */
         placeImg();
         snake = [{ x: 25, y: 2 }];
         document.getElementById('level').innerText = 1;
@@ -452,20 +407,20 @@ function gameLoop() {
     snakeGrowth();
     if (direction == 'LEFT') {
         snake[0].x--; //-1 does not work!
-        gameOver = false;
-        win = false;
+        /* gameOver = false;
+        win = false; */
     } else if (direction == 'RIGHT') {
         snake[0].x++;
-        gameOver = false;
-        win = false;
+        /* gameOver = false;
+        win = false; */
     } else if (direction == 'DOWN') {
         snake[0].y++;
-        gameOver = false;
-        win = false;
+        /* gameOver = false;
+        win = false; */
     } else if(direction == 'UP') {
         snake[0].y--;
-        gameOver = false;
-        win = false;
+        /* gameOver = false;
+        win = false; */
     }
 
     if (snake[0].x == food.x && snake[0].y == food.y) {
@@ -565,6 +520,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (this.getAttribute('id') === 'startKey' && direction == false) {
             direction = true;
             win = false;
+            gameOver = false;
             sounds(5);
             document.getElementById('startKey').innerText = 'Press an arrow key!';
             document.getElementById('startKey').setAttribute('class', 'startBtnBefore');
@@ -596,6 +552,7 @@ function keyPress(e) {
     if (direction == false && e.keyCode == 32) {
         direction = true;
         win = false;
+        gameOver = false;
         sounds(5);
         document.getElementById('startKey').innerText = 'Press an arrow key!';
         document.getElementById('startKey').setAttribute('class', 'startBtnBefore');

@@ -10,34 +10,24 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <!-- <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico"> -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Snake</title>
 </head>
 
 <body>
-     <!-- <button onclick="playAudio()" type="button">Yes</button> -->
-      
-     <!-- <button id="audioButton" onclick="pauseAudio()" type="button"><i id="soundOn" class="fas fa-play-circle"></i><i id="soundOff" class="fas fa-stop-circle"></i></button> 
- -->
+    <!-- ***********The whole Game including Header, Playing field and footer************* -->
     <div id="the-whole-thing">
         <header>
             <img class="logo" src="assets/images/animals-g13a0b5bb3_1280.png" alt="logo">
             <h1 class="heading">Snake 2001</h1>
-            <!-- <span id="heading">
-                <h1 class="heading">Snake 2001</h1>
-            </span> -->
             <div class="score-area">
                 <p class="scores"><b>Score:<span id="score">0</span></b></p>
                 <p class="record"><b>Current-Record:<span id="record">0</span></b></p>
                 <p class="level"><b>Level:<span id="level">1</span></b></p>
             </div>
-
         </header>
 
-
-
-        <!-- <img id="spider" src="assets/images/spider-transp.png" alt="Spider"> -->
+        <!-- ********Images are not shown. Its only for js*********** -->
         <div id="pictures">
             <img id="1" src="assets/images/spider-transp.png" alt="Spider" style="display:none">
             <img id="2" src="assets/images/elephant.png" alt="Elephant" style="display:none">
@@ -46,30 +36,24 @@
             <img id="fire" src="assets/images/fireball.png" alt="fire">
         </div>
 
-        <!-- <div id="messages">
-            <h2 id="lost">Game Over!</h2>
-            <h2 id="win">Congratulations! You win!</h2>
-        </div> -->
 
-
-        <!-- <canvas class="game-area-start game-area-L3" id="game-area"> -->
+        <!-- *********************The Playing Field************************ -->
         <canvas class="game-area-start" id="game-area">
-
-            <!-- <span class="food">tets</span> -->
-            <!-- <img src="assets/images/spider-transp.png" alt="Spider"> -->
         </canvas>
 
-        <!-- **********************Start Info********************** -->
+        <!-- **********************Start Info Button (How to Play and mute the sound)********************** -->
         <div id="startInfo">
-            <!-- <button type="button" id="startKey" class="startBtnBefore startbtnAfter" >Press here or Space to start!</button> -->
-            <button type="button" id="startKey" class="">Press "here" or Space to start! Click <i class="fas fa-play-circle"></i> <i class="fas fa-arrow-alt-circle-up"></i> <i class="fas fa-arrow-alt-circle-down"></i> for sound on/off.</button>
-            <!-- <h2 id="startKey">Press here or Space to start!</h2> -->
-            <!-- <h2>Press an arrow button!</h2> -->
+            <button type="button" id="startKey" class="">Press "here" or Space to start! Click <i
+                    class="fas fa-play-circle"></i> <i class="fas fa-arrow-alt-circle-up"></i> <i
+                    class="fas fa-arrow-alt-circle-down"></i> for sound on/off.</button>
         </div>
+
         <!-- **********************Sound-Button*********************** -->
         <div>
-            <button id="audioButton" onclick="pauseAudio()" type="button"><i id="soundOn" class="fas fa-play-circle"></i><i id="soundOff" class="fas fa-stop-circle soundOff"></i></button>
+            <button id="audioButton" onclick="pauseAudio()" type="button"><i id="soundOn"
+                    class="fas fa-play-circle"></i><i id="soundOff" class="fas fa-stop-circle soundOff"></i></button>
         </div>
+
         <!-- **********************  Control keys **********************-->
         <div class="control-area">
             <div>
@@ -92,6 +76,7 @@
             </div>
         </div>
 
+        <!-- **********************  Footer **********************-->
         <footer>
             <p>Find us on:</p>
             <ul class="socail-media">
@@ -99,19 +84,19 @@
                     <a href="https://twitter.com/" target="_blank" rel="noopener"
                         aria-label="Visit our Twitter page (opens in a new tab)"><i id="twitter"
                             class="fab fa-twitter"></i>
-                        <!-- <img id="twitter" src="assets/images/twitter-logo.png" alt="twitter-logo"> --></a>
+                    </a>
                 </li>
                 <li>
                     <a href="http://facebook.com" target="_blank" rel="noopener"
                         aria-label="Visit our Facebook page (opens in a new tab)"><i id="facebook"
                             class="fab fa-facebook"></i>
-                        <!-- <img id="facebook" src="assets/images/facebook-logo.png" alt="facebook-logo"> --></a>
+                    </a>
                 </li>
                 <li>
                     <a href="http://instagram.com" target="_blank" rel="noopener"
                         aria-label="Visit our Instagram page (opens in a new tab)"><i id="instagram"
                             class="fab fa-instagram"></i>
-                        <!-- <img id="instagram" src="assets/images/instagram-logo.png" alt="instagram-logo"> --></a>
+                    </a>
                 </li>
             </ul>
             <p>Copyright © Game-Developer 2022</p>
