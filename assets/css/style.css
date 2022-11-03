@@ -20,7 +20,7 @@ body {
 #the-whole-thing {
     width: 280px;
     height: 610px;
-    background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat;
+    background: url(../images/cellphone-gf7d2ec28d_1920.webp) no-repeat;
     background-size: 480px;
     background-size: 610px;
     background-position: top;
@@ -236,7 +236,7 @@ footer p {
     #the-whole-thing {
         width: 400px;
         height: 800px;
-        background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat;
+        /* background: url(../images/cellphone-gf7d2ec28d_1920.png) no-repeat; */
         background-size: 480px;
         background-size: 800px;
         background-position: top;
