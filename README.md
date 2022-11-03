@@ -121,13 +121,9 @@ As a demonstration, the player already wins when he has reached 500 points.
 - JavaScipt Validation
 <img src="assets/images/screenshot-js-validator.png" alt="CSS JavaScipt">
 
-- Lighthouse-Desktop
+- Lighthouse
 
-<img src="assets/images/screenshot-lighthouse.png" alt="Lighthouse Desktop">
-
-- Lighthouse-Mobil
-
-<img src="assets/images/screenshot-lighthouse-mobil.png" alt="Lighthouse Mobil">
+<img src="assets/images/screenshot-lighthouse.png" alt="Lighthouse">
 
 
 - user story besed test cases (screenshots):
@@ -186,7 +182,7 @@ As a demonstration, the player already wins when he has reached 500 points.
      - function addImage(x, y) {
      ctx.drawImage(document.getElementById(rId), x * cellWidth, y * cellHight, cellWidth+1, cellHight+1);}
 
- - It was difficult to prevent the snake from turning 180 degrees on the same line. For example, if you press up and right very quickly after going left in advance, the snake will turn on the same line. This happens especially in level 1 (slidly in level 2) when the snake moves slowly. Unfortunately nobody could help me with this problem. Nevertheless, I have practically fixed it by making changes of direction in level 1 only possible with a time delay (many other things have also been tried). The snake reacts with a slight time delay when changing direction. The problem almost never occurs anymore. However, if you force it strongly, you can still cause the bug.
+ - It was difficult to prevent the snake from turning 180 degrees on the same line. For example, if you press up and right very quickly after going left in advance, the snake will turn on the same line. This happens especially in level 1 (slightly in level 2) when the snake moves slowly. Unfortunately nobody could help me with this problem. Nevertheless, I have practically fixed it by making changes of direction in level 1 only possible with a time delay (many other things have also been tried). The snake reacts with a slight time delay when changing direction. The problem almost never occurs anymore. However, if you force it strongly, you can still cause the bug.
   - if (direction && e.keyCode == 37 && direction != 'RIGHT') {
             if (document.getElementById('level').innerText == 1) {
                 setTimeout(() => {direction = 'LEFT';}, 120)
