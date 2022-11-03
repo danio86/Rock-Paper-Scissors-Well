@@ -1,5 +1,6 @@
 # Snake 2001
 
+The site will be targeted toward people who like JavaScript and playing. Snake 2001 is a fully responsive JavaScript game. 
 Snake 2001 is a recreation of the Snake mobile game that was still played on button phones in the late 90's and 2000's. 
 A snake is guided by the player through a playing field and has to collect as much food as possible. The player receives points for this. The more dangerous the food is, the more points the player gets.
 This variant contains 3 levels. From level 1 to 2 only the speed changes. In both levels the snake dies if it hits the wall or if it bites itself. In level 3, a wall of fire appears in the middle of the playing field. The outer walls are permeable to it.
@@ -17,25 +18,32 @@ As a demonstration, the player already wins when he has reached 500 points.
 - As a visiting user, I can easily get information about the company through their social media links.
 
 
-## Features 
+## Existing Features 
 
 - __Body__
 
     - The body contains the Snake 2001 background image. Fern plants are shown, which are supposed to symbolize a rain forest. The image is available for free use on Pixabay.
         - [pixabay](https://pixabay.com/images/search/jungle/?manual_search=1)
     - The body also contains the "Game-Program-Field". This is in turn divided into different areas.
+    - The user will feel reminded of the rainforest.
+    - Body Image:<br>
+            <img src="assets/images/rainforest.webp" alt="Rainforest">
 
 
     - __Game Program Field__
 
      - The Game Field contains a background image. The background image shows an old vintage push button cell phone from the early 2000s. All other features are laid out over the background in a way that makes it look like you are operating this phone.
+     - The user will feel reminded of an old mobilphone.
+     - Game Background Image:<br>
+            <img src="assets/images/cellphone-gf7d2ec28d_1920.webp" alt="Mobilphone">
 
         - __Header__
 
             - The header contains the Snake 2001 logo which shows a snake. 
             - The header also includes the headline and score area.
-             - The score area shows the current score, the current record score and the current level.
+            - The score area shows the current score, the current record score and the current level.
             - The header has a fixed position inside the Game-Program-Field-Window.
+            - This area will allow the user to see how many poits she/he has and what the current record is.
 
         - Header Image:<br>
             <img src="assets/images/screenshot-header.png" alt="Header">
@@ -51,6 +59,7 @@ As a demonstration, the player already wins when he has reached 500 points.
                     - [Specific YouTube Tutorial] (https://www.youtube.com/watch?v=niD3gx4BI9A&t=4505s)
                 - Basic functions inside the Canvas (how moving and drawing functions are constantly repeat) is taken from the following website.
                     - [Specific YouTube Tutorial] (https://www.youtube.com/watch?v=7Azlj0f9vas)
+                - This area will allow the user to play the game.
 
         - Playing Field Image:<br>
             <img src="assets/images/screenshot-canvas.png" alt="Playing Field">
@@ -66,6 +75,7 @@ As a demonstration, the player already wins when he has reached 500 points.
                 - The sound button allows the user to mute or reactivate all sounds by clicking the play/pause button on the screen or the shift or the caps lock key on the keybord.
                 - The control button change color by mouse over.
                 - The Control Area idea and basic code is taken form the **Code-Institute Love-Maths-Project** but has been modified.
+                - This area will allow the user to control the sound to start the game and to control the snake direction.
 
         - Control Area Image:<br>
             <img src="assets/images/screenshot-control-area.png" alt="Control Area">
@@ -76,6 +86,7 @@ As a demonstration, the player already wins when he has reached 500 points.
         - The footer includes links to the relevant social media sites for the Game-Developer Company. The links will open to a new tab to allow easy navigation for the user. 
         - The footer is valuable to the user as it allows them to get Information via social media.
         - The footer idea and basic code is taken form the **Code-Institute Love-Running-Project** but has been slightly modified.
+        - This area will allow the user to follow the company on social media.
 
         - The Footer Image:<br>
             <img src="assets/images/screenshot-footer.png" alt="Footer">
@@ -107,6 +118,11 @@ As a demonstration, the player already wins when he has reached 500 points.
 
   - JavaScipt 
       - No errors were found when passing through the JSHint validator.
+        - Metrics:
+            - There are 25 functions in this file.
+            - Function with the largest signature take 2 arguments, while the median is 0.
+            - Largest function has 68 statements in it, while the median is 3.
+            - The most complex function has a cyclomatic complexity value of 31 while the median is 1.
 
   - Accessibility
       - I confirm that the colors and fonts selected are easy to read and accessible. This was discovered using lighthouse in devtools.
