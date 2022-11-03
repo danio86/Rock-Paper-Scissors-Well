@@ -612,7 +612,7 @@ function keyPress(e) {
 
         if (direction && e.keyCode == 37 && direction != 'RIGHT') {
             if (document.getElementById('level').innerText == 1) {
-                setTimeout(() => {direction = 'LEFT';}, 130)
+                setTimeout(() => {direction = 'LEFT';}, 50)
         } else {direction = 'LEFT';}
             /* avoidBackwarts.unshift('LEFT');
             console.log(avoidBackwarts, 'L?')
@@ -625,7 +625,7 @@ function keyPress(e) {
 
         if (direction && e.keyCode == 38 && direction != 'DOWN') {
             if (document.getElementById('level').innerText == 1) {
-                setTimeout(() => {direction = 'UP';}, 130)
+                setTimeout(() => {direction = 'UP';}, 50)
         } else {direction = 'UP';}
             /* avoidBackwarts.unshift('UP');
             console.log(avoidBackwarts, 'U?')
@@ -637,7 +637,7 @@ function keyPress(e) {
         }
         if (direction && e.keyCode == 39 && direction != 'LEFT') {
             if (document.getElementById('level').innerText == 1) {
-                setTimeout(() => {direction = 'RIGHT';}, 130)
+                setTimeout(() => {direction = 'RIGHT';}, 50)
         } else {direction = 'RIGHT';}
             /* avoidBackwarts.unshift('RIGHT');
             console.log(avoidBackwarts, 'R?')
@@ -650,7 +650,7 @@ function keyPress(e) {
 
         if (direction && e.keyCode == 40 && direction != 'UP') {
             if (document.getElementById('level').innerText == 1) {
-                setTimeout(() => {direction = 'DOWN';}, 130)
+                setTimeout(() => {direction = 'DOWN';}, 50)
         } else {direction = 'DOWN';}
             /* avoidBackwarts.unshift('DOWN');
             console.log(avoidBackwarts, 'D?')
