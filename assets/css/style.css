@@ -192,6 +192,10 @@ footer p {
     margin-top: 33px;
 }
 
+#upper-p {
+    display: none;
+}
+
 #facebook {
     background-color: lawngreen;
     position: relative;
