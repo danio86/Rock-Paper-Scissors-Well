@@ -79,14 +79,11 @@ header {
 }
 
 .game-area-L3 {
-    /* border: 10px solid transparent;
+    border: 10px solid transparent;
     border-image-repeat: round;
     border-image-slice: 50;
-    border-image-source: url(../images/forest-small.webp); */
     border-radius: 10px;
-    /* border-color: green; */
-    background-color: lawngreen; /* For browsers that do not support gradients */
-    background-image: linear-gradient(to bottom right, green, brown);
+    background: radial-gradient(circle, blue, green, brown);
 }
 
 #startInfo {
@@ -99,7 +96,6 @@ header {
     height: auto;
     text-transform: uppercase;
     font-size: 12px;
-    /* margin: -5px 0 2px 0; */
     position: relative;
     top: -5px;
 }
@@ -444,7 +440,7 @@ footer p {
     }
 
     .score-area {
-        font-size: 71%;
+        font-size: 65%;
         width: 59%;
     }
 
@@ -479,7 +475,7 @@ footer p {
     }
 
     .control-area {
-        bottom: -29px;
+        bottom: -30px;
     }
 
     button {

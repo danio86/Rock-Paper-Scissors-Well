@@ -26,8 +26,11 @@ As a demonstration, the player already wins when he has reached 500 points.
         - [pixabay](https://pixabay.com/images/search/jungle/?manual_search=1)
     - The body also contains the "Game-Program-Field". This is in turn divided into different areas.
     - The user will feel reminded of the rainforest.
+    - Du to performance reasons, the background image is converted to a color gradient on mobil level.
     - Body Image:<br>
             <img src="assets/images/rainforest.webp" alt="Rainforest">
+    - Body Background-Mobil:<br>
+            <img src="assets/images/screenshot-mobil-background.png" alt="Color Gradient">
 
 
     - __Game Program Field__
@@ -126,23 +129,25 @@ As a demonstration, the player already wins when he has reached 500 points.
 
   - Accessibility
       - I confirm that the colors and fonts selected are easy to read and accessible. This was discovered using lighthouse in devtools.
-      - All web pages have been tested for desktop and mobil devices.
+      - The program has been tested for desktop and mobil devices.
 
-- HTML Validation
-<img src="assets/images/screenshot-html-validator.png" alt="HTML Validation">
+- HTML Validation<br>
+    <img src="assets/images/screenshot-html-validator.png" alt="HTML Validation">
 
-- CSS Validation
-<img src="assets/images/screenshot-css-validator.png" alt="CSS Validation">
+- CSS Validation<br>
+    <img src="assets/images/screenshot-css-validator.png" alt="CSS Validation">
 
-- JavaScipt Validation
-<img src="assets/images/screenshot-js-validator.png" alt="CSS JavaScipt">
+- JavaScipt Validation<br>
+    <img src="assets/images/screenshot-js-validator.png" alt="CSS JavaScipt">
 
-- Lighthouse
+- Lighthouse<br>
+    <img src="assets/images/screenshot-lighthouse.png" alt="Lighthouse">
 
-<img src="assets/images/screenshot-lighthouse.png" alt="Lighthouse">
+- Lighthouse Mobil<br>
+    <img src="assets/images/screenshot-lighthouse-mobil.png" alt="Lighthouse Mobil">
 
 
-- user story besed test cases (screenshots):
+- User story besed test cases (screenshots):
 
   - As a visiting user, I can easily understand the main purpose of the game. 
       - Heading, Start Button, Animals<br>
