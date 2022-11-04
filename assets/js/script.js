@@ -124,7 +124,7 @@ function draw() {
 
     //Wall
     if (document.getElementById('level').innerText == 3) {
-        /* ctx.fillStyle = 'black';
+        /* ctx.fillStyle = linear-gradient(to bottom right, brown, red, yellow);
         ctx.fillRect(canvas.width / 2, 0, cellWidth, canvas.height);
         ctx.fillRect(0, canvas.height / 2, canvas.width, cellHight); */
         ctx.drawImage(document.getElementById('fire'), canvas.width / 2, 0, cellWidth, canvas.height);
