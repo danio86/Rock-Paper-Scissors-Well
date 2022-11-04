@@ -15,7 +15,8 @@ body {
     justify-content: center;
     align-items: center;
     /* background-image: url(../images/forest-small.webp); */
-    background-color: lawngreen; /* For browsers that do not support gradients */
+    background-color: lawngreen; 
+    /* For browsers that do not support gradients */
     background-image: linear-gradient(to bottom right, green, brown);
 }
 
@@ -253,6 +254,10 @@ footer p {
 /*everything coded in ths area is only applied for those screens. For bigger screen width than ...*/
 /* 400px - */
 @media screen and (min-width: 400px) {
+    body {
+        background-image: url(../images/rainforest.webp);
+    }
+
     #the-whole-thing {
         width: 400px;
         height: 800px;
@@ -294,6 +299,14 @@ footer p {
     #game-area {
         width: 260px;
         height: 260px;
+    }
+
+    .game-area-L3 {
+        border: 10px solid transparent;
+        border-image-repeat: round;
+        border-image-slice: 50;
+        border-image-source: url(../images/rainforest.webp);
+        border-radius: 10px;
     }
 
     #startInfo {
