@@ -77,12 +77,12 @@ header {
 }
 
 .game-area-L3 {
-    /* border: 10px solid transparent;
+    border: 10px solid transparent;
     border-image-repeat: round;
     border-image-slice: 50;
-    border-image-source: url(../images/rainforest.png);
-    border-radius: 10px; */
-    border-color: green;
+    border-image-source: url(../images/forest-big.webp);
+    border-radius: 10px;
+    /* border-color: green; */
 }
 
 #startInfo {
