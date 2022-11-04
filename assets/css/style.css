@@ -14,8 +14,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../images/palm.webp);
-    /* background-color: green; */
+    /* background-image: url(../images/palm.webp); */
+    background-color: green;
 }
 
 #the-whole-thing {
@@ -77,11 +77,12 @@ header {
 }
 
 .game-area-L3 {
-    border: 10px solid transparent;
+    /* border: 10px solid transparent;
     border-image-repeat: round;
     border-image-slice: 50;
     border-image-source: url(../images/rainforest.png);
-    border-radius: 10px;
+    border-radius: 10px; */
+    border-color: green;
 }
 
 #startInfo {
@@ -94,7 +95,9 @@ header {
     height: auto;
     text-transform: uppercase;
     font-size: 50%;
-    margin: -5px 0 2px 0;
+    /* margin: -5px 0 2px 0; */
+    position: relative;
+    top: -4px;
 }
 
 .startBtnBefore {
