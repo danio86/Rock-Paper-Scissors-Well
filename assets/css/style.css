@@ -93,11 +93,11 @@ header {
 }
 
 #startKey {
-    width: 125px;
+    width: 230px;
     border-radius: 10px;
     height: auto;
     text-transform: uppercase;
-    font-size: 50%;
+    font-size: 12px;
     /* margin: -5px 0 2px 0; */
     position: relative;
     top: -4px;
@@ -122,7 +122,7 @@ header {
 
 #audio-button {
     position: absolute;
-    margin: -5px 0 0 -101px;
+    margin: -4px 0 0 -102px;
     width: 53px;
     height: 30px;
     padding-top: 3px;
@@ -137,7 +137,7 @@ header {
 
 button {
     background-color: rgb(178, 178, 178);
-    width: 50px;
+    width: 53px;
     height: 30px;
     border-radius: 45px;
     font-family: Courier, sans-serif;
@@ -165,7 +165,7 @@ button:hover {
 }
 
 #down {
-    top: 24px;
+    top: 20px;
 }
 
 footer {
@@ -173,6 +173,10 @@ footer {
     width: 100%;
     text-align: center;
     font-size: 72%;
+}
+
+.socail-media {
+    margin-top: 25px;
 }
 
 footer li {
@@ -190,6 +194,9 @@ footer p {
     margin-bottom: -23px;
     color: whitesmoke;
     margin-top: 33px;
+    font-size: 12px;
+    width: 220px;
+    margin: 33px auto;
 }
 
 #upper-p {
@@ -199,7 +206,7 @@ footer p {
 #facebook {
     background-color: lawngreen;
     position: relative;
-    top: 23px;
+    top: 22px;
     border-radius: 27px;
     color: black;
     height: 22px;
@@ -210,24 +217,24 @@ footer p {
 #twitter {
     background-color: lawngreen;
     position: relative;
-    top: 12px;
+    top: 8px;
     border-radius: 27px;
     color: black;
-    left: 1px;
-    height: 22px;
-    width: 50px;
+    left: 3px;
+    height: 24px;
+    width: 52px;
     padding-top: 5px;
 }
 
 #instagram {
     background-color: lawngreen;
     position: relative;
-    top: 13px;
+    top: 10px;
     border-radius: 27px;
     color: black;
-    left: -4px;
-    height: 22px;
-    width: 50px;
+    left: -5px;
+    height: 24px;
+    width: 52px;
     padding-top: 5px;
 }
 
@@ -293,18 +300,19 @@ footer p {
     }
 
     #startKey {
-        width: 37%;
+        width: 50%;
         border-radius: 30px;
         height: auto;
         text-transform: uppercase;
-        font-size: 72%;
-        margin-top: 10px;
+        font-size: 80%;
+        margin-top: 7px;
+        padding: 2px;
     }
 
     #audio-button {
         position: absolute;
         margin: 75px 0 0 -131px;
-        width: 66px;
+        width: 68px;
         height: 39px;
         padding-top: 3px;
         font-size: 140%;
@@ -315,12 +323,12 @@ footer p {
     }
 
     button {
-        width: 70px;
-        height: 35px;
+        width: 71px;
+        height: 39px;
     }
 
     #up {
-        top: 5px;
+        top: 6px;
     }
 
     #middle-buttons {
@@ -329,50 +337,63 @@ footer p {
     }
 
     #left {
-        right: 58px;
+        right: 56px;
+        top: -5px;
     }
 
     #right {
         left: 58px;
+        top: -4px;
     }
 
     #down {
-        top: 46px;
+        top: 34px;
     }
 
     footer {
-        margin-top: 128px;
+        margin-top: 119px;
     }
 
     footer p {
         padding-top: 5px;
         font-size: 127%;
+        margin-bottom: -23px;
+        margin-top: 33px;
+        width: unset;
+    }
+
+    .socail-media {
+        margin-top: unset;
+      }
+
+    #upper-p {
+        display: block;
     }
 
     #facebook {
         top: 28px;
         height: 30px;
-        width: 64px;
+        width: 69px;
         padding-top: 6px;
         left: unset;
         font-size: 140%;
     }
 
     #twitter {
-        top: 12px;
-        height: 30px;
-        width: 64px;
+        top: 9px;
+        height: 31px;
+        width: 69px;
         padding-top: 6px;
-        left: -5px;
+        left: -1px;
         font-size: 140%;
     }
 
     #instagram {
-        top: 15px;
-        height: 30px;
-        width: 64px;
+        top: 12px;
+        height: 32px;
+        width: 68px;
         padding-top: 6px;
-        left: 2px;
+        left: -1px;
         font-size: 140%;
     }
 
@@ -458,14 +479,16 @@ footer p {
 
     #left {
         right: 45px;
+        top: 1px;
     }
 
     #right {
         left: 45px;
+        top: -1px;
     }
 
     #down {
-        top: 25px;
+        top: 21px;
     }
 
     footer {
@@ -580,8 +603,8 @@ footer p {
     }
 
     button {
-        width: 85px;
-        height: 45px;
+        width: 87px;
+        height: 47px;
     }
 
     #middle-buttons {
@@ -590,19 +613,21 @@ footer p {
 
     #left {
         right: 71px;
+        top: -5px;
     }
 
     #right {
         left: 71px;
+        top: -3px;
     }
 
     #down {
-        top: 50px;
+        top: 44px;
     }
 
     footer {
         height: 88px;
-        margin-top: 161px;
+        margin-top: 154px;
     }
 
     footer p {
