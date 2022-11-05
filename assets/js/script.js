@@ -40,7 +40,7 @@ let rId = Math.floor(Math.random() * 3) + 1;
 let soundStop = false;
 let soundL3 = true;
 let attentionSound = true;
-let finalSound = new Audio('assets/sounds/last-round.mp3');
+let finalSound = new Audio('assets/sounds/last-round.mp4');
 let mute = false;
 
 /**
