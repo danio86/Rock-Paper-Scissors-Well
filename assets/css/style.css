@@ -21,6 +21,7 @@ body {
 }
 
 #the-whole-thing {
+    position:relative;
     width: 280px;
     height: 610px;
     background: url(../images/cellphone-gf7d2ec28d_1920.webp) no-repeat;
@@ -502,7 +503,7 @@ footer p {
     }
 
     footer {
-        bottom: -56px;
+        /* bottom: -56px; */
         height: 73px;
         margin-top: 57px;
     }
