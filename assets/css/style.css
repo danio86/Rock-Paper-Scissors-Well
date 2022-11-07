@@ -202,10 +202,17 @@ footer p {
     display: none;
 }
 
+#fb-pos {
+    top: 8px;
+    position: relative;
+    background-color: rgb(57, 59, 74);
+    left: -1px;
+}
+
 #facebook {
     background-color: lawngreen;
     position: relative;
-    top: 21px;
+    top: 13px;
     border-radius: 27px;
     color: black;
     height: 22px;
@@ -379,6 +386,11 @@ footer p {
 
     #upper-p {
         display: block;
+    }
+
+    #fb-pos {
+        position: unset;
+        background-color: unset;
     }
 
     #facebook {
