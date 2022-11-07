@@ -547,7 +547,7 @@ footer p {
 /*-----------------MQ - 1550px - -------------------------*/
 @media screen and (min-width: 1550px) {
     #the-whole-thing {
-        margin: 25px 0;
+        /* margin: 25px 0; */
         width: 440px;
         height: 990px;
         background-size: 1000px;
