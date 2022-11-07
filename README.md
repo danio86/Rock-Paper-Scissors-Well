@@ -72,9 +72,8 @@ As a demonstration, the player already wins when he has reached 500 points.
 
             - The control panel contains the start button, the sound button and the control buttons of the snake for mobile devices (phones, tablets).Users on devices with a keyboard will be more likely to use the keyboard. 
                 - The start button contains instructions on how to start the game and how mute the sound.
-                 - after the first *Game-Over* sound instructions disapear.
-                - It serves as a user manual and as an intermediate step between the "Game Over Status" and the start of the game. This prevents the end screen ("Game Over" or "You Win") from being clicked away immediately by intuitively continuing to play (a direction key is pressed).
-                - The start button changes color by mouse over and by clicking.
+                 - It serves as a user manual and as an intermediate step between the "Game Over Status" and the start of the game. This prevents the end screen ("Game Over" or "You Win") from being clicked away immediately by intuitively continuing to play (a direction key is pressed).
+                 - The start button changes color by mouse over and by clicking.
                 - The sound button allows the user to mute or reactivate all sounds by clicking the play/pause button on the screen or the shift or the caps lock key on the keybord.
                 - The control button change color by mouse over.
                 - The Control Area idea and basic code is taken form the **Code-Institute Love-Maths-Project** but has been modified.
@@ -239,6 +238,7 @@ The live link can be found [here](https://danio86.github.io/Snake-2001/)
 - Instructions on how to implement links into the footer were taken from [Code Institute - Love Running Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LR101+2021_T1/courseware/4a07c57382724cfda5834497317f24d5/e6d4cda2bc08458ba94d2092be9bad3a/)
 - Instructions on how to implement sound and soundeffects were taken from [Go Make Things ](https://gomakethings.com/how-to-play-a-sound-with-javascript/)
 - Instructions on how to implement sound mute functions were taken from [w3schools](https://www.w3schools.com/jsref/prop_audio_paused.asp)
+- Instructions on how to prevent scrolling by clicking arrow key are taken from [stackoverflow](https://stackoverflow.com/questions/8916620/disable-arrow-key-scrolling-in-users-browser)
 - Images were edited (scaled (only favicon) and transparencies)  with a free software [GIMP](https://www.gimp.org/)
 - Images were edited (scaled)  with a free software [Microsoft Paint](https://apps.microsoft.com/store/detail/paint/9PCFS5B6T72H?hl=en-us&gl=us)
 - Sounds were converted to mp3 with free online converter [123apps](https://online-audio-converter.com/de/)
