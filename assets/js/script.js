@@ -310,6 +310,7 @@ function gameEnd() {
         document.getElementById('level').innerText = 1;
         document.getElementById('startKey').setAttribute('class', '');
         document.getElementById('startKey').innerHTML = 'Press "here" or Space to start! <i class="fas fa-volume-down"></i> <i class="fas fa-arrow-alt-circle-up"></i> <i class="fas fa-arrow-alt-circle-down"></i> for sound on/off.';
+        //innerHTML instead of innerText because of icons.
         console.log(document.getElementById('level').innerText);
         speed = 180;
         document.getElementById('game-area').setAttribute('class', 'game-area-start');
@@ -638,8 +639,10 @@ function keyPress(e) {
     }
 }
 
+// prevent scrolling by arrow keys
 window.addEventListener('keydown', (e) => {
-    if (e.target.localName != 'input') {   // if you need to filter <input> elements
+    if (e.target.localName != 'input') {
+        // to filter <input> elements
         switch (e.keyCode) {
             case 38: // up
             case 40: // down
