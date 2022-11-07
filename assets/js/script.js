@@ -309,7 +309,7 @@ function gameEnd() {
         document.getElementById('score').innerText = oldScore;
         document.getElementById('level').innerText = 1;
         document.getElementById('startKey').setAttribute('class', '');
-        document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
+        document.getElementById('startKey').innerHTML = 'Press "here" or Space to start! <i class="fas fa-volume-down"></i> <i class="fas fa-arrow-alt-circle-up"></i> <i class="fas fa-arrow-alt-circle-down"></i> for sound on/off.';
         console.log(document.getElementById('level').innerText);
         speed = 180;
         document.getElementById('game-area').setAttribute('class', 'game-area-start');
@@ -343,7 +343,7 @@ function gameEnd() {
         document.getElementById('score').innerText = oldScore;
         document.getElementById('level').innerText = 1;
         document.getElementById('startKey').setAttribute('class', '');
-        document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
+        document.getElementById('startKey').innerHTML = 'Press "here" or Space to start! <i class="fas fa-volume-down"></i> <i class="fas fa-arrow-alt-circle-up"></i> <i class="fas fa-arrow-alt-circle-down"></i> for sound on/off.';
         console.log(document.getElementById('level').innerText);
         speed = 180;
 
@@ -371,7 +371,7 @@ function gameEnd() {
         }];
         document.getElementById('level').innerText = 1;
         document.getElementById('startKey').setAttribute('class', '');
-        document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
+        document.getElementById('startKey').innerHTML = 'Press "here" or Space to start! <i class="fas fa-volume-down"></i> <i class="fas fa-arrow-alt-circle-up"></i> <i class="fas fa-arrow-alt-circle-down"></i> for sound on/off.';
         speed = 180;
         console.log(speed, 'end2');
         document.getElementById('score').innerText = oldScore;
@@ -637,3 +637,19 @@ function keyPress(e) {
         document.getElementById('startKey').setAttribute('class', 'startBtnBefore startbtnAfter');
     }
 }
+
+window.addEventListener('keydown', (e) => {
+    if (e.target.localName != 'input') {   // if you need to filter <input> elements
+        switch (e.keyCode) {
+            case 38: // up
+            case 40: // down
+                e.preventDefault();
+                break;
+            default:
+                break;
+        }
+    }
+}, {
+    capture: true,   // this disables arrow key scrolling in modern Chrome
+    passive: false   // this is optional, my code works without it
+});
