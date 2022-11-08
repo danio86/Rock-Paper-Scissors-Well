@@ -259,7 +259,7 @@ footer p {
 /* 400px - */
 @media screen and (min-width: 400px) {
     body {
-        background-image: url(../images/rainforest.webp);
+        background-image: url(../images/rainforest-illustration.webp);
     }
 
     #the-whole-thing {
@@ -309,7 +309,7 @@ footer p {
         border: 10px solid transparent;
         border-image-repeat: round;
         border-image-slice: 50;
-        border-image-source: url(../images/rainforest.webp);
+        border-image-source: url(../images/rainforest-illustration.webp);
         border-radius: 10px;
     }
 
