@@ -239,7 +239,7 @@ function scoreCounter(n) {
         document.getElementById('score').innerText = oldScore;
         document.getElementById('level').innerText = 1;
         document.getElementById('startKey').setAttribute('class', '');
-        document.getElementById('startKey').innerText = 'Press "here" or Space to start!';
+        document.getElementById('startKey').innerHTML = 'Press "here" or Space to start! <i class="fas fa-volume-down"></i> <i class="fas fa-arrow-alt-circle-up"></i> <i class="fas fa-arrow-alt-circle-down"></i> for sound on/off.';
         speed = 180;
 
         //all values in newRecord list are checked, the largest value is current record.
