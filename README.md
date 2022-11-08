@@ -28,7 +28,7 @@ As a demonstration, the player already wins when he has reached 500 points.
     - The user will feel reminded of the rainforest.
     - Du to performance reasons, the background image is converted to a color gradient on mobil level.
     - Body Image:<br>
-            <img src="assets/images/rainforest.webp" alt="Rainforest">
+            <img src="assets/images/rainforest-illustration.webp" alt="Rainforest">
     - Body Background-Mobil:<br>
             <img src="assets/images/screenshot-mobil-background.png" alt="Color Gradient">
 
@@ -184,16 +184,16 @@ As a demonstration, the player already wins when he has reached 500 points.
  <img src="assets/images/bug-snake-backwarts-bite-itself.png" alt="Bug-Snake-Backwarts-Bite-itself">
  The solution is a "for-loop": Ff there is more than one snake part (the snake parts are in a list), the last part gets the position of the previous part. The loop then repeats itself with the penultimate part. Until the loop gets to the head, then it breaks. The function is called whenever the snake encounters food.
 
-  - function snakeGrowth() {
-        for (let i = snake.length - 1; i > 0; i--) {
-            let piece = snake[i];
-            let frontPiece = snake[i - 1];
-            piece.x = frontPiece.x;
-            piece.y = frontPiece.y;
+ - function snakeGrowth() {
+    - for (let i = snake.length - 1; i > 0; i--) {
+        let piece = snake[i];
+        let frontPiece = snake[i - 1];
+        piece.x = frontPiece.x;
+        piece.y = frontPiece.y;}
 
  - To prevent the snake from being able to walk backwards, I simply banned it:
     - if (direction && e.keyCode == 37 && direction != 'RIGHT') {
-        direction = 'LEFT';
+        direction = 'LEFT';}
 
  - The most difficult bug was that the snake eats the animals (images). For this, the images had to behave exactly like canvas pixels. A tutor session lasting several hours was necessary to solve this problem. In the end they helped me to help myself. "Follow the javascript logic": The previously undefined image variable was placed in the canvas drawing function. This placement then called a function. Here an image is drawn with canvas pixel dimensions and in canvas coordinates. The coordinates are chosen randomly in the game loop.
   - function draw() {
@@ -203,7 +203,7 @@ As a demonstration, the player already wins when he has reached 500 points.
      ctx.drawImage(document.getElementById(rId), x * cellWidth, y * cellHight, cellWidth+1, cellHight+1);}
 
  - It was difficult to prevent the snake from turning 180 degrees on the same line. For example, if you press up and right very quickly after going left in advance, the snake will turn on the same line. This happens especially in level 1 (slightly in level 2) when the snake moves slowly. Unfortunately nobody could help me with this problem. Nevertheless, I have practically fixed it by making changes of direction in level 1 only possible with a time delay (many other things have also been tried). The snake reacts with a slight time delay when changing direction. The problem almost never occurs anymore. However, if you force it strongly, you can still cause the bug.
-  - if (direction && e.keyCode == 37 && direction != 'RIGHT') {
+     - if (direction && e.keyCode == 37 && direction != 'RIGHT') {
             if (document.getElementById('level').innerText == 1) {
                 setTimeout(() => {direction = 'LEFT';}, 120)
             } if (document.getElementById('level').innerText == 2) {
@@ -241,10 +241,12 @@ The live link can be found [here](https://danio86.github.io/Snake-2001/)
 - Instructions on how to prevent scrolling by clicking arrow key are taken from [stackoverflow](https://stackoverflow.com/questions/8916620/disable-arrow-key-scrolling-in-users-browser)
 - Images were edited (scaled (only favicon) and transparencies)  with a free software [GIMP](https://www.gimp.org/)
 - Images were edited (scaled)  with a free software [Microsoft Paint](https://apps.microsoft.com/store/detail/paint/9PCFS5B6T72H?hl=en-us&gl=us)
-- Sounds were converted to mp3 with free online converter [123apps](https://online-audio-converter.com/de/)
+- Sounds were converted to mp3/mp4 with free online converter [123apps](https://online-audio-converter.com/de/)
+- Images were converted to webp with free online converter [onlineconvertfree](https://onlineconvertfree.com/de/convert-format/jpg-to-webp/)
 
 - Color-Scheme
   <img src="assets/images/color-scheme.png" alt="Color Scheme">
+  <img src="assets/images/color-scheme2.png" alt="Color Scheme">
 
 ### Media
 
