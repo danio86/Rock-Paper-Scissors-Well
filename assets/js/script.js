@@ -12,8 +12,6 @@ let snake = [{
 //an array of jsons is 1 element/value
 let img;
 let food;
-/* let elephant;
-let lion; */
 let gotFood = false;
 let gotImg = false;
 
@@ -127,9 +125,6 @@ function draw() {
 
     //Wall
     if (document.getElementById('level').innerText == 3) {
-        /* ctx.fillStyle = linear-gradient(to bottom right, brown, red, yellow);
-        ctx.fillRect(canvas.width / 2, 0, cellWidth, canvas.height);
-        ctx.fillRect(0, canvas.height / 2, canvas.width, cellHight); */
         ctx.drawImage(document.getElementById('fire'), canvas.width / 2, 0, cellWidth, canvas.height);
         ctx.drawImage(document.getElementById('fire'), 0, canvas.height / 2, canvas.width, cellHight);
     }
@@ -212,7 +207,6 @@ function scoreCounter(n) {
         document.getElementById('level').innerText = 2;
         speed = 150;
     } else if (oldScore >= 240) {
-        /* console.log(soundL3, 's3'); */
         document.getElementById('level').innerText = 3;
         speed = 100;
         if (soundL3 == true) {
@@ -299,7 +293,6 @@ function gameEnd() {
         gameOver = true;
         sounds(3);
         soundStop = false;
-        /* soundL3 = true; */
         attention = false;
         attentionSound = true;
         finalSound.pause();
@@ -314,7 +307,6 @@ function gameEnd() {
         document.getElementById('startKey').setAttribute('class', '');
         document.getElementById('startKey').innerHTML = 'Press "here" or Space to start! <i class="fas fa-volume-down"></i> <i class="fas fa-arrow-alt-circle-up"></i> <i class="fas fa-arrow-alt-circle-down"></i> for sound on/off.';
         //innerHTML instead of innerText because of icons.
-        console.log(document.getElementById('level').innerText);
         speed = 180;
         document.getElementById('game-area').setAttribute('class', 'game-area-start');
         for (let i = 0; i < newRecord.length; i++) {
@@ -348,9 +340,7 @@ function gameEnd() {
         document.getElementById('level').innerText = 1;
         document.getElementById('startKey').setAttribute('class', '');
         document.getElementById('startKey').innerHTML = 'Press "here" or Space to start! <i class="fas fa-volume-down"></i> <i class="fas fa-arrow-alt-circle-up"></i> <i class="fas fa-arrow-alt-circle-down"></i> for sound on/off.';
-        console.log(document.getElementById('level').innerText);
         speed = 180;
-
         for (let i = 0; i < newRecord.length; i++) {
             if (newRecord[i] > largest) {
                 largest = newRecord[i];
@@ -377,7 +367,6 @@ function gameEnd() {
         document.getElementById('startKey').setAttribute('class', '');
         document.getElementById('startKey').innerHTML = 'Press "here" or Space to start! <i class="fas fa-volume-down"></i> <i class="fas fa-arrow-alt-circle-up"></i> <i class="fas fa-arrow-alt-circle-down"></i> for sound on/off.';
         speed = 180;
-        console.log(speed, 'end2');
         document.getElementById('score').innerText = oldScore;
         for (let i = 0; i < newRecord.length; i++) {
             if (newRecord[i] > largest) {
