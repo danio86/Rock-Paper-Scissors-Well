@@ -331,7 +331,7 @@ footer p {
         position: absolute;
         margin: 74px 0 0 -131px;
         width: 68px;
-        height: 39px;
+        height: 40px;
         padding-top: 3px;
         font-size: 140%;
     }
@@ -481,8 +481,8 @@ footer p {
 
     #audio-button {
         position: absolute;
-        margin: 21px 0 0 -110px;
-        width: 56px;
+        margin: 21px 0 0 -109px;
+        width: 57px;
         height: 33px;
         padding-top: 3px;
     }
