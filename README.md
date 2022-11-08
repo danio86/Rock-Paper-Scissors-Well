@@ -5,6 +5,7 @@ Snake 2001 is a recreation of the Snake mobile game that was still played on but
 A snake is guided by the player through a playing field and has to collect as much food as possible. The player receives points for this. The more dangerous the food is, the more points the player gets. 10 poits for a red sqare, 20 points for a spider, 30 points for an elephant and 40 points for a lion.
 This variant contains 3 levels. From level 1 to 2 only the speed changes. In both levels the snake dies if it hits the wall or if it bites itself. In level 3, a wall of fire appears in the middle of the playing field. The outer walls are permeable to it.
 For demonstration, the player wins when he reaches 500 points. For this he receives a trophy.
+There are sound effects throughout the game but no continuous music. Only in level 3 does a continuous "exciting" game sound appear.
 
 - Responsice Mockup<br>
     <img src="assets/images/screenshot-mq.png" alt="Responsice Mockup">
