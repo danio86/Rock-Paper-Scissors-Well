@@ -65,6 +65,9 @@ function sounds(s) {
 function playAudio() {
     mute = false;
     soundL3 = true;
+    if (document.getElementById('level').innerText == 3) {
+        finalSound.play();
+    }
     document.getElementById('audio-button').setAttribute('onclick', 'pauseAudio()');
     document.getElementById('soundOff').setAttribute('class', 'fas fa-volume-mute soundOff');
     document.getElementById('soundOn').setAttribute('class', 'fas fa-volume-down');
@@ -209,7 +212,7 @@ function scoreCounter(n) {
         document.getElementById('level').innerText = 2;
         speed = 150;
     } else if (oldScore >= 240) {
-        console.log(soundL3, 's3');
+        /* console.log(soundL3, 's3'); */
         document.getElementById('level').innerText = 3;
         speed = 100;
         if (soundL3 == true) {
@@ -296,7 +299,7 @@ function gameEnd() {
         gameOver = true;
         sounds(3);
         soundStop = false;
-        soundL3 = true;
+        /* soundL3 = true; */
         attention = false;
         attentionSound = true;
         finalSound.pause();
